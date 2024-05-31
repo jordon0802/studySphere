@@ -7,8 +7,8 @@ import type { ProfileScreenProps } from "../types";
 function ProfileScreen({navigation, route}: ProfileScreenProps) {
     return (
         <View style={styles.background}>
-            <Text style={styles.brand}>Profile Page</Text>
-            <Text style={styles.textInput}>This is {route.params.name}'s profile</Text>
+            <Text style={styles.brand}>STUDYSPHERE</Text>
+            <Text style={styles.textInput}>This is { route.params.name }'s Profile Page</Text>
             <Button title='Back' onPress={() => navigation.navigate('StudySphere')}/>
         </View>
     );

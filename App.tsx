@@ -17,7 +17,7 @@ function App() {
                     component={StudySphere}
                     />
                 <Stack.Screen
-                    name="Profile"
+                    name="ProfileScreen"
                     component={ProfileScreen}
                     />
             </Stack.Navigator>
