@@ -2,12 +2,12 @@ import { firebase } from '@react-native-firebase/app';
 import '@react-native-firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyDWiWik3wbc8deUBdTfOcti9v8UW-g5K1A",
+    authDomain: "studysphere-f1d2f.firebaseapp.com",
+    projectId: "studysphere-f1d2f",
+    storageBucket: "studysphere-f1d2f.appspot.com",
+    messagingSenderId: "743500797865",
+    appId: "1:743500797865:android:807ad5e1b1edb0b8c856b8"
 };
 
 if (!firebase.apps.length) {

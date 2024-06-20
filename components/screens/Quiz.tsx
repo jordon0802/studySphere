@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import type { StudySphereProps, RootStackParamList, ProfileScreenProps } from "../types";
 import { useNavigation } from '@react-navigation/native';
@@ -7,53 +7,62 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 
 import { useState, useEffect } from 'react';
-import { firebase } from '../firebaseConfig';
+//import { firebase } from '../firebaseConfig';
 
-const Quiz = () => {
-    const [quizzes, setQuizzes] = useState([]);
+export default function Quiz() {
+
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [selectedOption, setSelectedOption] = useState('');
+    const [score, setScore] = useState(0);
+    const [showScore, setShowScore] = useState(false);
 
-    useEffect(() => {
-        const fetchQuizzes = async () => {
-            const quizRef = firebase.firestore().collection('quizzes');
-            const snapshot = await quizRef.get();
-            const quizzesData = snapshot.docs.map(doc => doc.data());
-            setQuizzes(quizzesData);
-        };
-        fetchQuizzes();
-    }, []);
-
-    const handleNextQuestion = () => {
-        if (currentQuestion < quizzes.length - 1) {
-            setCurrentQuestion(currentQuestion + 1);
-            setSelectedOption('');
-        } else {
-            alert('Quiz completed!');
+    const quizData = [
+        {
+            question: "What is the 2 x 2?",
+            options: ['2','3','4','5'],
+            answer: '4',
         }
-    };
+    ]
+
+    const handleAnswer = (selectedAnswer) => {
+        const answer = quizData[currentQuestion]?.answer;
+        if(answer === selectedAnswer){
+            setScore((prevScore)=> prevScore + 1);
+        }
+
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < quizData.length) {
+            setCurrentQuestion(nextQuestion);
+        }else{
+            setShowScore(true);
+        }
+    }
+
+    const handleRestart = () => {
+        setCurrentQuestion(0);
+        setScore(0);
+        setShowScore(false);
+    }
 
     return (
         <View style={styles.container}>
-            {quizzes.length > 0 && (
-                <>
-                    <View style={styles.questionContainer}>
-                        <Text style={styles.questionText}> {quizzes[currentQuestion]?.question }</Text>
-                    </View>
-                    {quizzes[currentQuestion]?.options.map((option, index) => (
-                        <Button
-                            key={index}
-                            title={option}
-                            onPress={() => setSelectedOption(option)}
-                            color={selectedOption === option ? 'blue' : 'gray'}
-                        />
-                    ))}
-                    <Button title="Next Question" onPress={handleNextQuestion} />
-                </>
-            )}
+            {showScore ? <View> 
+                <Text style={styles.optionStyle}> {score} </Text>
+                <TouchableOpacity style={styles.optionContainer} onPress={handleRestart}>
+                    <Text style={styles.resetButton}>Reset</Text>
+                </TouchableOpacity>
+            </View> :
+            <View style={styles.questionContainer}>
+                <Text style={styles.questionText}> { quizData[currentQuestion]?.question } </Text>
+                {quizData[currentQuestion]?.options.map((item) => {
+                    return <TouchableOpacity onPress={()=> handleAnswer(item)} style={styles.optionContainer}>
+                        <Text style={styles.optionStyle}> {item} </Text>
+                    </TouchableOpacity>
+                })}
+            </View>
+            }
         </View>
     );
-};
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -71,6 +80,7 @@ const styles = StyleSheet.create({
     optionStyle: {
         color: "green",
         padding: 5,
+        alignSelf: 'center',
         fontSize: 18,
     },
 
@@ -82,6 +92,11 @@ const styles = StyleSheet.create({
 
     questionText: {
         fontSize: 24,
-    } 
+    },
+
+    resetButton : {
+        fontSize : 18,
+        paddingHorizontal: 10  
+    }
 
 });
