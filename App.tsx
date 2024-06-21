@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import StudySphere from './components/screens/StudySphere';
 import ProfileScreen from './components/screens/ProfileScreen';
 import { RootStackParamList } from './components/types';
+import Quiz from './components/screens/Quiz';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -19,6 +20,10 @@ function App() {
                 <Stack.Screen
                     name="ProfileScreen"
                     component={ProfileScreen}
+                    />
+                <Stack.Screen
+                    name='Quiz'
+                    component={Quiz}
                     />
             </Stack.Navigator>
         </NavigationContainer>

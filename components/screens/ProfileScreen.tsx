@@ -10,12 +10,13 @@ function ProfileScreen({navigation, route}: ProfileScreenProps) {
             <Text style={styles.brand}>STUDYSPHERE</Text>
             <Text style={styles.textInput}>This is { route.params.name }'s Profile Page</Text>
             <Button title='Back' onPress={() => navigation.navigate('StudySphere')}/>
-            <Button title='Flashcards' onPress={() => navigation.navigate('Flashcard')} />
-            <Button title='Quiz' onPress={() => navigation.navigate('Quiz')} />
-            <Button title='Study Plan' onPress={() => navigation.navigate('StudyPlan')} />
-            <Button title='Notes' onPress={() => navigation.navigate('Notes')} />
+            <Button title='Quiz' onPress={() => navigation.navigate('Quiz', { name: route.params.name })} />
         </View>
     );
 };
 
 export default ProfileScreen;
+
+//<Button title='Flashcards' onPress={() => navigation.navigate('Flashcard')} />
+//<Button title='Study Plan' onPress={() => navigation.navigate('StudyPlan')} />
+//<Button title='Notes' onPress={() => navigation.navigate('Notes')} />
