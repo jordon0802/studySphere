@@ -9,7 +9,7 @@ function ProfileScreen({navigation, route}: ProfileScreenProps) {
         <View style={styles.background}>
             <Text style={styles.brand}>STUDYSPHERE</Text>
             <Text style={styles.textInput}>This is { route.params.name }'s Profile Page</Text>
-            <Button title='Back' onPress={() => navigation.navigate('StudySphere')}/>
+            <Button title='Back' onPress={() => navigation.navigate('RegisterScreen')}/>
             <Button title='Quiz' onPress={() => navigation.navigate('Quiz', { name: route.params.name })} />
         </View>
     );

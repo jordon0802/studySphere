@@ -1,7 +1,7 @@
     import React from "react";
     import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-    import type { StudySphereProps, RootStackParamList, ProfileScreenProps } from "../types";
+    import type { RegisterScreenProps, RootStackParamList, ProfileScreenProps } from "../types";
     import { useNavigation } from '@react-navigation/native';
     import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 

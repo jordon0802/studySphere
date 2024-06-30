@@ -1,14 +1,26 @@
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 export type RootStackParamList = {
-    StudySphere : undefined;
+    RegisterScreen : undefined;
+    LoginScreen: undefined;
+    HomeScreen: undefined;
     ProfileScreen : { name : String };
-    Quiz : { name : String};
+    Quiz : { name : String };
 };
 
-export type StudySphereProps = NativeStackScreenProps<
+export type RegisterScreenProps = NativeStackScreenProps<
     RootStackParamList,
-    "StudySphere"
+    "RegisterScreen"
+>;
+
+export type LoginScreenProps = NativeStackScreenProps<
+    RootStackParamList,
+    "LoginScreen"
+>;
+
+export type HomeScreenProps = NativeStackScreenProps<
+    RootStackParamList,
+    "HomeScreen"
 >;
 
 export type ProfileScreenProps = NativeStackScreenProps<

@@ -4,7 +4,7 @@ import { Button, Text, TextInput , View } from 'react-native';
 import * as Yup from 'yup';
 
 import styles from "../styles"
-import type { StudySphereProps, RootStackParamList, ProfileScreenProps } from "../types";
+import type { RegisterScreenProps, RootStackParamList, ProfileScreenProps } from "../types";
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
@@ -40,14 +40,15 @@ async function doSubmit({ username, email, password } : Values, navigation : Pro
             'Content-Type': 'application/json',
         }});
         if (response.status == 200) {
-                navigation.navigate("ProfileScreen", { name : username })
+                //navigation.navigate("ProfileScreen", { name : username })
+                navigation.navigate("LoginScreen")
         }
     } catch (error) {
         console.log(error);
     }
 };
 
-function StudySphere() {
+function RegisterScreen() {
     const navigation = useNavigation<ProfileScreenNavigationProp>();
     const [username, onChangeUsername] = React.useState('');
     const [email, onChangeEmail] = React.useState('');
@@ -79,8 +80,10 @@ function StudySphere() {
             />
 
             <Button onPress={() => (doSubmit({username, email, password}, navigation))} title="register" />
+            <Text />
+            <Button onPress={() => navigation.navigate("LoginScreen")} title="login here" />
         </View>
     );
 };
 
-export default StudySphere;
+export default RegisterScreen;

@@ -2,20 +2,25 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import StudySphere from './components/screens/StudySphere';
-import ProfileScreen from './components/screens/ProfileScreen';
 import { RootStackParamList } from './components/types';
+import RegisterScreen from './components/screens/RegisterScreen';
+import ProfileScreen from './components/screens/ProfileScreen';
 import Quiz from './components/screens/Quiz';
+import LoginScreen from './components/screens/LoginScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='StudySphere' screenOptions={{headerShown: false}}>
+            <Stack.Navigator initialRouteName='RegisterScreen' screenOptions={{headerShown: false}}>
                 <Stack.Screen
-                    name="StudySphere"
-                    component={StudySphere}
+                    name="RegisterScreen"
+                    component={RegisterScreen}
+                    />
+                <Stack.Screen
+                    name="LoginScreen"
+                    component={LoginScreen}
                     />
                 <Stack.Screen
                     name="ProfileScreen"
