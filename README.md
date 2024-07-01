@@ -1,15 +1,15 @@
 
-**README**
+# **README**
 
-**Team Name**
+## **Team Name**
 
 StudySphere
 
-**Proposed Level of Achievement**
+## **Proposed Level of Achievement**
 
 Apollo 11
 
-**Project Scope**
+## **Project Scope**
 
 Study Buddy is a cutting-edge mobile application designed to enhance student collaboration and academic success. Upon registering and logging in securely with authentication features, users are greeted with a user-friendly homepage that serves as a gateway to a range of powerful educational tools.
 
@@ -24,17 +24,17 @@ Additionally, Study Buddy includes a robust review and rating system, empowering
 Overall, Study Buddy not only facilitates efficient study group formation and resource sharing but also cultivates a supportive learning environment where students can thrive academically and achieve their educational goals with confidence.
 
 
-**Motivation**
+## **Motivation**
 
 Study Buddy aims to revolutionise how students collaborate and learn together in today's dynamic educational landscape. By bridging the gap between traditional classroom learning and digital collaboration, Study Buddy empowers students to seamlessly connect, share knowledge, and support each other in their academic journeys. Whether it's organising study groups, coordinating project work, or sharing essential study materials, Study Buddy provides a centralised platform where students can efficiently collaborate and brainstorm ideas.
 
 Moreover, Study Buddy enhances learning effectiveness with interactive features like flashcards and quizzes, fostering deeper comprehension and retention of course material. Students can create personalised study sessions, exchange notes, and engage in real-time discussions, thereby cultivating a vibrant community of learners. With intuitive tools and a user-friendly interface, Study Buddy not only facilitates academic success but also cultivates a supportive environment where students can thrive together, making learning a collaborative and enriching experience.
 
-**Aim**
+## **Aim**
 
 We hope to help students find support groups that can help each other academically as well as make friends in school.
 
-**User Stories**
+## **User Stories**
 
 As a student, I want to be able to find a friend who I am compatible with and can work with, so that I can excel in my studies and maintain a good balance between studying and relaxing.
 
@@ -50,21 +50,21 @@ As a student, I want to test my understanding and knowledge of the subjects I le
 
 As a student, I want to see if the study app I am about to use is credible so that I don’t waste my time on a useless app.
 
-**Features**
+## **Features**
 
-**1. Algorithm to find the most compatible study partners using a profiling survey result**
+### **1. Algorithm to find the most compatible study partners using a profiling survey result**
 
 StudySphere will allow interested users to take a survey that consists of questions relating to their field of study, specialisation, study habits, ideal study conditions and personality etc. This survey will then be used to generate a user profile which will be used to match with other users. Users will be sorted based on their field of study and the algorithm will match them such that users can find the most compatible study partner.
 
 Matched users will then be able to communicate with each other by providing their contacts as well as schedule times to study together. 
 
-**2. Allow users to upload and share notes with each other**
+### **2. Allow users to upload and share notes with each other**
 
 Users can manually upload their notes onto the cloud in our app and can opt to share them with their friends or open it to the public. Users have the option to manually upload their notes onto the app's cloud storage, ensuring accessibility and security. Whether writing notes directly within the app or uploading existing PDF files, Study Buddy accommodates various note-taking preferences. This flexibility empowers students to collaborate effectively, share valuable study resources, and enhance their learning experiences through shared knowledge and collective effort. 
 
 This frontend will be mainly built using ReactJS and TypeScript. Our backend here would involve the framework of SpringBoot using Java and Firebase as our preferred data storage solution. Firebase offers real-time database capabilities and robust file storage options, making it ideal for handling content like study materials. Our server-side and frontend will interact through HTTP requests using Axios to send requests to the API endpoints. For example, when a user uploads a PDF file of study notes, the frontend will make a POST request to the backend's endpoint designated for file uploads.
 
-**3. Create study plans/goal setting**
+### **3. Create study plans/goal setting**
 
 StudySphere allows students to set goals and plans within the app. They can input details such as plan title, description, start date, end date, and specific goals they want to achieve within this timeframe. Existing study plans are displayed in a list format, showing key details like title, dates, and progress. Users can click on each plan to view or edit details, adjust goals, or update progress status.
 
@@ -83,17 +83,17 @@ When a user creates or updates a study plan through the frontend, send HTTP requ
 In addition, Firebase’s capabilities will ensure that any updates to the study plan are synchronised across all the users devices. 
 
 
-**4. Flashcards**
+### **4. Flashcards**
 
 StudySphere has another feature to manually upload flashcards to help facilitate studying, be it last minute revision or just to remember details better. Users can manually create and upload flashcards directly within the app, facilitating comprehensive subject reviews. Each flashcard allows users to input questions on one side and corresponding answers on the reverse, promoting interactive learning and effective memory recall.
 
 Our frontend logic, using ReactJS and TypeScript, will handle the UI to display the flashcards and to handle the flipping of the flashcard. Our backend will be managed through SpringBoot with Java, leveraging Firebase for secure storage and retrieval of user-generated flashcards. HTTP requests using axios and API endpoints facilitate communication between the frontend and backend systems. When users create or update flashcards, the frontend sends POST requests to designated backend endpoints, which then handle data processing and storage in Firebase. This integration ensures that users can access their flashcards across devices, share them with study partners, and benefit from collaborative learning experiences within StudySphere.
 
-**5. Quizzes to test knowledge**
+### **5. Quizzes to test knowledge**
 
 StudySphere offers a quiz creation feature to enhance learning. It is friendly and easy to use as users need only input a question and 4 different answers, including the correct one. ReactJS and Typescript will handle the UI for the quiz which includes a score tally which will be displayed at the end of the quiz. The frontend will also handle the display of the correct answers for the students to see and review their work. The quiz feature will include a cloud feature where students can share their created quiz with friends or to the general studySphere community. This will be handled by our backend, which will handle the POST requests, with an array of the Quiz details, from the frontend. And then our backend of SpringBoot and Java will handle this HTTP request and store the data using either SQL or Firebase. Conversely, when the frontend make a request to retrieve a quiz to the backend, the request will be handled by the logic on our server side which will retrieve the data and then allow users to access the quizzes.
 
-**6. Review and rating system**
+### **6. Review and rating system**
 
 Lastly, StudySphere will allow users to leave feedback on the system as well as suggest improvements to the application. This will allow us to meet the needs of the users and improve the application accordingly. Users will also be able to report vulnerabilities to us, which we will then be able to act upon and rectify.
 
@@ -104,7 +104,7 @@ Additionally, users can rate the application on a scale of 5 stars, as well as l
 
 
 
-**Timeline**
+## **Timeline**
 
 |**MS**|**Task**|**Description**|**In-Charge**|**Date**|
 | :-: | :-: | :-: | :-: | :-: |
@@ -128,7 +128,7 @@ Additionally, users can rate the application on a scale of 5 stars, as well as l
 ||TBC|TBC|TBC|19 Aug - 25 Aug|
 |Splash- down|TBC|TBC|TBC|26 Aug - 29 Aug|
 
-**Tech Stack**
+## **Tech Stack**
 
 React Native - Mobile App Development
 
@@ -140,7 +140,7 @@ Java -  Backend
 
 GitHub -  Version Control
 
-**Qualifications**
+## **Qualifications**
 
 CS50
 
@@ -150,40 +150,40 @@ CS2040S
 
 Courses in Python and Web Programming
 
-**Software Engineering Practices**
+## **Software Engineering Practices**
 
 In developing the Study Buddy app, several good practices in software engineering have been implemented to ensure the code is maintainable, scalable, and efficient:
 
-1. **Component-based Architecture**: The application is structured using reusable components such as Flashcard and Quiz. Each component encapsulates its own logic and UI, promoting modularity and making the code easier to maintain and extend.
+### 1. **Component-based Architecture**: The application is structured using reusable components such as Flashcard and Quiz. Each component encapsulates its own logic and UI, promoting modularity and making the code easier to maintain and extend.
 2. **Type Safety with TypeScript**: The use of TypeScript for defining types like FlashcardProps and QuizData enhances type safety. This practice helps catch type mismatches during development, reducing the likelihood of runtime errors and improving code reliability.
 
 ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.001.png)![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.002.png)
 
-3. **State Management with useState**: State is managed using React's useState hook for various functionalities like flipping flashcards and tracking quiz progress. This functional approach simplifies state management, avoids the complexities of class components, and enhances code readability.
+### 3. **State Management with useState**: State is managed using React's useState hook for various functionalities like flipping flashcards and tracking quiz progress. This functional approach simplifies state management, avoids the complexities of class components, and enhances code readability.
 
 ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.003.png)
 
-4. **Navigation with React Navigation**: Navigation between different screens is handled using React Navigation's createNativeStackNavigator. This provides a structured way to manage app flow and screen transitions, improving the user experience and maintaining a clean navigation structure.
+### 4. **Navigation with React Navigation**: Navigation between different screens is handled using React Navigation's createNativeStackNavigator. This provides a structured way to manage app flow and screen transitions, improving the user experience and maintaining a clean navigation structure.
 
 ![ref1]
 
-5. **Styling with StyleSheet**: Styles are defined using StyleSheet.create, ensuring that styling is scoped and optimised. This approach enhances performance by avoiding inline styles and makes the styling code more readable and maintainable.
+### 5. **Styling with StyleSheet**: Styles are defined using StyleSheet.create, ensuring that styling is scoped and optimised. This approach enhances performance by avoiding inline styles and makes the styling code more readable and maintainable.
 
 ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.005.png)
 
-6. **Using version Management:** The project employs version control using Git, enabling effective collaboration, tracking of changes, and rollback to previous versions if necessary. This practice ensures that the codebase is well-managed and that development progresses smoothly without the risk of losing work.
+### 6. **Using version Management:** The project employs version control using Git, enabling effective collaboration, tracking of changes, and rollback to previous versions if necessary. This practice ensures that the codebase is well-managed and that development progresses smoothly without the risk of losing work.
 
-   ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.006.png)
+![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.006.png)
 
-7. **Using Model-View-Controller:** By separating the application into models, views, and controllers, we have organised the code to enhance readability and maintainability. The model represents the data and business logic, the view handles the presentation layer, and the controller processes user inputs and updates the model and view accordingly. In addition we have services, data-transfer-objects as well as security features incorporated.
+### 7. **Using Model-View-Controller:** By separating the application into models, views, and controllers, we have organised the code to enhance readability and maintainability. The model represents the data and business logic, the view handles the presentation layer, and the controller processes user inputs and updates the model and view accordingly. In addition we have services, data-transfer-objects as well as security features incorporated.
 
-   ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.007.png)
+![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.007.png)
 
-8. **API Integration:** The application integrates with backend services through well-defined API endpoints. This allows for efficient communication between the frontend and backend, enabling functionalities such as data fetching, user authentication, and storage of user-generated content. API integration ensures that the app can interact with external services and databases, providing dynamic and up-to-date information to users.
+### 8. **API Integration:** The application integrates with backend services through well-defined API endpoints. This allows for efficient communication between the frontend and backend, enabling functionalities such as data fetching, user authentication, and storage of user-generated content. API integration ensures that the app can interact with external services and databases, providing dynamic and up-to-date information to users.
 
 ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.008.png)
 
-9. **Abstraction:** The application employs abstraction to hide complex implementation details and expose only necessary functionalities. This is achieved through the use of hooks, higher-order components, and context APIs. Abstraction reduces complexity, enhances code readability, and makes it easier to manage and update the application. 
+### 9. **Abstraction:** The application employs abstraction to hide complex implementation details and expose only necessary functionalities. This is achieved through the use of hooks, higher-order components, and context APIs. Abstraction reduces complexity, enhances code readability, and makes it easier to manage and update the application. 
 
    The navigation logic is abstracted into a centralised App.tsx file. This keeps the navigation setup separate from the actual screen components, making the code more organised and easier to manage
 
@@ -191,7 +191,7 @@ In developing the Study Buddy app, several good practices in software engineerin
 
 App.tsx File
 
-10. **Authentication & Authorization:** 
+### 10. **Authentication & Authorization:** 
 
    Token-Based Authentication: The use of JWT (JSON Web Tokens) for authentication ensures a secure, stateless mechanism for verifying user identities, minimising the risk of session hijacking and providing a scalable solution for modern web applications.
 
@@ -199,7 +199,7 @@ App.tsx File
 
    ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.010.png)
 
-11. **Encapsulation:** Through defining getters and setters in our backend code, we maintain better control of class attributes and methods, as it is easier to change a part of the code without having to alter everything else.
+### 11. **Encapsulation:** Through defining getters and setters in our backend code, we maintain better control of class attributes and methods, as it is easier to change a part of the code without having to alter everything else.
 
 ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.011.png)
 
