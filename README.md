@@ -69,7 +69,9 @@ This frontend will be mainly built using ReactJS and TypeScript. Our backend her
 StudySphere allows students to set goals and plans within the app. They can input details such as plan title, description, start date, end date, and specific goals they want to achieve within this timeframe. Existing study plans are displayed in a list format, showing key details like title, dates, and progress. Users can click on each plan to view or edit details, adjust goals, or update progress status.
 
 Our backend, powered by Spring Boot with Java and integrated with Firebase, StudySphere securely stores and retrieves study plans and goal settings as JSON objects. In addition, we will create RESTful API endpoints such as
+
 POST /study-plans
+
 GET /study-plans/{planId}
 
 PUT /study-plans/{planId}
@@ -153,49 +155,43 @@ Courses in Python and Web Programming
 In developing the Study Buddy app, several good practices in software engineering have been implemented to ensure the code is maintainable, scalable, and efficient:
 
 1. **Component-based Architecture**: The application is structured using reusable components such as Flashcard and Quiz. Each component encapsulates its own logic and UI, promoting modularity and making the code easier to maintain and extend.
-1. **Type Safety with TypeScript**: The use of TypeScript for defining types like FlashcardProps and QuizData enhances type safety. This practice helps catch type mismatches during development, reducing the likelihood of runtime errors and improving code reliability.
+2. **Type Safety with TypeScript**: The use of TypeScript for defining types like FlashcardProps and QuizData enhances type safety. This practice helps catch type mismatches during development, reducing the likelihood of runtime errors and improving code reliability.
 
-`	`![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.001.png)![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.002.png)
+![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.001.png)![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.002.png)
 
-1. **State Management with useState**: State is managed using React's useState hook for various functionalities like flipping flashcards and tracking quiz progress. This functional approach simplifies state management, avoids the complexities of class components, and enhances code readability.
+3. **State Management with useState**: State is managed using React's useState hook for various functionalities like flipping flashcards and tracking quiz progress. This functional approach simplifies state management, avoids the complexities of class components, and enhances code readability.
 
-`	`![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.003.png)
+![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.003.png)
 
-1. **Navigation with React Navigation**: Navigation between different screens is handled using React Navigation's createNativeStackNavigator. This provides a structured way to manage app flow and screen transitions, improving the user experience and maintaining a clean navigation structure.
+4. **Navigation with React Navigation**: Navigation between different screens is handled using React Navigation's createNativeStackNavigator. This provides a structured way to manage app flow and screen transitions, improving the user experience and maintaining a clean navigation structure.
 
-`	`![ref1]
+![ref1]
 
-1. **Styling with StyleSheet**: Styles are defined using StyleSheet.create, ensuring that styling is scoped and optimised. This approach enhances performance by avoiding inline styles and makes the styling code more readable and maintainable.
+5. **Styling with StyleSheet**: Styles are defined using StyleSheet.create, ensuring that styling is scoped and optimised. This approach enhances performance by avoiding inline styles and makes the styling code more readable and maintainable.
 
-`	`![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.005.png)
+![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.005.png)
 
-1. **Using version Management:** The project employs version control using Git, enabling effective collaboration, tracking of changes, and rollback to previous versions if necessary. This practice ensures that the codebase is well-managed and that development progresses smoothly without the risk of losing work.
+6. **Using version Management:** The project employs version control using Git, enabling effective collaboration, tracking of changes, and rollback to previous versions if necessary. This practice ensures that the codebase is well-managed and that development progresses smoothly without the risk of losing work.
 
    ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.006.png)
 
-1. **Using Model-View-Controller:** By separating the application into models, views, and controllers, we have organised the code to enhance readability and maintainability. The model represents the data and business logic, the view handles the presentation layer, and the controller processes user inputs and updates the model and view accordingly. In addition we have services, data-transfer-objects as well as security features incorporated.
+7. **Using Model-View-Controller:** By separating the application into models, views, and controllers, we have organised the code to enhance readability and maintainability. The model represents the data and business logic, the view handles the presentation layer, and the controller processes user inputs and updates the model and view accordingly. In addition we have services, data-transfer-objects as well as security features incorporated.
 
    ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.007.png)
 
-1. **API Integration:** The application integrates with backend services through well-defined API endpoints. This allows for efficient communication between the frontend and backend, enabling functionalities such as data fetching, user authentication, and storage of user-generated content. API integration ensures that the app can interact with external services and databases, providing dynamic and up-to-date information to users.
+8. **API Integration:** The application integrates with backend services through well-defined API endpoints. This allows for efficient communication between the frontend and backend, enabling functionalities such as data fetching, user authentication, and storage of user-generated content. API integration ensures that the app can interact with external services and databases, providing dynamic and up-to-date information to users.
 
-`	`![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.008.png)
+![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.008.png)
 
-1. **Abstraction:** The application employs abstraction to hide complex implementation details and expose only necessary functionalities. This is achieved through the use of hooks, higher-order components, and context APIs. Abstraction reduces complexity, enhances code readability, and makes it easier to manage and update the application. 
+9. **Abstraction:** The application employs abstraction to hide complex implementation details and expose only necessary functionalities. This is achieved through the use of hooks, higher-order components, and context APIs. Abstraction reduces complexity, enhances code readability, and makes it easier to manage and update the application. 
 
    The navigation logic is abstracted into a centralised App.tsx file. This keeps the navigation setup separate from the actual screen components, making the code more organised and easier to manage
 
    ![ref2]
 
-`	`App.tsx File
+App.tsx File
 
-
-
-
-
-
-
-1. **Authentication & Authorization:** 
+10. **Authentication & Authorization:** 
 
    Token-Based Authentication: The use of JWT (JSON Web Tokens) for authentication ensures a secure, stateless mechanism for verifying user identities, minimising the risk of session hijacking and providing a scalable solution for modern web applications.
 
@@ -203,9 +199,9 @@ In developing the Study Buddy app, several good practices in software engineerin
 
    ![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.010.png)
 
-1. **Encapsulation:** Through defining getters and setters in our backend code, we maintain better control of class attributes and methods, as it is easier to change a part of the code without having to alter everything else.
+11. **Encapsulation:** Through defining getters and setters in our backend code, we maintain better control of class attributes and methods, as it is easier to change a part of the code without having to alter everything else.
 
-`	`![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.011.png)
+![](Aspose.Words.a7bf8548-e0f5-418a-b4d5-2b94b3d6527c.011.png)
 
 
 
