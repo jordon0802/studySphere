@@ -67,7 +67,7 @@
                             <Text style={styles.optionStyle}> {item} </Text>
                         </TouchableOpacity>
                     })}
-                    <Button title="Back" onPress={() => navigation.goBack()} />
+                    <Button title="Back" onPress={() => navigation.goBack()} /> 
                 </View>
                 }
             </View>
