@@ -4,7 +4,7 @@ function HomeScreen() {
 
     return (
         <View>
-            <Text>Hello World, PLEASE WORK</Text>
+            <Text>Hello World, PLEASE WORK, NO</Text>
         </View>
     )
 
