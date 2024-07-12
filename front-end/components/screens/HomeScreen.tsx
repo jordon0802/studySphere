@@ -12,7 +12,7 @@ function HomeScreen() {
     return (
         <View style={styles.background}>
             <Text style={styles.brand}>StudySphere</Text>
-            <View style={localStyles.buttonContainer}>
+            <View style={styles.buttonContainer}>
                 <Button
                     title="Notes"
                     onPress={() => navigation.navigate('NotesScreen')}
@@ -38,11 +38,3 @@ function HomeScreen() {
 };
 
 export default HomeScreen;
-
-const localStyles = StyleSheet.create({
-    buttonContainer: {
-        alignItems: 'center',
-        marginTop: 20,
-        color: 'blue'
-    },
-});
