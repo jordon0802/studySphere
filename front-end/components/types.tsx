@@ -4,8 +4,8 @@
         RegisterScreen : undefined;
         LoginScreen: undefined;
         HomeScreen: undefined;
-        ProfileScreen : { name : String };
-        Quiz : { name : String };
+        ProfileScreen : undefined;
+        Quiz : undefined;
         Flashcard : undefined;
         StudyPlanScreen : undefined;
         NotesScreen : undefined;
