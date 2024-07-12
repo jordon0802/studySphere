@@ -7,7 +7,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "HomeScreen">;
 
-const HomeScreen = () => {
+function HomeScreen() {
     const navigation = useNavigation<HomeScreenNavigationProp>();
     return (
         <View style={styles.background}>
@@ -16,22 +16,21 @@ const HomeScreen = () => {
                 <Button
                     title="Notes"
                     onPress={() => navigation.navigate('NotesScreen')}
-                    color="darkblue"
                 />
+                <Text />
                 <Button
                     title="Profile"
                     onPress={() => navigation.navigate('ProfileScreen')}
-                    color="darkblue"
                 />
+                <Text />
                 <Button
-                    title="Flashcards"
-                    onPress={() => navigation.navigate('Flashcard')}
-                    color="darkblue"
+                    title="Flashcard"
+                    onPress={() => navigation.navigate('FlashcardScreen')}
                 />
+                <Text />
                 <Button
                     title="Quiz"
-                    onPress={() => navigation.navigate('Quiz')}
-                    color="darkblue"
+                    onPress={() => navigation.navigate('QuizScreen')}
                 />
             </View>
         </View>
@@ -42,7 +41,8 @@ export default HomeScreen;
 
 const localStyles = StyleSheet.create({
     buttonContainer: {
-        marginTop: 20,
         alignItems: 'center',
+        marginTop: 20,
+        color: 'blue'
     },
 });

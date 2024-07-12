@@ -5,8 +5,8 @@
         LoginScreen: undefined;
         HomeScreen: undefined;
         ProfileScreen : undefined;
-        Quiz : undefined;
-        Flashcard : undefined;
+        QuizScreen : undefined;
+        FlashcardScreen : undefined;
         StudyPlanScreen : undefined;
         NotesScreen : undefined;
     };
@@ -31,15 +31,14 @@
         "ProfileScreen"
     >;
 
-    export type QuizProps = NativeStackScreenProps<
+    export type QuizScreenProps = NativeStackScreenProps<
         RootStackParamList,
-        "Quiz"
+        "QuizScreen"
     >;
-
     
-    export type FlashcardProps = NativeStackScreenProps<
+    export type FlashcardScreenProps = NativeStackScreenProps<
         RootStackParamList,
-        "Flashcard"
+        "FlashcardScreen"
     >;
 
     export type StudyPlanScreenProps = NativeStackScreenProps<

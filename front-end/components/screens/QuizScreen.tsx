@@ -15,16 +15,23 @@
         answer : string;
     };
 
-    export default function Quiz() {
+    type QuizScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "QuizScreen">;
+
+    function QuizScreen() {
 
         const [currentQuestion, setCurrentQuestion] = useState(0);
         const [score, setScore] = useState(0);
         const [showScore, setShowScore] = useState(false);
-        const navigation = useNavigation();
+        const navigation = useNavigation<QuizScreenNavigationProp>();
 
-        const quizData : QuizData[] =[
+        const quizData : QuizData[] = [
             {
                 question: "What is the 2 x 2?",
+                options: ['2','3','4','5'],
+                answer: '4',
+            },
+            {
+                question: "What is the 2 + 2?",
                 options: ['2','3','4','5'],
                 answer: '4',
             }
@@ -32,6 +39,7 @@
 
         const handleAnswer = (selectedAnswer: string) => {
             const answer = quizData[currentQuestion]?.answer;
+
             if(answer === selectedAnswer){
                 setScore((prevScore)=> prevScore + 1);
             }
@@ -39,7 +47,7 @@
             const nextQuestion = currentQuestion + 1;
             if (nextQuestion < quizData.length) {
                 setCurrentQuestion(nextQuestion);
-            }else{
+            } else {
                 setShowScore(true);
             }
         }
@@ -52,37 +60,46 @@
 
         return (
             <View style={styles.container}>
-                {showScore ? (
+                {showScore ?
+                (
                     <View> 
-                        <Text style={styles.optionStyle}> {score} </Text>
-                        <TouchableOpacity style={styles.optionContainer} onPress={handleRestart}>
-                            <Text style={styles.resetButton}>Reset</Text>
-                        </TouchableOpacity>
-                        <Button title="Back" onPress={() => navigation.goBack()} />
-                </View> ) :
-                <View style={styles.questionContainer}>
-                    <Text style={styles.questionText}> { quizData[currentQuestion]?.question } </Text>
-                    {quizData[currentQuestion]?.options.map((item, index) => {
-                        return <TouchableOpacity key={index} onPress={()=> handleAnswer(item)} style={styles.optionContainer}>
-                            <Text style={styles.optionStyle}> {item} </Text>
-                        </TouchableOpacity>
-                    })}
-                    <Button title="Back" onPress={() => navigation.goBack()} /> 
-                </View>
+                        <Text style={styles.optionStyle}> Your Score is: </Text>
+                        <Text style={styles.optionStyle}> {score} / {quizData.length} </Text>
+                        <Text />
+                        <Button onPress={() => handleRestart()} title="Restart" />
+                        <Text />
+                        <Button onPress={() => navigation.navigate("HomeScreen")} title="Back" />
+                    </View>
+                ) : (
+                    <View style={styles.questionContainer}>
+                        <Text style={styles.questionText}> { quizData[currentQuestion]?.question } </Text>
+
+                        {quizData[currentQuestion]?.options.map((item, index) => {
+                            return <TouchableOpacity key={index} onPress={()=> handleAnswer(item)} style={styles.optionContainer}>
+                                <Text style={styles.optionStyle}> {item} </Text>
+                            </TouchableOpacity>
+                        })}
+
+                        <Button title="Back" onPress={() => navigation.goBack()} /> 
+                    </View>
+                )    
                 }
-            </View>
+            </View>    
         );
-    }
+    };
 
     const styles = StyleSheet.create({
         container: {
-            flex: 1,
-            backgroundColor: "turquoise",
             alignItems: "center",
+            backgroundColor: "turquoise",
+            flex: 1,
+            fontWeight: 'bold',
             justifyContent: "center",
+            padding: 5,
+            textAlign: 'center',
         },
         questionContainer: {
-            backgroundColor: "darkblue",
+            backgroundColor: "white",
             padding: 10,
             margin: 10,
             borderRadius: 5,
@@ -95,18 +112,16 @@
         },
 
         optionContainer: {
-            borderColor: 'black',
+            //borderColor: 'black',
             borderWidth: 2,
+            color: 'darkblue',
             marginTop: 15,
         },
 
         questionText: {
             fontSize: 24,
-        },
-
-        resetButton : {
-            fontSize : 18,
-            paddingHorizontal: 10  
         }
 
     });
+
+    export default QuizScreen;

@@ -1,34 +1,40 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../types';
 
 type FlashcardProps = {
-  flashcard: {
     question: string;
     answer: string;
     options: string[];
-  };
 };
 
-const Flashcard: React.FC<FlashcardProps> = ({ flashcard }) => {
+type FlashcardScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "FlashcardScreen">;
+
+function FlashcardScreen( { question, answer, options = [] } : FlashcardProps ) {
+  const navigation = useNavigation<FlashcardScreenNavigationProp>()
   const [flip, setFlip] = useState(false);
 
   return (
-    <TouchableOpacity style={styles.card} onPress={() => setFlip(!flip)}>
-      <View style={[styles.cardContent, flip && styles.flipped]}>
-        <View style={styles.front}>
-          <Text>{flashcard.question}</Text>
-          <View style={styles.flashcardOptions}>
-            {flashcard.options.map((option, index) => (
-              <Text key={index} style={styles.flashcardOption}>{option}</Text>
-            ))}
+    <View>
+      <TouchableOpacity style={styles.card} onPress={() => setFlip(!flip)}>
+        <View style={[styles.cardContent, flip && styles.flipped]}>
+          <View style={styles.front}>
+            <Text>{question}</Text>
+            <View style={styles.flashcardOptions}>
+              {options.map((option, index) => (
+                <Text key={index} style={styles.flashcardOption}>{option}</Text>
+              ))}
+            </View>
+          </View>
+          <View style={styles.back}>
+            <Text>{answer}</Text>
           </View>
         </View>
-        <View style={styles.back}>
-          <Text>{flashcard.answer}</Text>
-        </View>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+      <Button onPress={() => navigation.navigate("HomeScreen")} title="Back" />
+    </View>
   );
 };
 
@@ -90,7 +96,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Flashcard;   
+export default FlashcardScreen;   
 
 
 

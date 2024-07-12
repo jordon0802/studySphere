@@ -1,7 +1,14 @@
+import { Button } from '@rneui/base';
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
+import { NotesScreenProps, RootStackParamList } from '../types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-const NotesScreen = () => {
+type NotesScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "ProfileScreen">;
+
+function NotesScreen() {
+  const navigation = useNavigation<NotesScreenNavigationProp>();
   const [notes, setNotes] = useState<string[]>([]);
   const [newNote, setNewNote] = useState('');
 
@@ -40,6 +47,7 @@ const NotesScreen = () => {
         keyExtractor={(item, index) => index.toString()}
         style={styles.notesList}
       />
+      <Button onPress={() => navigation.navigate("HomeScreen")} title="Back" />
     </View>
   );
 };
