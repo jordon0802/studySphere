@@ -4,7 +4,7 @@
     import type { RegisterScreenProps, RootStackParamList, ProfileScreenProps } from "../types";
     import { useNavigation } from '@react-navigation/native';
     import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-
+    import styles from "../styles";
 
     import { useState, useEffect } from 'react';
     //import { firebase } from '../firebaseConfig';
@@ -59,24 +59,24 @@
         }
 
         return (
-            <View style={styles.container}>
+            <View style={styles.quizContainer}>
                 {showScore ?
                 (
                     <View> 
-                        <Text style={styles.optionStyle}> Your Score is: </Text>
-                        <Text style={styles.optionStyle}> {score} / {quizData.length} </Text>
+                        <Text style={styles.quizOptionStyle}> Your Score is: </Text>
+                        <Text style={styles.quizOptionStyle}> {score} / {quizData.length} </Text>
                         <Text />
                         <Button onPress={() => handleRestart()} title="Restart" />
                         <Text />
                         <Button onPress={() => navigation.navigate("HomeScreen")} title="Back" />
                     </View>
                 ) : (
-                    <View style={styles.questionContainer}>
-                        <Text style={styles.questionText}> { quizData[currentQuestion]?.question } </Text>
+                    <View style={styles.quizQuestionContainer}>
+                        <Text style={styles.quizQuestionText}> { quizData[currentQuestion]?.question } </Text>
 
                         {quizData[currentQuestion]?.options.map((item, index) => {
-                            return <TouchableOpacity key={index} onPress={()=> handleAnswer(item)} style={styles.optionContainer}>
-                                <Text style={styles.optionStyle}> {item} </Text>
+                            return <TouchableOpacity key={index} onPress={()=> handleAnswer(item)} style={styles.quizOptionContainer}>
+                                <Text style={styles.quizOptionStyle}> {item} </Text>
                             </TouchableOpacity>
                         })}
 
@@ -87,41 +87,5 @@
             </View>    
         );
     };
-
-    const styles = StyleSheet.create({
-        container: {
-            alignItems: "center",
-            backgroundColor: "turquoise",
-            flex: 1,
-            fontWeight: 'bold',
-            justifyContent: "center",
-            padding: 5,
-            textAlign: 'center',
-        },
-        questionContainer: {
-            backgroundColor: "white",
-            padding: 10,
-            margin: 10,
-            borderRadius: 5,
-        },
-        optionStyle: {
-            color: "green",
-            padding: 5,
-            alignSelf: 'center',
-            fontSize: 18,
-        },
-
-        optionContainer: {
-            //borderColor: 'black',
-            borderWidth: 2,
-            color: 'darkblue',
-            marginTop: 15,
-        },
-
-        questionText: {
-            fontSize: 24,
-        }
-
-    });
 
     export default QuizScreen;
