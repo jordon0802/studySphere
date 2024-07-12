@@ -6,9 +6,13 @@
         HomeScreen: undefined;
         ProfileScreen : undefined;
         QuizScreen : undefined;
-        FlashcardScreen : undefined;
+        MyFlashcardsScreen : undefined;
+        FlashcardMainScreen : undefined;
+        NewFlashcardScreen : undefined;
         StudyPlanScreen : undefined;
         NotesScreen : undefined;
+        FlashcardScreen : undefined;
+        
     };
 
     export type RegisterScreenProps = NativeStackScreenProps<
@@ -36,9 +40,19 @@
         "QuizScreen"
     >;
     
-    export type FlashcardScreenProps = NativeStackScreenProps<
+    export type MyFlashcardScreenProps = NativeStackScreenProps<
         RootStackParamList,
-        "FlashcardScreen"
+        "MyFlashcardsScreen"
+    >;
+
+    export type FlashcardMainScreenProps = NativeStackScreenProps<
+        RootStackParamList,
+        "FlashcardMainScreen"
+    >;
+
+    export type NewFlashcardScreenProps = NativeStackScreenProps<
+        RootStackParamList,
+        "NewFlashcardScreen"
     >;
 
     export type StudyPlanScreenProps = NativeStackScreenProps<
@@ -50,5 +64,11 @@
         RootStackParamList,
         "NotesScreen"
     >;
+
+    export type FlashcardScreenProps = NativeStackScreenProps<
+        RootStackParamList,
+        "FlashcardScreen"
+    >;
+    
 
 
