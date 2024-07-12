@@ -19,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,13 +36,19 @@ public class LoginApiController {
     CustomUserDetailService userService;
 
     @PostMapping("/user/login")
-    public LoginUserResponse loginUser (@RequestBody @Validated LoginUserRequest loginUserRequest) {
+    public ResponseEntity<String> loginUser (@RequestBody @Validated LoginUserRequest loginUserRequest) {
         String email = loginUserRequest.getEmail();
         String password = loginUserRequest.getPassword();
 
+        ResponseEntity<String> response;
+
+        if (email.isEmpty() || password.isEmpty()) {
+            response = new ResponseEntity<>("Please fill in All Fields.", HttpStatus.BAD_REQUEST);
+            return response;
+        }
+
         UserPrincipal principal = userService.loadUserByUsername(email);
 
-        System.out.println("Email: " + email + "\nPassword: " + password);
         /*var authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(email, password)
         );*/
@@ -51,29 +58,28 @@ public class LoginApiController {
         /*SecurityContextHolder.getContext().setAuthentication(authentication);
         var principal = (UserPrincipal) authentication.getPrincipal();*/
 
-        var role = principal.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .toList();
+        // User Principal exists if found in database, else principal == null
 
-        var token = jwtIssuer.generateToken(principal.getUser_id(), principal.getEmail(), role);
+        System.out.println("Principal username: " + principal.getUsername());
 
-        // Check empty fields??
+        if (principal.getUsername() == null) {
+            response = new ResponseEntity<>("User not found", HttpStatus.UNAUTHORIZED);
+            return response;
+        }
 
-        return LoginUserResponse.builder()
-                .accessToken(token)
-                .build();
+        if (principal.getEmail().equals(email) && password.equals(principal.getPassword())) {
+            var role = principal.getAuthorities().stream()
+                    .map(GrantedAuthority::getAuthority)
+                    .toList();
 
-        /*List<User> userList = UserService.fetchUserList();
+            var token = jwtIssuer.generateToken(principal.getUser_id(), principal.getEmail(), role);
 
-        int len = userList.size();
+            response = new ResponseEntity<>(token, HttpStatus.OK);
+        } else {
+            response = new ResponseEntity<>("Invalid Password", HttpStatus.BAD_REQUEST);
+        }
 
-        for (User user : userList) {
-            if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
-                return new ResponseEntity<>("Successful Login",HttpStatus.OK);
-            }
-        }*/
-
-        //return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        return response;
     }
 
     @GetMapping("/testing")

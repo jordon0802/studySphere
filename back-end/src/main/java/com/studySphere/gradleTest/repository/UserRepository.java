@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 @CrossOrigin
@@ -18,16 +19,18 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
     @Transactional
     @Modifying
-    @Query(value = "INSERT INTO USERS(user_id, username, email, password) VALUES(:user_id, :username, :email, :password)",
+    @Query(value = "INSERT INTO USERS(username, email, password, created_at, updated_at) " +
+            "VALUES(:username, :email, :password, :created_at, :updated_at)",
             nativeQuery = true)
-    int registerNewUser(@Param("user_id") int user_id,
-                        @Param("username") String username,
+    int registerNewUser(@Param("username") String username,
                         @Param("email") String email,
-                        @Param("password") String password);
+                        @Param("password") String password,
+                        @Param("created_at") Date createdAt,
+                        @Param("updated_at") Date updatedAt);
 
-    @Transactional
+    /*@Transactional
     @Query(value = "SELECT * FROM users WHERE email = :email")
-    List<User> (@Param("email") String email);
+    List<User> selectUserByEmail (@Param("email") String email);*/
 
     @Transactional
     @Query(value = "SELECT COUNT(*) FROM users", nativeQuery = true)

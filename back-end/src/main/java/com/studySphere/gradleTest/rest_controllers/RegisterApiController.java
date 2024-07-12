@@ -12,6 +12,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @CrossOrigin
 @RestController
 @RequiredArgsConstructor
@@ -25,30 +27,29 @@ public class RegisterApiController {
     UserService userService;
 
     @PostMapping("/user/register")
-    public ResponseEntity<HttpStatus> registerNewUser(@RequestBody RegisterUserRequest registerUserRequest) {
+    public ResponseEntity<String> registerNewUser(@RequestBody RegisterUserRequest registerUserRequest) {
 
         String username = registerUserRequest.getUsername();
         String email = registerUserRequest.getEmail();
         String password = registerUserRequest.getPassword();
 
+        long currentTime = System.currentTimeMillis();
+        Date createdAt = new Date(currentTime);
+        Date updatedAt = new Date(currentTime);
+
         // Check empty fields
         if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
-            return new ResponseEntity<>(/*"Please fill in All Fields",*/HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Please fill in All Fields", HttpStatus.BAD_REQUEST);
         }
 
-        // Get UserId
-        // int user_id = userService.nextUserId();
-
-        // TokenGeneration (NO NEED?)
-        //String token = jwtIssuer.generateToken(user_id, email, "ROLE_USER");
 
         // Register New User YAY!
-        int result = userService.registerNewUserServiceMethod(1, username, email, password);
+        int result = userService.registerNewUserServiceMethod(username, email, password, createdAt, updatedAt);
 
         if (result != 1) {
-            return new ResponseEntity<>(/*"Failed to register User",*/ HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Failed to register User", HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(/*"User registered successfully",*/ HttpStatus.OK);
+            return new ResponseEntity<>("User registered successfully", HttpStatus.OK);
         }
     }
 }
