@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import java.sql.Date;
 import java.sql.SQLOutput;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,24 +23,25 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public int registerNewUserServiceMethod(int user_id, String username, String email, String password) {
-        return userRepository.registerNewUser(user_id, username, email, password);
+    public int registerNewUserServiceMethod(String username, String email, String password, Date createdAt, Date updatedAt) {
+        return userRepository.registerNewUser(username, email, password, createdAt, updatedAt);
     }
 
     public Optional<User> findUserByEmail(String email) {
         System.out.println("findUserByEmail Called, email: " + email);
-        String user = userRepository.selectUserByEmail(email);
-        System.out.println("user: " + user);
-        if (user == null) { return Optional.empty(); }
-        var User = new User();
-        /*User.setUser_id(Integer.parseInt(user.get(0)));
-        User.setUsername(user.get(1)); // OR username
-        User.setEmail(user.get(2));
-        User.setPassword(user.get(3));
-        User.setCreated_at(Date.valueOf(user.get(4)));
-        User.setUpdated_at(Date.valueOf(user.get(5)));*/
 
-        return Optional.of(User);
+        User user = new User();
+
+        List<User> userList = (List<User>) userRepository.findAll();
+        for (User u : userList) {
+            System.out.println("user:" + u.getUsername());
+            if (u.getEmail().equals(email)) {
+                System.out.println("email: " + u.getEmail());
+                user = u;
+            }
+        }
+
+        return Optional.of(user);
     }
 
     public long nextUserId() {

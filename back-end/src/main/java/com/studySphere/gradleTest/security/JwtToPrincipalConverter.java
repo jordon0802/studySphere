@@ -12,13 +12,13 @@ public class JwtToPrincipalConverter {
         return UserPrincipal.builder()
                 .user_id(Integer.parseInt(decodedJWT.getSubject()))
                 .username(decodedJWT.getSubject())
-                .email(decodedJWT.getClaim("e").asString())
+                .email(decodedJWT.getClaim("email").asString())
                 .authorities(extractAuthoritiesFromClaim(decodedJWT))
                 .build();
     }
 
     private List<SimpleGrantedAuthority> extractAuthoritiesFromClaim(DecodedJWT decodedJWT) {
-        var claim = decodedJWT.getClaim("a");
+        var claim = decodedJWT.getClaim("authorities");
         if (claim.isNull() || claim.isMissing()) return List.of();
         // Claim notNull or notMissing
         return claim.asList(SimpleGrantedAuthority.class);
