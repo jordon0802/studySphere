@@ -1,2 +1,3 @@
 # Ignore app-debug.apk file
 **/app-debug.apk
+**/.DS_STORE
