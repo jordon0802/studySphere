@@ -41,7 +41,7 @@ function App() {
 
                 <Stack.Screen
                     name="FlashcardScreen"
-                    component={FlashcardScreen}
+                    component={MyFlashcardsScreen}
                 />
 
                 <Stack.Screen
