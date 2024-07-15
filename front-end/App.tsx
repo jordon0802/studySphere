@@ -7,10 +7,12 @@ import RegisterScreen from './components/screens/RegisterScreen';
 import ProfileScreen from './components/screens/ProfileScreen';
 import QuizScreen from './components/screens/QuizScreen';
 import LoginScreen from './components/screens/LoginScreen';
-import FlashcardScreen from './components/screens/Flashcard';
+import MyFlashcardsScreen from './components/screens/MyFlashcardsScreen';
 import NotesScreen from './components/screens/NotesScreen';
 import StudyPlanScreen from './components/screens/StudyPlan';
 import HomeScreen from './components/screens/HomeScreen';
+import FlashcardMainScreen from './components/screens/FlashcardMainScreen';
+import NewFlashcardScreen from './components/screens/NewFlashcardScreen';
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -23,8 +25,23 @@ function App() {
             <Stack.Navigator initialRouteName='RegisterScreen' screenOptions={{headerShown: false}}>
 
                 <Stack.Screen 
+                    name="MyFlashcardsScreen"
+                    component={MyFlashcardsScreen}
+                />
+
+                <Stack.Screen 
+                    name="NewFlashcardScreen"
+                    component={NewFlashcardScreen}
+                />
+                
+                <Stack.Screen 
+                    name="FlashcardMainScreen"
+                    component={FlashcardMainScreen}
+                />
+
+                <Stack.Screen
                     name="FlashcardScreen"
-                    component={FlashcardScreen}
+                    component={MyFlashcardsScreen}
                 />
 
                 <Stack.Screen

@@ -24,8 +24,8 @@ function HomeScreen() {
                 />
                 <Text />
                 <Button
-                    title="Flashcard"
-                    onPress={() => navigation.navigate('FlashcardScreen')}
+                    title="Flashcards"
+                    onPress={() => navigation.navigate('FlashcardMainScreen')}
                 />
                 <Text />
                 <Button
