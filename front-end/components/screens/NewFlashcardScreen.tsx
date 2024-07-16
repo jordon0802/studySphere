@@ -1,30 +1,37 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebaseConfig';
 import { useNavigation } from '@react-navigation/native';
 import type { RootStackParamList } from '../types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { firestoreInstance, analyticsInstance } from '../Firebase';
 
 type NewFlashcardScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "NewFlashcardScreen">;
 
-function NewFlashcardScreen() {
+function NewFlashcardScreen() { 
+  
+  //const db = firestoreInstance;
+
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [options, setOptions] = useState<string[]>(['', '', '', '']);
   const navigation = useNavigation<NewFlashcardScreenNavigationProp>();
 
   const handleOptionChange = (text: string, index: number) => {
+    // Creates a copy of options array to "edit"
     const newOptions = [...options];
+    // Writes over that copy
     newOptions[index] = text;
+    // Write over the original options
     setOptions(newOptions);
   };
 
+  const docRef = firestoreInstance.collection('users').doc('testing')
+
   const handleSubmit = async () => {
-    await addDoc(collection(db, 'flashcards'), {
-      question,
-      answer,
-      options,
+    await docRef.set({
+      question: question,
+      answer: answer,
+      options: options,
     });
     // Reset the form
     setQuestion('');
@@ -56,6 +63,7 @@ function NewFlashcardScreen() {
           onChangeText={(text) => handleOptionChange(text, index)}
         />
       ))}
+
       <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
         <Text style={styles.submitButtonText}>Submit</Text>
       </TouchableOpacity>
