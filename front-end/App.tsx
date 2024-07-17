@@ -14,6 +14,7 @@ import HomeScreen from './components/screens/HomeScreen';
 import FlashcardMainScreen from './components/screens/FlashcardMainScreen';
 import NewFlashcardScreen from './components/screens/NewFlashcardScreen';
 
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 
