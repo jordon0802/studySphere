@@ -3,8 +3,9 @@ import { StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
-import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
-import { db } from '../firebaseConfig';
+
+import { firebase, firestoreInstance, analyticsInstance } from '../Firebase';
+
 import FlashcardScreen from './FlashcardScreen';
 
 type FlashcardData = {
@@ -20,21 +21,28 @@ function MyFlashcardsScreen() {
   const [flashcards, setFlashcards] = useState<FlashcardData[]>([]);
   const navigation = useNavigation<MyFlashcardsScreenNavigationProp>();
 
+  const[test, setTest] = useState();
+
   useEffect(() => {
     const fetchFlashcards = async () => {
-      const querySnapshot = await getDocs(collection(db, 'flashcards'));
+      const querySnapshot = await firestoreInstance.collection('users').get();
       const flashcardsData: FlashcardData[] = [];
-      querySnapshot.forEach((doc) => {
+
+      /*querySnapshot.forEach((doc) => {
+        console.log(doc.data.name);
         flashcardsData.push({ id: doc.id, ...doc.data() } as FlashcardData);
       });
-      setFlashcards(flashcardsData);
+      setFlashcards(flashcardsData);*/
+
+      console.log(querySnapshot.docs[0].data());
+
     };
 
     fetchFlashcards();
   }, []);
 
   const handleDelete = async (id: string) => {
-    await deleteDoc(doc(db, 'flashcards', id));
+    await firestoreInstance.collection('users').doc(id).delete();
     setFlashcards(flashcards.filter(flashcard => flashcard.id !== id));
   };
 

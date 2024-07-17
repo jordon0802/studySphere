@@ -1,14 +1,13 @@
 {
   "project_info": {
-    "project_number": "743500797865",
-    "firebase_url": "https://studysphere-f1d2f-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "studysphere-f1d2f",
-    "storage_bucket": "studysphere-f1d2f.appspot.com"
+    "project_number": "970108121466",
+    "project_id": "studysphere-1231f",
+    "storage_bucket": "studysphere-1231f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:743500797865:android:807ad5e1b1edb0b8c856b8",
+        "mobilesdk_app_id": "1:970108121466:android:d5f377b467e2e5ace826c3",
         "android_client_info": {
           "package_name": "com.studysphere"
         }
@@ -16,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDWiWik3wbc8deUBdTfOcti9v8UW-g5K1A"
+          "current_key": "AIzaSyAEZky1nM2jz0YdjrBWlg9dtarh4R_t870"
         }
       ],
       "services": {

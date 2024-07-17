@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.studysphere.app-mergeDebugResources-32:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.studysphere.app-mergeDebugResources-39:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\garethdcruz\\.gradle\\caches\\transforms-4\\452ffdcf9637ac22e3426671d55dd6fb\\transformed\\material-1.6.1\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/067c87c7bdbb0d340d16cb2923839d28/transformed/material-1.6.1/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebaseConfig';
+
+import { firestoreInstance } from '../Firebase';
+
 import { useNavigation } from '@react-navigation/native';
 import type { RootStackParamList } from '../types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -15,16 +16,23 @@ function NewFlashcardScreen() {
   const navigation = useNavigation<NewFlashcardScreenNavigationProp>();
 
   const handleOptionChange = (text: string, index: number) => {
+    // Creates a copy of options array to "edit"
     const newOptions = [...options];
+    // Writes over that copy
     newOptions[index] = text;
+    // Write over the original options
     setOptions(newOptions);
+
   };
 
+  const docRef = firestoreInstance.collection('users').doc('testing')
+
   const handleSubmit = async () => {
-    await addDoc(collection(db, 'flashcards'), {
-      question,
-      answer,
-      options,
+    await docRef.set({
+      /*question: question,
+      answer: answer,
+      options: options,*/
+      name: 'bye'
     });
     // Reset the form
     setQuestion('');

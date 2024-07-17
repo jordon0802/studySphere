@@ -1,5 +1,6 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+/*import * as fireapp from '@react-native-firebase/app';
+import { getFirestore } from '@react-native-firebase/firestore'
+import { getAnalytics } from '@react-native-firebase/analytics';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDWiWik3wbc8deUBdTfOcti9v8UW-g5K1A",
@@ -10,7 +11,7 @@ const firebaseConfig = {
   appId: "1:743500797865:android:807ad5e1b1edb0b8c856b8"
 };
 
-const app = initializeApp(firebaseConfig);
+const app = fireapp.default.initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export { db };
+export { db };*/
