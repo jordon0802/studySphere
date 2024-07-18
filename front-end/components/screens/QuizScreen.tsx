@@ -18,7 +18,6 @@
     type QuizScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "QuizScreen">;
 
     function QuizScreen() {
-
         const [currentQuestion, setCurrentQuestion] = useState(0);
         const [score, setScore] = useState(0);
         const [showScore, setShowScore] = useState(false);
@@ -60,8 +59,7 @@
 
         return (
             <View style={styles.quizContainer}>
-                {showScore ?
-                (
+                {showScore ? (
                     <View> 
                         <Text style={styles.quizOptionStyle}> Your Score is: </Text>
                         <Text style={styles.quizOptionStyle}> {score} / {quizData.length} </Text>
@@ -72,9 +70,9 @@
                     </View>
                 ) : (
                     <View style={styles.quizQuestionContainer}>
-                        <Text style={styles.quizQuestionText}> { quizData[currentQuestion]?.question } </Text>
+                        <Text style={styles.quizQuestionText}> { quizData[currentQuestion].question } </Text>
 
-                        {quizData[currentQuestion]?.options.map((item, index) => {
+                        {quizData[currentQuestion].options.map((item, index) => {
                             return <TouchableOpacity key={index} onPress={()=> handleAnswer(item)} style={styles.quizOptionContainer}>
                                 <Text style={styles.quizOptionStyle}> {item} </Text>
                             </TouchableOpacity>
@@ -82,8 +80,7 @@
 
                         <Button title="Back" onPress={() => navigation.goBack()} /> 
                     </View>
-                )    
-                }
+                )}
             </View>    
         );
     };

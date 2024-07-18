@@ -11,8 +11,9 @@
         NewFlashcardScreen : undefined;
         StudyPlanScreen : undefined;
         NotesScreen : undefined;
-        FlashcardScreen : undefined;
-        
+        BuddySphereScreen : undefined; 
+        MyFriendsScreen : undefined; 
+        FindFriendsScreen : undefined;
     };
 
     export type RegisterScreenProps = NativeStackScreenProps<
@@ -65,9 +66,19 @@
         "NotesScreen"
     >;
 
-    export type FlashcardScreenProps = NativeStackScreenProps<
-        RootStackParamList,
-        "FlashcardScreen"
+    export type BuddySphereScreenProps = NativeStackScreenProps< 
+        RootStackParamList, 
+        "BuddySphereScreen" 
+    >; 
+ 
+    export type FindFriendsScreenProps = NativeStackScreenProps< 
+        RootStackParamList, 
+        "FindFriendsScreen" 
+    >; 
+ 
+    export type MyFriendsScreenProps = NativeStackScreenProps< 
+        RootStackParamList, 
+        "MyFriendsScreen" 
     >;
     
 

@@ -1,75 +1,103 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 
 import { firebase, firestoreInstance, analyticsInstance } from '../Firebase';
 
-import FlashcardScreen from './FlashcardScreen';
+//import FlashcardScreen from './FlashcardScreen';
 
 type FlashcardData = {
   id: string;
   question: string;
   answer: string;
-  options: string[];
 };
 
-type MyFlashcardsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "FlashcardScreen">;
+type MyFlashcardsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "MyFlashcardsScreen">;
 
 function MyFlashcardsScreen() {
   const [flashcards, setFlashcards] = useState<FlashcardData[]>([]);
+  const [currentFlashcard, setCurrentFlashcard] = useState(0);
+  const [flip, setFlip] = useState(false);
+
   const navigation = useNavigation<MyFlashcardsScreenNavigationProp>();
 
-  const[test, setTest] = useState();
+  var totalFlashcards = 0;
 
-  useEffect(() => {
-    const fetchFlashcards = async () => {
-      const querySnapshot = await firestoreInstance.collection('users').get();
-      const flashcardsData: FlashcardData[] = [];
+  const fetchFlashcards = async () => {
+    const querySnapshot = await firestoreInstance.collection("User").doc("user1").collection("Flashcards").get();
+    const flashcardsData : FlashcardData[] = [];
 
-      /*querySnapshot.forEach((doc) => {
-        console.log(doc.data.name);
-        flashcardsData.push({ id: doc.id, ...doc.data() } as FlashcardData);
-      });
-      setFlashcards(flashcardsData);*/
-
-      console.log(querySnapshot.docs[0].data());
-
-    };
-
-    fetchFlashcards();
-  }, []);
-
-  const handleDelete = async (id: string) => {
-    await firestoreInstance.collection('users').doc(id).delete();
-    setFlashcards(flashcards.filter(flashcard => flashcard.id !== id));
+    querySnapshot.forEach((doc) => {
+      // "as" => considers doc[i] as FlashcardData type
+      flashcardsData.push({ id: doc.id, ...doc.data() } as FlashcardData);
+    });
+    setFlashcards(flashcardsData);
   };
 
-  const renderItem = ({ item }: { item: FlashcardData }) => (
+  const handleDelete = async (id: string) => {
+    const collectionRef = firestoreInstance.collection("Users").doc("user1").collection("Flashcards");
+    await collectionRef.doc(id).delete();
+  };
+
+  // Destructure, specify item is of type FlashcardData
+  const renderItem = ({item}: {item: FlashcardData}) => (
     <View style={styles.flashcardContainer}>
-      <FlashcardScreen question={item.question} answer={item.answer} options={item.options} />
-      <TouchableOpacity onPress={() => handleDelete(item.id)} style={styles.deleteButton}>
-        <Text style={styles.deleteButtonText}>Delete</Text>
+      <TouchableOpacity onPress={() => setFlip(!flip)} style={styles.card}>
+        {flip ? (
+          <Text>{item.question}</Text>
+        ) : (
+          <Text>{item.answer}</Text>
+        )}
       </TouchableOpacity>
     </View>
   );
 
+  const handleNext = () => {
+    setFlip(false);
+    setCurrentFlashcard(currentFlashcard + 1);
+  }
+
+  const handlePrev = () => {
+    setFlip(false);
+    if (currentFlashcard > 0) {
+      setCurrentFlashcard(currentFlashcard - 1);
+    }
+  }
+
+  useEffect(() => { fetchFlashcards() }, []);
+  totalFlashcards = flashcards.length;
+
   return (
     <View style={styles.container}>
-      <FlatList
-        data={flashcards}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
-      <TouchableOpacity onPress={() => navigation.navigate('FlashcardMainScreen')} style={styles.backButton}>
-        <Text style={styles.backButtonText}>Back</Text>
-      </TouchableOpacity>
+      {(currentFlashcard >= totalFlashcards) ? (
+        <Text>End of Flashcards!!</Text>
+      ) : (
+        renderItem({item: flashcards[currentFlashcard]})
+      )}
+      <Button onPress={handleNext} title="Next"/>
+      <Button onPress={handlePrev} title="Prev"/>
+      <Button onPress={() => navigation.navigate('FlashcardMainScreen')} title="Back"/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  card: {
+    width: '80%',
+    aspectRatio: 1.5,
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    elevation: 3,
+    marginBottom: 20,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

@@ -5,6 +5,7 @@ MERGED from /Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/
 INJECTED from /Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/debug/AndroidManifest.xml:2:1-9:12
 INJECTED from /Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/debug/AndroidManifest.xml:2:1-9:12
 INJECTED from /Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-async-storage_async-storage] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-41:12
 MERGED from [:react-native-firebase_firestore] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/firestore/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-30:12
@@ -255,6 +256,8 @@ uses-sdk
 INJECTED from /Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/debug/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/debug/AndroidManifest.xml
 INJECTED from /Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/debug/AndroidManifest.xml
+MERGED from [:react-native-async-storage_async-storage] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-async-storage_async-storage] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-firebase_firestore] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/firestore/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44

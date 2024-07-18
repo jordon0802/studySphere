@@ -4,16 +4,16 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import { RootStackParamList } from './components/types';
 import RegisterScreen from './components/screens/RegisterScreen';
+import LoginScreen from './components/screens/LoginScreen';
+import HomeScreen from './components/screens/HomeScreen';
 import ProfileScreen from './components/screens/ProfileScreen';
 import QuizScreen from './components/screens/QuizScreen';
-import LoginScreen from './components/screens/LoginScreen';
 import MyFlashcardsScreen from './components/screens/MyFlashcardsScreen';
-import NotesScreen from './components/screens/NotesScreen';
-import StudyPlanScreen from './components/screens/StudyPlan';
-import HomeScreen from './components/screens/HomeScreen';
 import FlashcardMainScreen from './components/screens/FlashcardMainScreen';
 import NewFlashcardScreen from './components/screens/NewFlashcardScreen';
-
+import StudyPlanScreen from './components/screens/StudyPlan';
+import NotesScreen from './components/screens/NotesScreen';
+import FlashcardScreen from './components/screens/FlashcardScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
