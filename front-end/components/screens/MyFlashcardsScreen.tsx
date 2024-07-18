@@ -66,7 +66,7 @@ function MyFlashcardsScreen() {
     }
   }
 
-  useEffect(() => { fetchFlashcards() }, []);
+  useEffect(() => { fetchFlashcards() });
   totalFlashcards = flashcards.length;
 
   return (

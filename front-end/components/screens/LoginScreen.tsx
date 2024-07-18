@@ -8,6 +8,9 @@ import type { RegisterScreenProps, RootStackParamList, ProfileScreenProps } from
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { firestoreInstance } from '../Firebase';
+
 interface Values {
     email: String;
     password: String;
@@ -35,8 +38,25 @@ async function doSubmit({ email, password } : Values, navigation : ProfileScreen
             headers: {
             'Content-Type': 'application/json',
         }});
+
+        const storeData = async (key:string, value: string) => {
+            try {
+                await AsyncStorage.setItem(key, value);
+                // Store user_id
+                const storeId = await firestoreInstance.collection("User").doc(response.data[1]).set({ user_id: response.data[0] });
+            } catch (error) {
+                console.log("error: " + error);
+            }
+        }
+
         if (response.status == 200) {
-                navigation.navigate("HomeScreen")
+            storeData("user_id", response.data[0]);
+            storeData("username", response.data[1]);
+            storeData("token", response.data[2]);
+
+            
+
+            navigation.navigate("HomeScreen");
         }
     } catch (error) {
         console.log(error);
