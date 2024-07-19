@@ -7,6 +7,7 @@ import styles from "../styles"
 import { useNavigation } from '@react-navigation/native';
 import type { RootStackParamList } from '../types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type NewFlashcardScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "NewFlashcardScreen">;
 
@@ -15,11 +16,9 @@ function NewFlashcardScreen() {
   const [answer, setAnswer] = useState('');
   const navigation = useNavigation<NewFlashcardScreenNavigationProp>();
 
-  // 2nd collection: user_id
-  const collectionRef = firestoreInstance.collection("User").doc("user1").collection("Flashcards")
-
   const handleSubmit = async () => {
-    await collectionRef.add({
+    const username = await AsyncStorage.getItem("username");
+    const collectionRef =  await firestoreInstance.collection("User").doc(username as string).collection("Flashcards").add({
       question: question,
       answer: answer
     });

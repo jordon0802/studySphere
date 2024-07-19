@@ -59,6 +59,7 @@
 
         return (
             <View style={styles.quizContainer}>
+                <Text style={styles.brand}>Quiz</Text>
                 {showScore ? (
                     <View> 
                         <Text style={styles.quizOptionStyle}> Your Score is: </Text>

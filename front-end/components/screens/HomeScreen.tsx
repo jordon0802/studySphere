@@ -12,39 +12,6 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "H
 
 function HomeScreen() {
     const navigation = useNavigation<HomeScreenNavigationProp>();
-
-    const getData = async (key: string) => {
-        try {
-            const value = await AsyncStorage.getItem(key);
-            if (value !== null) {
-                console.log("key: " + key)
-                console.log("value: " + value);
-                return value;
-            } else {
-                console.log(key + " is null");
-            }
-        } catch (error) {
-            console.log("error: " + error);
-        }
-    }
-
-    const getId = async () => {
-        try {
-            const username = await AsyncStorage.getItem("username");
-            const value = (await firestoreInstance.collection("User").doc(username as string).get()).data();
-            const object: {user_id?: string} | undefined = value;
-            const user_id = object?.user_id;
-            console.log(user_id);
-            return user_id;
-        } catch (error) {
-            console.log("error: " + error);
-        }
-    }
-
-    getData("user_id");
-    getData("token");
-    getId();
-
     return (
         <View style={styles.background}>
             <Text style={styles.brand}>StudySphere</Text>

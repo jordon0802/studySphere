@@ -13,6 +13,7 @@ function FlashcardMainScreen() {
 
   return (
     <View style={styles.background}>
+      <Text style={styles.brand}>Flashcards</Text>
       <Button onPress={() => navigation.navigate("NewFlashcardScreen")} title="New Flashcard"/>
       <Text />
       <Button onPress={() => navigation.navigate("MyFlashcardsScreen")} title="My Flashcards"/>

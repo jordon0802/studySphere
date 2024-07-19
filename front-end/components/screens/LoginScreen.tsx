@@ -43,7 +43,7 @@ async function doSubmit({ email, password } : Values, navigation : ProfileScreen
             try {
                 await AsyncStorage.setItem(key, value);
                 // Store user_id
-                const storeId = await firestoreInstance.collection("User").doc(response.data[1]).set({ user_id: response.data[0] });
+                await firestoreInstance.collection("User").doc(response.data[1]).set({ user_id: response.data[0] });
             } catch (error) {
                 console.log("error: " + error);
             }
@@ -53,8 +53,6 @@ async function doSubmit({ email, password } : Values, navigation : ProfileScreen
             storeData("user_id", response.data[0]);
             storeData("username", response.data[1]);
             storeData("token", response.data[2]);
-
-            
 
             navigation.navigate("HomeScreen");
         }

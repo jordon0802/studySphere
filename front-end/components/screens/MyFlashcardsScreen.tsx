@@ -5,6 +5,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 
 import { firebase, firestoreInstance, analyticsInstance } from '../Firebase';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 //import FlashcardScreen from './FlashcardScreen';
 
@@ -26,8 +27,9 @@ function MyFlashcardsScreen() {
   var totalFlashcards = 0;
 
   const fetchFlashcards = async () => {
-    const querySnapshot = await firestoreInstance.collection("User").doc("user1").collection("Flashcards").get();
-    const flashcardsData : FlashcardData[] = [];
+    const username = await AsyncStorage.getItem("username");
+    const querySnapshot = await firestoreInstance.collection("User").doc(username as string).collection("Flashcards").get();
+    const flashcardsData: FlashcardData[] = [];
 
     querySnapshot.forEach((doc) => {
       // "as" => considers doc[i] as FlashcardData type
@@ -37,7 +39,8 @@ function MyFlashcardsScreen() {
   };
 
   const handleDelete = async (id: string) => {
-    const collectionRef = firestoreInstance.collection("Users").doc("user1").collection("Flashcards");
+    const username = await AsyncStorage.getItem("username");
+    const collectionRef = firestoreInstance.collection("Users").doc(username as string).collection("Flashcards");
     await collectionRef.doc(id).delete();
   };
 
@@ -45,7 +48,7 @@ function MyFlashcardsScreen() {
   const renderItem = ({item}: {item: FlashcardData}) => (
     <View style={styles.flashcardContainer}>
       <TouchableOpacity onPress={() => setFlip(!flip)} style={styles.card}>
-        {flip ? (
+        {!flip ? (
           <Text>{item.question}</Text>
         ) : (
           <Text>{item.answer}</Text>
