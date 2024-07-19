@@ -17,6 +17,11 @@ function HomeScreen() {
             <Text style={styles.brand}>StudySphere</Text>
             <View style={styles.buttonContainer}>
                 <Button
+                    title="BuddySphere"
+                    onPress={() => navigation.navigate('BuddySphereScreen')}
+                />
+                <Text />
+                <Button
                     title="Notes"
                     onPress={() => navigation.navigate('NotesScreen')}
                 />

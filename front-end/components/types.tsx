@@ -14,6 +14,8 @@
         BuddySphereScreen : undefined; 
         MyFriendsScreen : undefined; 
         FindFriendsScreen : undefined;
+        FriendRequestScreen : undefined;
+        ChatScreen : undefined;
     };
 
     export type RegisterScreenProps = NativeStackScreenProps<
@@ -80,6 +82,16 @@
         RootStackParamList, 
         "MyFriendsScreen" 
     >;
+
+    export type FriendRequestScreenProps = NativeStackScreenProps< 
+        RootStackParamList, 
+        "FriendRequestScreen" 
+    >;
+
+    export type ChatScreenProps = NativeStackScreenProps< 
+        RootStackParamList, 
+        "ChatScreen" 
+>;
     
 
 

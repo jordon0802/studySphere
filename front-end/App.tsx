@@ -13,7 +13,13 @@ import FlashcardMainScreen from './components/screens/FlashcardMainScreen';
 import NewFlashcardScreen from './components/screens/NewFlashcardScreen';
 import StudyPlanScreen from './components/screens/StudyPlan';
 import NotesScreen from './components/screens/NotesScreen';
-import FlashcardScreen from './components/screens/FlashcardScreen';
+//import FlashcardScreen from './components/screens/FlashcardScreen';
+import BuddySphereScreen from './components/screens/BuddySphereScreen';
+import FriendRequestScreen from './components/screens/FriendRequestScreen';
+import MyFriendsScreen from './components/screens/MyFriendsScreen';
+import FindFriendsScreen from './components/screens/FindFriendsScreen';
+import ChatScreen from './components/screens/ChatScreen';
+
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -37,11 +43,6 @@ function App() {
                 <Stack.Screen 
                     name="FlashcardMainScreen"
                     component={FlashcardMainScreen}
-                />
-
-                <Stack.Screen
-                    name="FlashcardScreen"
-                    component={MyFlashcardsScreen}
                 />
 
                 <Stack.Screen
@@ -77,6 +78,31 @@ function App() {
                 <Stack.Screen
                     name='StudyPlanScreen'
                     component={StudyPlanScreen}
+                />
+
+                <Stack.Screen
+                    name='BuddySphereScreen'
+                    component={BuddySphereScreen}
+                />
+
+                <Stack.Screen
+                    name='FriendRequestScreen'
+                    component={FriendRequestScreen}
+                />
+
+                <Stack.Screen
+                    name='MyFriendsScreen'
+                    component={MyFriendsScreen}
+                />
+
+                <Stack.Screen
+                    name='FindFriendsScreen'
+                    component={FindFriendsScreen}
+                />
+
+                <Stack.Screen
+                    name='ChatScreen'
+                    component={ChatScreen}
                 />
 
             </Stack.Navigator>
