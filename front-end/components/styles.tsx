@@ -1,63 +1,64 @@
-import {StyleSheet} from 'react-native';
-
+import {StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: 'turquoise',
-        flex: 1,
-        justifyContent: 'center',
-        padding: 5,
-    },
-    brand: {
-        color: 'darkblue',
-        fontSize: 50,
-        fontWeight: 'bold',
-        justifyContent: 'center',
-        textAlign: 'center',
-    },
-    buttonContainer: {
-        alignItems: 'center',
-        marginTop: 20,
-        color: 'blue'
-    },
-    loginPage: {
-        borderColor: 'black',
-        borderRadius: 5,
-        color: 'grey',
-        textAlign: 'left'
-    },
-    quizContainer: {
-        alignItems: "center",
         backgroundColor: "turquoise",
         flex: 1,
-        fontWeight: 'bold',
         justifyContent: "center",
-        padding: 5,
-        textAlign: 'center',
+    },
+    brand: {
+        color: "white",
+        borderColor: "white",
+        fontSize: 50,
+        fontWeight: "bold",
+        justifyContent: "center",
+        textAlign: "center",
+    },
+    buttonContainer: {
+        alignItems: "center",
+        marginTop: 20,
+        color: "blue"
+    },
+    image: {
+        flex: 1,
+        justifyContent: "center",
     },
     quizOptionContainer: {
+        borderRadius: 5,
         borderWidth: 2,
-        color: 'darkblue',
+        color: "black",
         marginTop: 15,
     },
     quizOptionStyle: {
-        color: "green",
+        borderRadius: 5,
+        color: "black",
         padding: 5,
-        alignSelf: 'center',
-        fontSize: 18,
+        alignSelf: "center",
+        fontSize: 16,
     },
     quizQuestionContainer: {
-        backgroundColor: "white",
-        padding: 10,
+        backgroundColor: "lightcyan",
+        borderRadius: 10,
         margin: 10,
-        borderRadius: 5,
+        padding: 15,
     },    
     quizQuestionText: {
-        fontSize: 24,
+        fontSize: 20,
+        textAlign: "center",
     },
     textInput: {
-        color: 'black',
-        textAlign: 'center',
+        backgroundColor: "white",
+        borderColor: "#ccc",
+        borderRadius: 5,
+        borderWidth: 2,
+        marginVertical: 5,
+        padding: 10,
+        width: "100%",
+    },
+    textOutput: {
+        color: "white",
+        fontSize: 24,
+        textAlign: "center",
     }
 });
 

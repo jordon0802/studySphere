@@ -11,7 +11,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type ChatScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "ChatScreen">;
 
-export default function ChatScreen() {
+function ChatScreen() {
   const navigation = useNavigation<ChatScreenNavigationProp>(); 
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -37,3 +37,5 @@ export default function ChatScreen() {
 
   
 }
+
+export default ChatScreen;

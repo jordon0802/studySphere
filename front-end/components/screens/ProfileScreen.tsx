@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, ImageBackground, Text, View} from 'react-native';
 
 import styles from "../styles"
 import type { ProfileScreenProps } from "../types";
@@ -7,10 +7,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { firestoreInstance } from '../Firebase';
 
 function ProfileScreen({navigation, route}: ProfileScreenProps) {
+    const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
     const [email, setEmail] = useState<string>();
     const [username, setUsername] = useState<string>();
     const [user_id, setUser_id] = useState<number>();
-    
 
     const getData = async (key: string) => {
         try {
@@ -63,10 +63,14 @@ function ProfileScreen({navigation, route}: ProfileScreenProps) {
 
     return (
         <View style={styles.background}>
-            <Text style={styles.brand}>STUDYSPHERE</Text>
-            <Text style={styles.textInput}>Hi {username}!!</Text>
-            <Text style={styles.textInput}>Your user id is: {user_id}</Text>
-            <Button title='Back' onPress={() => navigation.navigate('HomeScreen')}/>
+            <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+                <Text style={styles.brand}>My Profile</Text>
+                <Text />
+                <Text style={styles.textOutput}>Hi {username}!!</Text>
+                <Text style={styles.textOutput}>Your user id is: {user_id}</Text>
+                <Text />
+                <Button title='Back' onPress={() => navigation.navigate('HomeScreen')}/>
+            </ImageBackground>
         </View>
     );
 };

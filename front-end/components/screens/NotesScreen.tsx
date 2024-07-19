@@ -1,7 +1,7 @@
 import { Button } from '@rneui/base';
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, FlatList, ImageBackground } from 'react-native';
 import { NotesScreenProps, RootStackParamList } from '../types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import styles from "../styles";
@@ -17,6 +17,7 @@ type NotesData = {
 type NotesScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "ProfileScreen">;
 
 function NotesScreen() {
+  const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
   const navigation = useNavigation<NotesScreenNavigationProp>();
   const [notes, setNotes] = useState<NotesData[]>([]);
   const [newNote, setNewNote] = useState('');
@@ -63,17 +64,20 @@ function NotesScreen() {
 
   return (
     <View style={styles.background}>
-      <Text style={styles.brand}>My Notes</Text>
-      <View style={customStyles.addNoteContainer}>
-        <TextInput onChangeText={setNewNote} placeholder="Enter your note" style={customStyles.input} value={newNote}/>
-        <Button onPress={addNote} title={"Add Note"}/>
-      </View>
-      <FlatList
-        data={notes}
-        renderItem={renderNoteItem}
-        style={customStyles.notesList}
-      />
-      <Button onPress={() => navigation.navigate("HomeScreen")} title="Back"/>
+      <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+        <Text style={styles.brand}>My Notes</Text>
+        <Text />
+        <View style={customStyles.addNoteContainer}>
+          <TextInput onChangeText={setNewNote} placeholder="Enter your note" style={customStyles.input} value={newNote}/>
+          <Button onPress={addNote} title={"Add Note"}/>
+        </View>
+        <FlatList
+          data={notes}
+          renderItem={renderNoteItem}
+          style={customStyles.notesList}
+        />
+        <Button onPress={() => navigation.navigate("HomeScreen")} title="Back"/>
+      </ImageBackground>
     </View>
   );
 };

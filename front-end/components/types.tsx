@@ -6,6 +6,8 @@
         HomeScreen: undefined;
         ProfileScreen : undefined;
         QuizScreen : undefined;
+        QuizMeScreen: undefined;
+        NewQuizScreen: undefined;
         MyFlashcardsScreen : undefined;
         FlashcardMainScreen : undefined;
         NewFlashcardScreen : undefined;
@@ -41,6 +43,16 @@
     export type QuizScreenProps = NativeStackScreenProps<
         RootStackParamList,
         "QuizScreen"
+    >;
+
+    export type QuizMeScreenProps = NativeStackScreenProps<
+        RootStackParamList,
+        "QuizMeScreen"
+    >;
+
+    export type NewQuizScreenProps = NativeStackScreenProps<
+        RootStackParamList,
+        "NewQuizScreen"
     >;
     
     export type MyFlashcardScreenProps = NativeStackScreenProps<

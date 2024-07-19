@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { RootStackParamList } from '../types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -9,16 +9,20 @@ import styles from "../styles"
 type FlashcardMainScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "FlashcardMainScreen">;
 
 function FlashcardMainScreen() {
+  const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
   const navigation = useNavigation<FlashcardMainScreenNavigationProp>();
 
   return (
     <View style={styles.background}>
-      <Text style={styles.brand}>Flashcards</Text>
-      <Button onPress={() => navigation.navigate("NewFlashcardScreen")} title="New Flashcard"/>
-      <Text />
-      <Button onPress={() => navigation.navigate("MyFlashcardsScreen")} title="My Flashcards"/>
-      <Text />
-      <Button onPress={() => navigation.navigate("HomeScreen")} title="Back" />
+      <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+        <Text style={styles.brand}> My Flashcards</Text>
+        <Text />
+        <Button onPress={() => navigation.navigate("NewFlashcardScreen")} title="New Flashcard"/>
+        <Text />
+        <Button onPress={() => navigation.navigate("MyFlashcardsScreen")} title="Saved Flashcards"/>
+        <Text />
+        <Button onPress={() => navigation.navigate("HomeScreen")} title="Back" />
+      </ImageBackground>
     </View>
   );
 }

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 
 import { firebase, firestoreInstance, analyticsInstance } from '../Firebase';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from '../styles';
 
 //import FlashcardScreen from './FlashcardScreen';
 
@@ -18,6 +19,7 @@ type FlashcardData = {
 type MyFlashcardsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "MyFlashcardsScreen">;
 
 function MyFlashcardsScreen() {
+  const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
   const [flashcards, setFlashcards] = useState<FlashcardData[]>([]);
   const [currentFlashcard, setCurrentFlashcard] = useState(0);
   const [flip, setFlip] = useState(false);
@@ -46,8 +48,8 @@ function MyFlashcardsScreen() {
 
   // Destructure, specify item is of type FlashcardData
   const renderItem = ({item}: {item: FlashcardData}) => (
-    <View style={styles.flashcardContainer}>
-      <TouchableOpacity onPress={() => setFlip(!flip)} style={styles.card}>
+    <View style={customStyles.flashcardContainer}>
+      <TouchableOpacity onPress={() => setFlip(!flip)} style={customStyles.card}>
         {!flip ? (
           <Text>{item.question}</Text>
         ) : (
@@ -73,20 +75,27 @@ function MyFlashcardsScreen() {
   totalFlashcards = flashcards.length;
 
   return (
-    <View style={styles.container}>
-      {(currentFlashcard >= totalFlashcards) ? (
-        <Text>End of Flashcards!!</Text>
-      ) : (
-        renderItem({item: flashcards[currentFlashcard]})
-      )}
-      <Button onPress={handleNext} title="Next"/>
-      <Button onPress={handlePrev} title="Prev"/>
-      <Button onPress={() => navigation.navigate('FlashcardMainScreen')} title="Back"/>
+    <View style={styles.background}>
+      <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+        {(currentFlashcard >= totalFlashcards) ? (
+          <View>
+            <Text style={styles.brand}>End of Flashcards!!</Text>
+            <Text />
+          </ View>
+        ) : (
+          renderItem({item: flashcards[currentFlashcard]})
+        )}
+        <Button onPress={handleNext} title="Next"/>
+        <Text />
+        <Button onPress={handlePrev} title="Prev"/>
+        <Text />
+        <Button onPress={() => navigation.navigate('FlashcardMainScreen')} title="Back"/>
+      </ImageBackground>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const customStyles = StyleSheet.create({
   card: {
     width: '80%',
     aspectRatio: 1.5,

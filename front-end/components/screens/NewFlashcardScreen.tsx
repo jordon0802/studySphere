@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, ImageBackground, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { firestoreInstance } from '../Firebase';
 import styles from "../styles"
@@ -12,13 +12,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 type NewFlashcardScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "NewFlashcardScreen">;
 
 function NewFlashcardScreen() {
-  const [question, setQuestion] = useState('');
-  const [answer, setAnswer] = useState('');
+  const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
   const navigation = useNavigation<NewFlashcardScreenNavigationProp>();
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
 
   const handleSubmit = async () => {
     const username = await AsyncStorage.getItem("username");
-    const collectionRef =  await firestoreInstance.collection("User").doc(username as string).collection("Flashcards").add({
+    await firestoreInstance.collection("User").doc(username as string).collection("Flashcards").add({
       question: question,
       answer: answer
     });
@@ -30,35 +31,28 @@ function NewFlashcardScreen() {
 
   return (
     <View style={styles.background}>
-      <TextInput
-        style={customStyles.input}
-        placeholder="Question"
-        value={question}
-        onChangeText={setQuestion}
-      />
-      <TextInput
-        style={customStyles.input}
-        placeholder="Answer"
-        value={answer}
-        onChangeText={setAnswer}
-      />
-      <Button onPress={handleSubmit} title="Submit"/>
-      <Text />
-      <Button onPress={() => navigation.navigate("FlashcardMainScreen")} title="Back"/>
+      <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+        <Text style={styles.brand}>New Flashcard</Text>
+        <Text />
+        <TextInput
+          style={styles.textInput}
+          placeholder="Question"
+          value={question}
+          onChangeText={setQuestion}
+        />
+        <TextInput
+          style={styles.textInput}
+          placeholder="Answer"
+          value={answer}
+          onChangeText={setAnswer}
+        />
+        <Text />
+        <Button onPress={handleSubmit} title="Submit"/>
+        <Text />
+        <Button onPress={() => navigation.navigate("FlashcardMainScreen")} title="Back"/>
+      </ImageBackground>
     </View>
   );
 }
-
-const customStyles = StyleSheet.create({
-  input: {
-    backgroundColor: "white",
-    borderColor: '#ccc',
-    borderRadius: 5,
-    borderWidth: 1,
-    marginVertical: 10,
-    padding: 10,
-    width: '100%',
-  }
-});
 
 export default NewFlashcardScreen;

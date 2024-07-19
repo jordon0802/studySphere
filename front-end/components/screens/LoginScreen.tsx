@@ -71,14 +71,14 @@ function StudySphere() {
             <Text style={styles.brand}>STUDYSPHERE</Text>
             
             <TextInput
-                style={styles.loginPage}
+                style={styles.textInput}
                 placeholder="Email"
                 onChangeText={onChangeEmail}
                 value={email}
             />
 
             <TextInput
-                style={styles.loginPage}
+                style={styles.textInput}
                 placeholder="Password"
                 onChangeText={onChangePassword}
                 value={password}
