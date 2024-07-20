@@ -14,7 +14,8 @@ type FriendsData = {
 
 type MyFriendsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "MyFriendsScreen">;
 
-export default function MyFriendsScreen() {
+function MyFriendsScreen() {
+  const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const getId = async () => {
     try {
         const username = await AsyncStorage.getItem("username");
@@ -100,3 +101,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+export default MyFriendsScreen;

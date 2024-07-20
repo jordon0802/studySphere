@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react';
-import { Button, Text, TextInput , View } from 'react-native';
+import { Button, ImageBackground, Text, TextInput , View } from 'react-native';
 import * as Yup from 'yup';
 
 import styles from "../styles"
@@ -62,32 +62,35 @@ async function doSubmit({ email, password } : Values, navigation : ProfileScreen
 };
 
 function StudySphere() {
+    const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
     const navigation = useNavigation<ProfileScreenNavigationProp>();
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
 
     return (
         <View style={styles.background}>
-            <Text style={styles.brand}>STUDYSPHERE</Text>
-            
-            <TextInput
-                style={styles.textInput}
-                placeholder="Email"
-                onChangeText={onChangeEmail}
-                value={email}
-            />
-
-            <TextInput
-                style={styles.textInput}
-                placeholder="Password"
-                onChangeText={onChangePassword}
-                value={password}
-                secureTextEntry={true}
-            />
-
-            <Button onPress={() => (doSubmit({email, password}, navigation))} title="login" />
-            <Text />
-            <Button onPress={() => navigation.navigate("RegisterScreen")} title="register here" />
+            <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+                <Text style={styles.brand}>STUDYSPHERE</Text>
+                <Text />
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="Email"
+                    onChangeText={onChangeEmail}
+                    value={email}
+                />
+                <Text />
+                <TextInput
+                    style={styles.textInput}
+                    placeholder="Password"
+                    onChangeText={onChangePassword}
+                    value={password}
+                    secureTextEntry={true}
+                />
+                <Text />
+                <Button onPress={() => (doSubmit({email, password}, navigation))} title="login" />
+                <Text />
+                <Button onPress={() => navigation.navigate("RegisterScreen")} title="register here" />
+            </ImageBackground>
         </View>
     );
 };

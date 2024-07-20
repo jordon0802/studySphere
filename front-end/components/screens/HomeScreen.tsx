@@ -44,7 +44,6 @@ function HomeScreen() {
                     title="StudyPlan"
                     onPress={() => navigation.navigate('StudyPlanScreen')}
                 />
-            </View>
             </ImageBackground>
         </View>
     );
