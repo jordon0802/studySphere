@@ -36,14 +36,19 @@ public class LoginApiController {
     CustomUserDetailService userService;
 
     @PostMapping("/user/login")
-    public ResponseEntity<String> loginUser (@RequestBody @Validated LoginUserRequest loginUserRequest) {
+    public ResponseEntity<String[]> loginUser (@RequestBody @Validated LoginUserRequest loginUserRequest) {
         String email = loginUserRequest.getEmail();
         String password = loginUserRequest.getPassword();
 
-        ResponseEntity<String> response;
+        ResponseEntity<String[]> response;
+        // {Error Message/user_id, username, token}
+        String[] body = new String[3];
 
         if (email.isEmpty() || password.isEmpty()) {
-            response = new ResponseEntity<>("Please fill in All Fields.", HttpStatus.BAD_REQUEST);
+            body[0] = "Please fill in All Fields.";
+            body[1] = "";
+            body[2] = "";
+            response = new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
             return response;
         }
 
@@ -63,7 +68,10 @@ public class LoginApiController {
         System.out.println("Principal username: " + principal.getUsername());
 
         if (principal.getUsername() == null) {
-            response = new ResponseEntity<>("User not found", HttpStatus.UNAUTHORIZED);
+            body[0] = "User not found";
+            body[1] = "";
+            body[2] = "";
+            response = new ResponseEntity<>(body, HttpStatus.UNAUTHORIZED);
             return response;
         }
 
@@ -74,9 +82,15 @@ public class LoginApiController {
 
             var token = jwtIssuer.generateToken(principal.getUser_id(), principal.getEmail(), role);
 
-            response = new ResponseEntity<>(token, HttpStatus.OK);
+            body[0] = Integer.toString(principal.getUser_id());
+            body[1] = principal.getUsername();
+            body[2] = token;
+            response = new ResponseEntity<>(body, HttpStatus.OK);
         } else {
-            response = new ResponseEntity<>("Invalid Password", HttpStatus.BAD_REQUEST);
+            body[0] = "Invalid Password";
+            body[1] = "";
+            body[2] = "";
+            response = new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
         }
 
         return response;

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 
 import { firebase, firestoreInstance, analyticsInstance } from '../Firebase';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from '../styles';
 
 //import FlashcardScreen from './FlashcardScreen';
 
@@ -17,6 +19,7 @@ type FlashcardData = {
 type MyFlashcardsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "MyFlashcardsScreen">;
 
 function MyFlashcardsScreen() {
+  const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const [flashcards, setFlashcards] = useState<FlashcardData[]>([]);
   const [currentFlashcard, setCurrentFlashcard] = useState(0);
   const [flip, setFlip] = useState(false);
@@ -26,8 +29,9 @@ function MyFlashcardsScreen() {
   var totalFlashcards = 0;
 
   const fetchFlashcards = async () => {
-    const querySnapshot = await firestoreInstance.collection("User").doc("user1").collection("Flashcards").get();
-    const flashcardsData : FlashcardData[] = [];
+    const username = await AsyncStorage.getItem("username");
+    const querySnapshot = await firestoreInstance.collection("User").doc(username as string).collection("Flashcards").get();
+    const flashcardsData: FlashcardData[] = [];
 
     querySnapshot.forEach((doc) => {
       // "as" => considers doc[i] as FlashcardData type
@@ -37,15 +41,16 @@ function MyFlashcardsScreen() {
   };
 
   const handleDelete = async (id: string) => {
-    const collectionRef = firestoreInstance.collection("Users").doc("user1").collection("Flashcards");
+    const username = await AsyncStorage.getItem("username");
+    const collectionRef = firestoreInstance.collection("Users").doc(username as string).collection("Flashcards");
     await collectionRef.doc(id).delete();
   };
 
   // Destructure, specify item is of type FlashcardData
   const renderItem = ({item}: {item: FlashcardData}) => (
-    <View style={styles.flashcardContainer}>
-      <TouchableOpacity onPress={() => setFlip(!flip)} style={styles.card}>
-        {flip ? (
+    <View style={customStyles.flashcardContainer}>
+      <TouchableOpacity onPress={() => setFlip(!flip)} style={customStyles.card}>
+        {!flip ? (
           <Text>{item.question}</Text>
         ) : (
           <Text>{item.answer}</Text>
@@ -66,24 +71,31 @@ function MyFlashcardsScreen() {
     }
   }
 
-  useEffect(() => { fetchFlashcards() }, []);
+  useEffect(() => { fetchFlashcards() });
   totalFlashcards = flashcards.length;
 
   return (
-    <View style={styles.container}>
-      {(currentFlashcard >= totalFlashcards) ? (
-        <Text>End of Flashcards!!</Text>
-      ) : (
-        renderItem({item: flashcards[currentFlashcard]})
-      )}
-      <Button onPress={handleNext} title="Next"/>
-      <Button onPress={handlePrev} title="Prev"/>
-      <Button onPress={() => navigation.navigate('FlashcardMainScreen')} title="Back"/>
+    <View style={styles.background}>
+      <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+        {(currentFlashcard >= totalFlashcards) ? (
+          <View>
+            <Text style={styles.brand}>End of Flashcards!!</Text>
+            <Text />
+          </ View>
+        ) : (
+          renderItem({item: flashcards[currentFlashcard]})
+        )}
+        <Button onPress={handleNext} title="Next"/>
+        <Text />
+        <Button onPress={handlePrev} title="Prev"/>
+        <Text />
+        <Button onPress={() => navigation.navigate('FlashcardMainScreen')} title="Back"/>
+      </ImageBackground>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const customStyles = StyleSheet.create({
   card: {
     width: '80%',
     aspectRatio: 1.5,

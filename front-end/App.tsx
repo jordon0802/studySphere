@@ -8,6 +8,8 @@ import LoginScreen from './components/screens/LoginScreen';
 import HomeScreen from './components/screens/HomeScreen';
 import ProfileScreen from './components/screens/ProfileScreen';
 import QuizScreen from './components/screens/QuizScreen';
+import QuizMeScreen from './components/screens/QuizMeScreen';
+import NewQuizScreen from './components/screens/NewQuizScreen'
 import MyFlashcardsScreen from './components/screens/MyFlashcardsScreen';
 import FlashcardMainScreen from './components/screens/FlashcardMainScreen';
 import NewFlashcardScreen from './components/screens/NewFlashcardScreen';
@@ -69,6 +71,16 @@ function App() {
                 <Stack.Screen
                     name="QuizScreen"
                     component={QuizScreen}
+                />
+
+                <Stack.Screen
+                    name="QuizMeScreen"
+                    component={QuizMeScreen}
+                />
+
+                <Stack.Screen
+                    name="NewQuizScreen"
+                    component={NewQuizScreen}
                 />
                 
                 <Stack.Screen

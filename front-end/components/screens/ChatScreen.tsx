@@ -19,7 +19,7 @@ type MessageData = {
 type ChatScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "ChatScreen">;
 type ChatScreenRouteProp = RouteProp<RootStackParamList, "ChatScreen">;
 
-export default function ChatScreen() {
+function ChatScreen() {
   const navigation = useNavigation<ChatScreenNavigationProp>(); 
   const route = useRoute<ChatScreenRouteProp>();
   const { friendUsername } = route.params;
@@ -184,3 +184,5 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
 });
+
+export default ChatScreen;

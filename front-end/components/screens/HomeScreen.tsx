@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, ImageBackground } from 'react-native';
 import styles from '../styles'; 
 import type { RootStackParamList } from '../types';
 import { useNavigation } from '@react-navigation/native';
@@ -8,11 +8,13 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "HomeScreen">;
 
 function HomeScreen() {
+    const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
     const navigation = useNavigation<HomeScreenNavigationProp>();
     return (
         <View style={styles.background}>
-            <Text style={styles.brand}>StudySphere</Text>
-            <View style={styles.buttonContainer}>
+            <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+                <Text style={styles.brand}>StudySphere</Text>
+                <Text />
                 <Button
                     title="BuddySphere"
                     onPress={() => navigation.navigate('BuddySphereScreen')}
@@ -43,6 +45,7 @@ function HomeScreen() {
                     onPress={() => navigation.navigate('StudyPlanScreen')}
                 />
             </View>
+            </ImageBackground>
         </View>
     );
 };
