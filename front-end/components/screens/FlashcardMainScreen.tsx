@@ -9,7 +9,7 @@ import styles from "../styles"
 type FlashcardMainScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "FlashcardMainScreen">;
 
 function FlashcardMainScreen() {
-  const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
+  const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const navigation = useNavigation<FlashcardMainScreenNavigationProp>();
 
   return (

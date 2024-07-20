@@ -8,7 +8,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "HomeScreen">;
 
 function HomeScreen() {
-    const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
+    const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
     const navigation = useNavigation<HomeScreenNavigationProp>();
     return (
         <View style={styles.background}>

@@ -16,7 +16,7 @@ type QuizData =  {
 type QuizMeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "NewQuizScreen">;
 
 function NewQuizScreen() {
-    const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
+    const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
     const navigation = useNavigation<QuizMeScreenNavigationProp>();
     const [question, setQuestion] = useState("");
     const [option1, setOption1] = useState("");

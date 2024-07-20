@@ -20,7 +20,7 @@ type QuizData =  {
 type QuizMeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "QuizMeScreen">;
 
 function QuizMeScreen() {
-    const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
+    const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
@@ -101,11 +101,12 @@ function QuizMeScreen() {
                     </View>
                 ) : showScore ? (
                     <View> 
-                        <Text style={styles.quizOptionStyle}> Your Score is: </Text>
-                        <Text style={styles.quizOptionStyle}> {score} / {quizzes.length} </Text>
+                        <View style={styles.quizResultContainer}>
+                        <Text style={styles.quizResultStyle}> Your Score is: </Text>
+                            <Text style={styles.quizResultStyle}> {score} / {quizzes.length} </Text>
+                        </View>
                         <Text />
                         <Button onPress={() => handleRestart()} title="Restart" />
-                        <Text />
                     </View>
                 ) : (quizzes[currentQuestion]) ? (
                     <View style={styles.quizQuestionContainer}>

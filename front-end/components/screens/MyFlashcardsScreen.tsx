@@ -19,7 +19,7 @@ type FlashcardData = {
 type MyFlashcardsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "MyFlashcardsScreen">;
 
 function MyFlashcardsScreen() {
-  const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
+  const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const [flashcards, setFlashcards] = useState<FlashcardData[]>([]);
   const [currentFlashcard, setCurrentFlashcard] = useState(0);
   const [flip, setFlip] = useState(false);

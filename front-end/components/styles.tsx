@@ -16,8 +16,10 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         alignItems: "center",
-        marginTop: 20,
-        color: "blue"
+        borderRadius: 10,
+        color: "blue",
+        justifyContent: "center",
+        //marginTop: 20,
     },
     image: {
         flex: 1,
@@ -46,14 +48,24 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: "center",
     },
+    quizResultContainer: {
+        backgroundColor: "lightcyan",
+        borderRadius: 10,
+        marginHorizontal: 40,
+        padding: 12,
+    },
+    quizResultStyle: {
+        alignSelf: "center",
+        fontSize: 20,
+        fontWeight: "bold"
+    },
     textInput: {
         backgroundColor: "white",
         borderColor: "#ccc",
         borderRadius: 5,
         borderWidth: 2,
-        marginVertical: 5,
+        marginHorizontal: 10,
         padding: 10,
-        width: "100%",
     },
     textOutput: {
         color: "white",

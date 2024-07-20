@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 type NewFlashcardScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "NewFlashcardScreen">;
 
 function NewFlashcardScreen() {
-  const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
+  const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const navigation = useNavigation<NewFlashcardScreenNavigationProp>();
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -40,6 +40,7 @@ function NewFlashcardScreen() {
           value={question}
           onChangeText={setQuestion}
         />
+        <Text />
         <TextInput
           style={styles.textInput}
           placeholder="Answer"

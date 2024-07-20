@@ -14,10 +14,10 @@ type NotesData = {
   note: string;
 }
 
-type NotesScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "ProfileScreen">;
+type NotesScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "NotesScreen">;
 
 function NotesScreen() {
-  const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
+  const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const navigation = useNavigation<NotesScreenNavigationProp>();
   const [notes, setNotes] = useState<NotesData[]>([]);
   const [newNote, setNewNote] = useState('');
@@ -69,7 +69,9 @@ function NotesScreen() {
         <Text />
         <View style={customStyles.addNoteContainer}>
           <TextInput onChangeText={setNewNote} placeholder="Enter your note" style={customStyles.input} value={newNote}/>
-          <Button onPress={addNote} title={"Add Note"}/>
+          <View style={styles.buttonContainer}>
+            <Button onPress={addNote} title={"Add Note"} />
+          </View>
         </View>
         <FlatList
           data={notes}
@@ -77,6 +79,7 @@ function NotesScreen() {
           style={customStyles.notesList}
         />
         <Button onPress={() => navigation.navigate("HomeScreen")} title="Back"/>
+        <Text />
       </ImageBackground>
     </View>
   );
@@ -84,8 +87,10 @@ function NotesScreen() {
 
 const customStyles = StyleSheet.create({
   addNoteContainer: {
+    borderRadius: 10,
     flexDirection: "row",
     marginBottom: 20,
+    marginHorizontal: 10,
   },
   input: {
     flex: 1,
@@ -129,6 +134,7 @@ const customStyles = StyleSheet.create({
     flexDirection: "row",
     padding: 1,
     marginBottom: 10,
+    marginHorizontal: 10,
   },
   noteText: {
     flex: 8,

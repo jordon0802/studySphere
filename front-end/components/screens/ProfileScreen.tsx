@@ -7,7 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { firestoreInstance } from '../Firebase';
 
 function ProfileScreen({navigation, route}: ProfileScreenProps) {
-    const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
+    const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
     const [email, setEmail] = useState<string>();
     const [username, setUsername] = useState<string>();
     const [user_id, setUser_id] = useState<number>();

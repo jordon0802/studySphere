@@ -8,7 +8,7 @@ import styles from '../styles';
 type BuddySphereScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "BuddySphereScreen">;
 
 export default function HomeScreen() {
-  const image = {uri: "https://wallpapers.com/images/high/dark-blue-background-water-bubbles-k7xwvjs2dnta8dqk.webp"};
+  const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const navigation = useNavigation<BuddySphereScreenNavigationProp>();
 
     return (
