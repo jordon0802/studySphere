@@ -10,7 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 type FriendsData = {
   id: string;
   username: string;
-};
+}
 
 type ResultsData = {
   results: FriendsData[]

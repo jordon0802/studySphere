@@ -23,21 +23,27 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
     const navigation = useNavigation<NewStudyPlanScreenProp>();
 
     //FETCH USERID
-    const getId = async () => {
-        try {
-            const user_id = await AsyncStorage.getItem("user_id");
-            console.log(user_id);
-            return user_id;
-        } catch (error) {
-            console.log("error: " + error);
-        }
-    }
-    const user_id = getId();
+    // const getId = async () => {
+    //     try {
+    //         const user_id = await AsyncStorage.getItem("user_id");
+    //         console.log(user_id);
+    //         return user_id;
+    //     } catch (error) {
+    //         console.log("error: " + error);
+    //     }
+    // }
+    // const user_id = getId();
 
     const handleSubmit = async () => {
         try {
             const username = await AsyncStorage.getItem("username");
-            const collectionRef = firestoreInstance.collection('Users').doc(username as string).collection('StudyPlan');
+
+            if (!username) {
+                console.log('No User Found!');
+                return;
+            }
+
+            const collectionRef = firestoreInstance.collection('User').doc(username as string).collection('StudyPlan');
             await collectionRef.add({
                 title: title,
                 description : description,
@@ -50,8 +56,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
             
         } catch (error) {
             console.log('Error Uploading', error);
-        };
-    }
+        }
+    };
     
     return (
         <View style={styles.background}>
