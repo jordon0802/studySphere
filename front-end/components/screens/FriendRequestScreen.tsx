@@ -21,7 +21,6 @@ export default function FriendRequestScreen() {
     const getId = async () => {
       try {
           const user_id = await AsyncStorage.getItem("user_id");
-          console.log(user_id);
           return user_id;
       } catch (error) {
           console.log("error: " + error);

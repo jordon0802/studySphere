@@ -39,6 +39,12 @@ function HomeScreen() {
                     title="Quiz"
                     onPress={() => navigation.navigate('QuizScreen')}
                 />
+                <Text />
+                <Button
+                    title="StudyPlan"
+                    onPress={() => navigation.navigate('StudyPlanScreen')}
+                />
+            </View>
             </ImageBackground>
         </View>
     );

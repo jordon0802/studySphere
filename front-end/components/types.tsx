@@ -12,12 +12,13 @@
         FlashcardMainScreen : undefined;
         NewFlashcardScreen : undefined;
         StudyPlanScreen : undefined;
+        NewStudyPlanScreen : undefined;
         NotesScreen : undefined;
         BuddySphereScreen : undefined; 
         MyFriendsScreen : undefined; 
         FindFriendsScreen : undefined;
         FriendRequestScreen : undefined;
-        ChatScreen : undefined;
+        ChatScreen: { friendId: string; friendUsername: string };
     };
 
     export type RegisterScreenProps = NativeStackScreenProps<
@@ -73,6 +74,11 @@
     export type StudyPlanScreenProps = NativeStackScreenProps<
         RootStackParamList,
         "StudyPlanScreen"
+    >;
+
+    export type NewStudyPlanScreenProps = NativeStackScreenProps<
+        RootStackParamList,
+        "NewStudyPlanScreen"
     >;
 
     export type NotesScreenProps = NativeStackScreenProps<
