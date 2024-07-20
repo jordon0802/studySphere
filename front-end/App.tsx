@@ -19,6 +19,7 @@ import FriendRequestScreen from './components/screens/FriendRequestScreen';
 import MyFriendsScreen from './components/screens/MyFriendsScreen';
 import FindFriendsScreen from './components/screens/FindFriendsScreen';
 import ChatScreen from './components/screens/ChatScreen';
+import NewStudyPlanScreen from './components/screens/NewStudyPlanScreen';
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -78,6 +79,11 @@ function App() {
                 <Stack.Screen
                     name='StudyPlanScreen'
                     component={StudyPlanScreen}
+                />
+
+                <Stack.Screen
+                    name='NewStudyPlanScreen'
+                    component={NewStudyPlanScreen}
                 />
 
                 <Stack.Screen
