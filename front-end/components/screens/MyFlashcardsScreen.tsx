@@ -77,17 +77,22 @@ function MyFlashcardsScreen() {
   return (
     <View style={styles.background}>
       <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+        <Text style={styles.brand}>My Flashcards</Text>
+        <Text />
         {(currentFlashcard >= totalFlashcards) ? (
-          <View>
-            <Text style={styles.brand}>End of Flashcards!!</Text>
-            <Text />
-          </ View>
+        <View>
+          <View  style={styles.resultContainer}>
+            <Text style={styles.textOutput}>End of Flashcards!!</Text>
+          </View>
+          <Text />
+        </ View>
         ) : (
           renderItem({item: flashcards[currentFlashcard]})
         )}
-        <Button onPress={handleNext} title="Next"/>
-        <Text />
-        <Button onPress={handlePrev} title="Prev"/>
+        <View style={styles.nextPrevContainer}>
+          <Button onPress={handlePrev} title="Prev"/>
+          <Button onPress={handleNext} title="Next"/>
+        </View>
         <Text />
         <Button onPress={() => navigation.navigate('FlashcardMainScreen')} title="Back"/>
       </ImageBackground>
@@ -117,7 +122,7 @@ const customStyles = StyleSheet.create({
     padding: 20,
   },
   flashcardContainer: {
-    marginBottom: 20,
+    marginBottom: 10,
     alignItems: 'center',
   },
   deleteButton: {

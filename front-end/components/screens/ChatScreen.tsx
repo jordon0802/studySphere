@@ -1,11 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, Text, Button, StyleSheet, TextInput } from 'react-native';
+import { View, FlatList, Text, Button, StyleSheet, TextInput, ImageBackground } from 'react-native';
 import { firestoreInstance } from '../Firebase';
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from '../styles';
 
 //!!Update messages for both friend and my side!!
 
@@ -20,6 +21,7 @@ type ChatScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "C
 type ChatScreenRouteProp = RouteProp<RootStackParamList, "ChatScreen">;
 
 function ChatScreen() {
+  const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const navigation = useNavigation<ChatScreenNavigationProp>(); 
   const route = useRoute<ChatScreenRouteProp>();
   const { friendUsername } = route.params;
@@ -111,37 +113,39 @@ function ChatScreen() {
   };
 
   const renderItem = ({ item }: { item: MessageData }) => (
-    <View style={[styles.messageItem, item.senderId === currentUsername ? styles.myMessage : styles.friendMessage]}>
+    <View style={[customStyles.messageItem, item.senderId === currentUsername ? customStyles.myMessage : customStyles.friendMessage]}>
       <Text>{item.text}</Text>
     </View>
   );
 
   return (
-    <View style={styles.container}>
-      <Button title="Back" onPress={() => navigation.goBack()} />
-      <Text style={styles.header}>Chat with {friendUsername}</Text>
-      <FlatList
-        data={messages}
-        keyExtractor={(item) => item.id}
-        renderItem={renderItem}
-        contentContainerStyle={styles.messagesContainer}
-      />
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          value={newMessage}
-          onChangeText={setNewMessage}
-          placeholder="Type a message"
+    <View style={customStyles.container}>
+      <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+        <Button title="Back" onPress={() => navigation.goBack()} />
+        <Text style={customStyles.header}>Chat with {friendUsername}</Text>
+        <FlatList
+          data={messages}
+          keyExtractor={(item) => item.id}
+          renderItem={renderItem}
+          contentContainerStyle={customStyles.messagesContainer}
         />
-        <Button title="Send" onPress={sendMessage} />
-      </View>
+        <View style={customStyles.inputContainer}>
+          <TextInput
+            style={customStyles.input}
+            value={newMessage}
+            onChangeText={setNewMessage}
+            placeholder="Type a message"
+          />
+          <Button title="Send" onPress={sendMessage} />
+        </View>
+      </ImageBackground>
     </View>
   );
 
 
 }
 
-const styles = StyleSheet.create({
+const customStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',

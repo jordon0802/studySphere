@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList, TextInput } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList, TextInput, ImageBackground } from 'react-native';
 import styles from "../styles"
 import { firestoreInstance } from '../Firebase';
 import { useNavigation } from '@react-navigation/native';
@@ -17,6 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
   type NewStudyPlanScreenProp = NativeStackNavigationProp<RootStackParamList, "NewStudyPlanScreen">;
 
   function NewStudyPlanScreen() {
+    const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [dueDate, setDueDate] = useState('');
@@ -61,27 +62,34 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
     
     return (
         <View style={styles.background}>
-          <TextInput
-            style={customStyles.input}
-            placeholder="Title"
-            value={title}
-            onChangeText={setTitle}
-          />
-          <TextInput
-            style={customStyles.input}
-            placeholder="Description"
-            value={description}
-            onChangeText={setDescription}
-          />
-          <TextInput
-            style={customStyles.input}
-            placeholder="Due Date"
-            value={dueDate}
-            onChangeText={setDueDate}
-          />
-          <Button onPress={handleSubmit} title="Submit"/>
-          <Text />
-          <Button onPress={() => navigation.navigate("StudyPlanScreen")} title="Back"/>
+          <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+            <Text style={styles.brand}>New Studyplan</Text>
+            <Text />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Title"
+              value={title}
+              onChangeText={setTitle}
+            />
+            <Text />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Description"
+              value={description}
+              onChangeText={setDescription}
+            />
+            <Text />
+            <TextInput
+              style={styles.textInput}
+              placeholder="Due Date"
+              value={dueDate}
+              onChangeText={setDueDate}
+            />
+            <Text />
+            <Button onPress={handleSubmit} title="Submit"/>
+            <Text />
+            <Button onPress={() => navigation.navigate("StudyPlanScreen")} title="Back"/>
+          </ImageBackground>
         </View>
       );
     }

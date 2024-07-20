@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList, Alert } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList, Alert, ImageBackground } from 'react-native';
 import { firestoreInstance } from '../Firebase';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from '../styles';
 
 type StudyPlanData = {
   id : string
@@ -16,6 +17,7 @@ type StudyPlanData = {
 type StudyPlanScreenProp = NativeStackNavigationProp<RootStackParamList, "StudyPlanScreen">;
 
 function StudyPlanScreen() {
+  const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const [studyPlan, setStudyPlan] = useState<StudyPlanData[]>([]);
   const [currentStudyPlan, setCurrentStudyPlan] = useState(0);
   const navigation = useNavigation<StudyPlanScreenProp>();
@@ -51,7 +53,7 @@ function StudyPlanScreen() {
         console.log('No User Found!');
         return;
       }
-      await firestoreInstance.collection('Users').doc(username as string).collection('StudyPlan').doc(id).delete();
+      await firestoreInstance.collection('User').doc(username as string).collection('StudyPlan').doc(id).delete();
       setStudyPlan(studyPlan.filter(plan => plan.id !== id));
       if (currentStudyPlan > 0) {
         setCurrentStudyPlan(currentStudyPlan - 1);
@@ -99,16 +101,16 @@ function StudyPlanScreen() {
   };
 
   const renderItem = ({ item }: { item: StudyPlanData }) => (
-    <View style={styles.card}>
-      <Text style={styles.title}>{item.title}</Text>
-      <Text style={styles.description}>{item.description}</Text>
-      <Text style={styles.dueDate}>Due Date: {item.dueDate}</Text>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.smallButtonDelete} onPress={() => confirmDelete(item.id)}>
-          <Text style={styles.buttonText}>Delete</Text>
+    <View style={customStyles.card}>
+      <Text style={customStyles.title}>{item.title}</Text>
+      <Text style={customStyles.description}>{item.description}</Text>
+      <Text style={customStyles.dueDate}>Due Date: {item.dueDate}</Text>
+      <View style={customStyles.buttonContainer}>
+        <TouchableOpacity style={customStyles.smallButtonDelete} onPress={() => confirmDelete(item.id)}>
+          <Text style={customStyles.buttonText}>Delete</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.smallButtonComplete} onPress={() => completeStudyPlan(item.id)}>
-          <Text style={styles.buttonText}>Complete</Text>
+        <TouchableOpacity style={customStyles.smallButtonComplete} onPress={() => completeStudyPlan(item.id)}>
+          <Text style={customStyles.buttonText}>Complete</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -128,26 +130,36 @@ function StudyPlanScreen() {
   useEffect(() => {fetchStudyPlan();}, []);
 
   return (
-    <View style={styles.container}>
-      <Button onPress={() => navigation.navigate('NewStudyPlanScreen')} title="New Plan" />
-      <Text />
-      {studyPlan.length === 0 ? (
-        <Text>Make a Plan!</Text>
-      ) : (
-        renderItem({ item: studyPlan[currentStudyPlan] })
-      )}
-      <View style={styles.navigationContainer}>
-        <Button onPress={handlePrev} title="Prev" />
-        <Button onPress={handleNext} title="Next" />
-      </View>
-      <View style={styles.homeButtonContainer}>
-        <Button onPress={() => navigation.navigate('HomeScreen')} title="Home" />
-      </View>
+    <View style={styles.background}>
+      <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+        <Text style={styles.brand}>Study Plans</Text>
+        <Text />
+        <View style={styles.buttonContainer}>
+          <Button onPress={() => navigation.navigate('NewStudyPlanScreen')} title="New Plan" />
+        </View>
+        <Text />
+        {studyPlan.length === 0 ? (
+        <View>
+          <View style={styles.resultContainer}>
+            <Text style={styles.textOutput}>Make a Plan!</Text>
+          </View>
+          <Text />
+        </View>
+        ) : (
+          renderItem({ item: studyPlan[currentStudyPlan] })
+        )}
+        <View style={styles.nextPrevContainer}>
+          <Button onPress={handlePrev} title="Prev" />
+          <Button onPress={handleNext} title="Next" />
+        </View>
+        <Text />
+        <Button onPress={() => navigation.navigate('HomeScreen')} title="Back" />
+      </ImageBackground>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const customStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -203,12 +215,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 12,
-  },
-  navigationContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '60%',
-    marginTop: 20,
   },
   homeButtonContainer: {
     position: 'absolute',

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, FlatList, Text, Button, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { firestoreInstance } from '../Firebase';
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from '../styles';
 
 type FriendsData = {
   id: string;
@@ -55,27 +56,33 @@ function MyFriendsScreen() {
   };
 
   const renderItem = ({ item }: { item: FriendsData }) => (
-    <TouchableOpacity style={styles.friendItem} onPress={() => startChat(item.id, item.username)}>  
-      <View style={styles.textContainer}>
-        <Text style={styles.username}>{item.username}</Text>
+    <TouchableOpacity style={customStyles.friendItem} onPress={() => startChat(item.id, item.username)}>  
+      <View style={customStyles.textContainer}>
+        <Text style={customStyles.username}>{item.username}</Text>
       </View>
     </TouchableOpacity>
   );
 
 
   return (
-    <View style={styles.container}>
-      <Button title="Back to Home" onPress={() => navigation.goBack()} />
-      <FlatList
-        data={friends}
-        keyExtractor={(item) => item.id}
-        renderItem={renderItem}
-      />
+    <View style={styles.background}>
+      <ImageBackground resizeMode="cover" source={image} style={styles.image}>
+        <Text style={styles.brand}>My Friends</Text>
+        <Text />
+        <FlatList
+          data={friends}
+          keyExtractor={(item) => item.id}
+          renderItem={renderItem}
+        />
+        <Text />
+        <Button onPress={() => navigation.navigate("BuddySphereScreen")} title="Back"/>
+        <Text />
+      </ImageBackground>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const customStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',

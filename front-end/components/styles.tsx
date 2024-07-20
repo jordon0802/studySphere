@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         alignItems: "center",
-        borderRadius: 10,
+        borderRadius: 20,
         color: "blue",
         justifyContent: "center",
         //marginTop: 20,
@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
         justifyContent: "center",
+    },
+    nextPrevContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
     },
     quizOptionContainer: {
         borderRadius: 5,
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: "center",
     },
-    quizResultContainer: {
+    resultContainer: {
         backgroundColor: "lightcyan",
         borderRadius: 10,
         marginHorizontal: 40,
@@ -68,7 +72,8 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     textOutput: {
-        color: "white",
+        color: "black",
+        fontWeight: "bold",
         fontSize: 24,
         textAlign: "center",
     }

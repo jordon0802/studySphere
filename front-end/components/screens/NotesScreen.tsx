@@ -78,6 +78,7 @@ function NotesScreen() {
           renderItem={renderNoteItem}
           style={customStyles.notesList}
         />
+        <Text />
         <Button onPress={() => navigation.navigate("HomeScreen")} title="Back"/>
         <Text />
       </ImageBackground>

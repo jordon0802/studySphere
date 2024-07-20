@@ -101,7 +101,7 @@ function QuizMeScreen() {
                     </View>
                 ) : showScore ? (
                     <View> 
-                        <View style={styles.quizResultContainer}>
+                        <View style={styles.resultContainer}>
                         <Text style={styles.quizResultStyle}> Your Score is: </Text>
                             <Text style={styles.quizResultStyle}> {score} / {quizzes.length} </Text>
                         </View>
