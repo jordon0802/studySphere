@@ -21,6 +21,14 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         //marginTop: 20,
     },
+    delButton: {
+        aspectRatio: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        position: "absolute",
+        right: 5,
+        top: 3,
+      },
     image: {
         flex: 1,
         justifyContent: "center",

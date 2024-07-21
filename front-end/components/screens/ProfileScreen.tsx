@@ -8,8 +8,8 @@ import { firestoreInstance } from '../Firebase';
 
 function ProfileScreen({navigation, route}: ProfileScreenProps) {
     const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
-    const [email, setEmail] = useState<string>();
     const [username, setUsername] = useState<string>();
+    const [email, setEmail] = useState<string>();
     const [user_id, setUser_id] = useState<number>();
 
     const getData = async (key: string) => {
@@ -47,6 +47,17 @@ function ProfileScreen({navigation, route}: ProfileScreenProps) {
         }
     }
 
+    const getEmail = async () => {
+        try {
+            const value = await AsyncStorage.getItem("email");
+            if (value !== null) {
+                setEmail(value);
+            }
+        } catch (error) {
+            console.log("error: " + error);
+        }
+    }
+
     const getUser_id = async () => {
         try {
             const value = await AsyncStorage.getItem("user_id");
@@ -59,6 +70,7 @@ function ProfileScreen({navigation, route}: ProfileScreenProps) {
     }
 
     getUsername();
+    getEmail();
     getUser_id();
 
     return (
@@ -66,8 +78,11 @@ function ProfileScreen({navigation, route}: ProfileScreenProps) {
             <ImageBackground resizeMode="cover" source={image} style={styles.image}>
                 <Text style={styles.brand}>My Profile</Text>
                 <Text />
-                <Text style={styles.textOutput}>Hi {username}!!</Text>
-                <Text style={styles.textOutput}>Your user id is: {user_id}</Text>
+                <View style={styles.resultContainer}>
+                    <Text style={styles.textOutput}>Hi {username}!!</Text>
+                    <Text style={styles.textOutput}>Your email is: {email}</Text>
+                    <Text style={styles.textOutput}>Your user id is: {user_id}</Text>
+                </View>
                 <Text />
                 <Button title='Back' onPress={() => navigation.navigate('HomeScreen')}/>
             </ImageBackground>

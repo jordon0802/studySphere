@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList, ImageBackground } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity, View, FlatList, ImageBackground, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
@@ -7,6 +7,7 @@ import { RootStackParamList } from '../types';
 import { firebase, firestoreInstance, analyticsInstance } from '../Firebase';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../styles';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 //import FlashcardScreen from './FlashcardScreen';
 
@@ -28,6 +29,36 @@ function MyFlashcardsScreen() {
 
   var totalFlashcards = 0;
 
+  const confirmDelete = (id: string) => {
+    Alert.alert(
+      'Delete Flashcard',
+      'Are you sure you want to delete this flashcard?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Delete',
+          onPress: () => deleteFlashcard(id),
+          style: 'destructive',
+        },
+      ],
+      { cancelable: true }
+    );
+  };
+
+  const deleteFlashcard = async (id: string) => {
+    try {
+      const username = await AsyncStorage.getItem("username");
+      const collectionRef = firestoreInstance.collection("User").doc(username as string).collection("Flashcards");
+      await collectionRef.doc(id).delete();
+      setCurrentFlashcard(currentFlashcard - 1);
+    } catch (error) {
+      console.log("error: " + error);
+    }
+  };
+
   const fetchFlashcards = async () => {
     const username = await AsyncStorage.getItem("username");
     const querySnapshot = await firestoreInstance.collection("User").doc(username as string).collection("Flashcards").get();
@@ -40,22 +71,16 @@ function MyFlashcardsScreen() {
     setFlashcards(flashcardsData);
   };
 
-  const handleDelete = async (id: string) => {
-    const username = await AsyncStorage.getItem("username");
-    const collectionRef = firestoreInstance.collection("Users").doc(username as string).collection("Flashcards");
-    await collectionRef.doc(id).delete();
-  };
-
   // Destructure, specify item is of type FlashcardData
   const renderItem = ({item}: {item: FlashcardData}) => (
     <View style={customStyles.flashcardContainer}>
-      <TouchableOpacity onPress={() => setFlip(!flip)} style={customStyles.card}>
-        {!flip ? (
-          <Text>{item.question}</Text>
-        ) : (
-          <Text>{item.answer}</Text>
-        )}
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => setFlip(!flip)} style={customStyles.card}>
+          {!flip ? (
+            <Text>{item.question}</Text>
+          ) : (
+            <Text>{item.answer}</Text>
+          )}
+        </TouchableOpacity>
     </View>
   );
 
@@ -85,15 +110,20 @@ function MyFlashcardsScreen() {
             <Text style={styles.textOutput}>End of Flashcards!!</Text>
           </View>
           <Text />
+          <Button onPress={handlePrev} title="Prev"/>
+          <Text />
         </ View>
         ) : (
-          renderItem({item: flashcards[currentFlashcard]})
+          <View>
+            {renderItem({item: flashcards[currentFlashcard]})}
+            <View style={styles.nextPrevContainer}>
+            <Button onPress={handlePrev} title="Prev"/>
+            <Button onPress={() => confirmDelete(flashcards[currentFlashcard].id)} title="Delete" color="red"/>
+            <Button onPress={handleNext} title="Next"/>
+            </View>
+            <Text />
+          </View>
         )}
-        <View style={styles.nextPrevContainer}>
-          <Button onPress={handlePrev} title="Prev"/>
-          <Button onPress={handleNext} title="Next"/>
-        </View>
-        <Text />
         <Button onPress={() => navigation.navigate('FlashcardMainScreen')} title="Back"/>
       </ImageBackground>
     </View>

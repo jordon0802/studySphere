@@ -16,33 +16,38 @@ function HomeScreen() {
                 <Text style={styles.brand}>StudySphere</Text>
                 <Text />
                 <Button
+                    title="My Profile"
+                    onPress={() => navigation.navigate('ProfileScreen')}
+                />
+                <Text />
+                <Button
                     title="BuddySphere"
                     onPress={() => navigation.navigate('BuddySphereScreen')}
                 />
                 <Text />
                 <Button
-                    title="Notes"
+                    title="My Notes"
                     onPress={() => navigation.navigate('NotesScreen')}
                 />
                 <Text />
                 <Button
-                    title="Profile"
-                    onPress={() => navigation.navigate('ProfileScreen')}
-                />
-                <Text />
-                <Button
-                    title="Flashcards"
+                    title="My Flashcards"
                     onPress={() => navigation.navigate('FlashcardMainScreen')}
                 />
                 <Text />
                 <Button
-                    title="Quiz"
+                    title="My Quizzes"
                     onPress={() => navigation.navigate('QuizScreen')}
                 />
                 <Text />
                 <Button
-                    title="StudyPlan"
+                    title="My Study Plans"
                     onPress={() => navigation.navigate('StudyPlanScreen')}
+                />
+                <Text />
+                <Button
+                    title="Logout"
+                    onPress={() => navigation.navigate('LoginScreen')}
                 />
             </ImageBackground>
         </View>

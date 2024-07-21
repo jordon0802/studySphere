@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React from 'react';
-import { Button, ImageBackground, Text, TextInput , View } from 'react-native';
+import React, { useState } from 'react';
+import { Alert, Button, ImageBackground, Text, TextInput , View } from 'react-native';
 import * as Yup from 'yup';
 
 import styles from "../styles"
@@ -12,8 +12,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { firestoreInstance } from '../Firebase';
 
 interface Values {
-    email: String;
-    password: String;
+    email: string;
+    password: string;
 }
 
 // Validation Schema
@@ -24,48 +24,52 @@ const userSchema = Yup.object({
 
 type ProfileScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "ProfileScreen">;
 
-// POST Request
-async function doSubmit({ email, password } : Values, navigation : ProfileScreenNavigationProp) {
-    try {
-        console.log(email);
-        console.log(password);
-        let data = JSON.stringify({
-            "email": email,
-            "password": password
-        })
-    
-        const response = await axios.post('http://10.0.2.2:9080/api/v1/user/login', data, {
-            headers: {
-            'Content-Type': 'application/json',
-        }});
-
-        const storeData = async (key:string, value: string) => {
-            try {
-                await AsyncStorage.setItem(key, value);
-                // Store user_id
-                await firestoreInstance.collection("User").doc(response.data[1]).set({ user_id: response.data[0] });
-            } catch (error) {
-                console.log("error: " + error);
-            }
-        }
-
-        if (response.status == 200) {
-            storeData("user_id", response.data[0]);
-            storeData("username", response.data[1]);
-            storeData("token", response.data[2]);
-
-            navigation.navigate("HomeScreen");
-        }
-    } catch (error) {
-        console.log(error);
-    }
-};
-
 function StudySphere() {
     const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
     const navigation = useNavigation<ProfileScreenNavigationProp>();
-    const [email, onChangeEmail] = React.useState('');
-    const [password, onChangePassword] = React.useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    // POST Request
+    const doSubmit = async ({ email, password } : Values, navigation : ProfileScreenNavigationProp) => {
+        try {
+            console.log(email);
+            console.log(password);
+            let data = JSON.stringify({
+                "email": email,
+                "password": password
+            })
+        
+            const response = await axios.post('http://10.0.2.2:9080/api/v1/user/login', data, {
+                headers: {
+                'Content-Type': 'application/json',
+            }});
+
+            const storeData = async (key:string, value: string) => {
+                try {
+                    await AsyncStorage.setItem(key, value);
+                    // Store user_id
+                    await firestoreInstance.collection("User").doc(response.data[1]).set({ user_id: response.data[0] });
+                } catch (error) {
+                    console.log("error: " + error);
+                }
+            }
+
+            if (response.status == 200) {
+                storeData("user_id", response.data[0]);
+                storeData("username", response.data[1]);
+                storeData("email", email);
+                storeData("token", response.data[2]);
+
+                setEmail("");
+                setPassword("");
+
+                navigation.navigate("HomeScreen");
+            }
+        } catch (error) {
+            console.log("Error: " + error);
+        }
+    };
 
     return (
         <View style={styles.background}>
@@ -75,17 +79,19 @@ function StudySphere() {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Email"
-                    onChangeText={onChangeEmail}
+                    onChangeText={setEmail}
                     value={email}
                 />
                 <Text />
                 <TextInput
                     style={styles.textInput}
                     placeholder="Password"
-                    onChangeText={onChangePassword}
+                    onChangeText={setPassword}
                     value={password}
                     secureTextEntry={true}
                 />
+                <Text />
+                <Button onPress={() => (doSubmit({email: "qweiop", password: "qweiop"}, navigation))} title="debug-login" />
                 <Text />
                 <Button onPress={() => (doSubmit({email, password}, navigation))} title="login" />
                 <Text />

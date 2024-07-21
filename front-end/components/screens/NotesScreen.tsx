@@ -41,11 +41,9 @@ function NotesScreen() {
   const renderNoteItem = ({ item }: { item: NotesData }) => (
     <View style={customStyles.noteItem}>
       <Text style={customStyles.noteText}>{item.note}</Text>
-      <View style={customStyles.delButton}>
-        <TouchableOpacity onPress={() => deleteNote(item.id)}>
+        <TouchableOpacity onPress={() => deleteNote(item.id)} style={styles.delButton}>
           <FontAwesome name="close" size={20} color="black"/>
         </TouchableOpacity>
-      </View>
     </View>
   );
 
@@ -109,14 +107,6 @@ const customStyles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: "center",
     alignItems: "center",
-  },
-  delButton: {
-    aspectRatio: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    right: 5,
-    top: 3,
   },
   addButtonText: {
     color: "#fff",

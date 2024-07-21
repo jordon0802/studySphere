@@ -1,11 +1,12 @@
 import React, { useState } from "react"; 
-import { Button, ImageBackground, Text, TouchableOpacity, View } from "react-native";
+import { Alert, Button, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import styles from "../styles";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { firestoreInstance } from "../Firebase";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 type QuizData =  {
     id: string,
@@ -28,16 +29,49 @@ function QuizMeScreen() {
 
     const navigation = useNavigation<QuizMeScreenNavigationProp>();
 
-    const fetchQuiz = async () => {
-        const username = await AsyncStorage.getItem("username");
-        const querySnapshot = await firestoreInstance.collection("User").doc(username as string).collection("Quizzes").get();
-        const quizData: QuizData[] = [];
+    const confirmDelete = (id: string) => {
+        Alert.alert(
+          'Delete Quiz',
+          'Are you sure you want to delete this quiz?',
+          [
+            {
+              text: 'Cancel',
+              style: 'cancel',
+            },
+            {
+              text: 'Delete',
+              onPress: () => deleteQuiz(id),
+              style: 'destructive',
+            },
+          ],
+          { cancelable: true }
+        );
+      };
 
-        querySnapshot.forEach((doc) => {
-            // "as" => considers doc[i] as FlashcardData type
-            quizData.push({ id: doc.id, ...doc.data() } as QuizData);
-        });
-        setQuizzes(quizData);
+    const deleteQuiz = async (id: string) => {
+        try {
+            const username = await AsyncStorage.getItem("username");
+            const collectionRef = firestoreInstance.collection("User").doc(username as string).collection("Quizzes");
+            await collectionRef.doc(id).delete();
+        } catch (error) {
+            console.log("error: " + error);
+        };
+    };
+
+    const fetchQuiz = async () => {
+        try {
+            const username = await AsyncStorage.getItem("username");
+            const querySnapshot = await firestoreInstance.collection("User").doc(username as string).collection("Quizzes").get();
+            const quizData: QuizData[] = [];
+
+            querySnapshot.forEach((doc) => {
+                // "as" => considers doc[i] as FlashcardData type
+                quizData.push({ id: doc.id, ...doc.data() } as QuizData);
+            });
+            setQuizzes(quizData);
+        } catch (error) {
+            console.log("error: " + error);
+        }
     };
     fetchQuiz();
     
@@ -95,7 +129,7 @@ function QuizMeScreen() {
             <ImageBackground resizeMode="cover" source={image} style={styles.image}>
                 <Text style={styles.brand}>My Quiz</Text>
                 <Text />
-                { (quizzes.length <= 0) ? (
+                {(quizzes.length <= 0) ? (
                     <View>
                         <Text style={styles.brand}>You have no quizzes yet!</Text>
                     </View>
@@ -109,18 +143,23 @@ function QuizMeScreen() {
                         <Button onPress={() => handleRestart()} title="Restart" />
                     </View>
                 ) : (quizzes[currentQuestion]) ? (
-                    <View style={styles.quizQuestionContainer}>
-                        <Text style={styles.quizQuestionText}> { quizzes[currentQuestion].question } </Text>
+                    <View>
+                        <View style={styles.quizQuestionContainer}>
+                            <TouchableOpacity onPress={() => confirmDelete(quizzes[currentQuestion].id)} style={styles.delButton}>
+                                <FontAwesome name="close" size={20} color="black"/>
+                            </TouchableOpacity>
+                            <Text style={styles.quizQuestionText}> { quizzes[currentQuestion].question } </Text>
                             {renderOption1(quizzes[currentQuestion])}
                             {renderOption2(quizzes[currentQuestion])}
                             {renderOption3(quizzes[currentQuestion])}
                             {renderOption4(quizzes[currentQuestion])}
+                        </View>
                     </View>
                 ) : (
                     <View>
                         <Text style={styles.brand}>You have no quizzes here!</Text>
                     </View>
-                ) }
+                )}
                 <Text />
                 <Button title="Back" onPress={() => navigation.goBack()} />
             </ImageBackground>

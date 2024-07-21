@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React from 'react';
-import { Button, ImageBackground, Text, TextInput , View } from 'react-native';
+import React, { useState } from 'react';
+import { Alert, Button, ImageBackground, Text, TextInput , View } from 'react-native';
 import * as Yup from 'yup';
 
 import styles from "../styles"
@@ -9,9 +9,9 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface Values {
-    username: String;
-    email: String;
-    password: String;
+    username: string;
+    email: string;
+    password: string;
 }
 
 // Validation Schema
@@ -23,37 +23,41 @@ const userSchema = Yup.object({
 
 type ProfileScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "ProfileScreen">;
 
-// POST Request
-async function doSubmit({ username, email, password } : Values, navigation : ProfileScreenNavigationProp) {
-    try {
-        console.log(username);
-        console.log(email);
-        console.log(password);
-        let data = JSON.stringify({
-            "username": username,
-            "email": email,
-            "password": password
-        })
-    
-        const response = await axios.post('http://10.0.2.2:9080/api/v1/user/register', data, {
-            headers: {
-            'Content-Type': 'application/json',
-        }});
-        if (response.status == 200) {
-                //navigation.navigate("ProfileScreen", { name : username })
-                navigation.navigate("LoginScreen")
-        }
-    } catch (error) {
-        console.log(error);
-    }
-};
-
 function RegisterScreen() {
     const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
     const navigation = useNavigation<ProfileScreenNavigationProp>();
-    const [username, onChangeUsername] = React.useState('');
-    const [email, onChangeEmail] = React.useState('');
-    const [password, onChangePassword] = React.useState('');
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    // POST Request
+    const doSubmit = async ({ username, email, password } : Values, navigation : ProfileScreenNavigationProp) => {
+        try {
+            console.log(username);
+            console.log(email);
+            console.log(password);
+            let data = JSON.stringify({
+                "username": username,
+                "email": email,
+                "password": password
+            })
+        
+            const response = await axios.post('http://10.0.2.2:9080/api/v1/user/register', data, {
+                headers: {
+                'Content-Type': 'application/json',
+            }});
+            if (response.status == 200) {
+                setUsername("");
+                setEmail("");
+                setPassword("");
+                navigation.navigate("LoginScreen")
+            } else {
+                
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <View style={styles.background}>
@@ -63,21 +67,21 @@ function RegisterScreen() {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Username"
-                    onChangeText={onChangeUsername}
+                    onChangeText={setUsername}
                     value={username}
                 />
                 <Text />
                 <TextInput
                     style={styles.textInput}
                     placeholder="Email"
-                    onChangeText={onChangeEmail}
+                    onChangeText={setEmail}
                     value={email}
                 />
                 <Text />
                 <TextInput
                     style={styles.textInput}
                     placeholder="Password"
-                    onChangeText={onChangePassword}
+                    onChangeText={setPassword}
                     value={password}
                     secureTextEntry={true}
                 />
