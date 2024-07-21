@@ -1,179 +1,210 @@
-import React, { useState } from 'react';
-import { View, TextInput, Button, FlatList, Text, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, TextInput, Button, FlatList, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { firestoreInstance } from '../Firebase';
 import { useNavigation } from '@react-navigation/native';
-import { query, where, getDocs, collection } from '@react-native-firebase/firestore';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+type UserData = {
+  username : string;
+};
+
+type userId = {
+  user_id: string;
+
+}
+
 type FriendsData = {
   id: string;
   username: string;
-}
+};
 
-type ResultsData = {
-  results: FriendsData[]
-}
+// type RequestData = {
+//   id: string;
+//   username: string;
+//   requestId: string;
+// };
 
 type FindFriendsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "FindFriendsScreen">;
 
 export default function FindFriendsScreen() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [results, setResults] = useState<FriendsData[]>([]);
+  const [users, setUsers] = useState<UserData[]>([]);
+  // const [user_id, setUser_id] = useState<string>("");
+  // const [username, setUsername] = useState<string>("");
   const [friends, setFriends] = useState<FriendsData[]>([]);
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation<FindFriendsScreenNavigationProp>();
 
-  //FETCH USERID
-  const getId = async () => {
-    try {
-        const user_id = await AsyncStorage.getItem("user_id");
-        console.log(user_id);
-        return user_id;
-    } catch (error) {
-        console.log("error: " + error);
-    }
-  }
-  const user_id = getId();
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  //FETCH FRIEND ID
-  const getFriends = async () => {
-    try {
-      const friendsData: FriendsData[] = [];
-
-      const querySnapshot = await firestoreInstance.collection("User").get();
-      querySnapshot.forEach((doc) => {
-        friendsData.push({ id: doc.id, ...doc.data() } as FriendsData)
-      })
-      setFriends(friendsData);
-    } catch (error) {
-      console.log("ERROR");
-    }
-    
-  };
-  getFriends();
-
-  //RENDER
-  const renderFriendItem = ({ item }: { item: FriendsData }) => (
-    <View style={styles.container}>
-      <Text style={styles.container}>{item.username}</Text>
-    </View>
-  );
-   
-  //SEARCH FUNCTION
-  const searchUsers = async () => {
+  const getCurrentUsername = async (): Promise<string | null> => {
     try {
       const username = await AsyncStorage.getItem("username");
-      // Step 1: Fetch the list of friends for the current user
-      const friendsRef = firestoreInstance.collection('Users').doc(username as string).collection('Friends');
-      const friendsSnapshot = await friendsRef.get();
-
-      // Map over the friend documents to get their IDs
-      const friends = friendsSnapshot.docs.map(doc => doc.id);
-
-      // Step 2: Search for users whose names match the search term
-      const usersRef = await firestoreInstance.collection('User').get();
-      const friendsData : FriendsData[] = [];
-      
-      usersRef.forEach((doc) => {
-        friendsData.push({ id: doc.id, ...doc.data() } as FriendsData)
-      });
-
-
-      // Step 3: Filter out friends from the search results
-      //const nonFriends = users.filter(user => !friends.includes(user.id));
-      setResults(friendsData);
+      return username;
     } catch (error) {
-      console.error('Error searching users: ', error);
+      console.log("Error fetching username: ", error);
+      return null;
     }
   };
-  
-  // const randomUsers = async () => {
-  //   try {
-  //     const 
-  //   } catch (error) {
-  //     console.error('Error loading users', error);
-  //   }
-  // };
-  
 
-  const sendFriendRequest = async () => {
+  // const handleUsername = (Username: string | undefined) => {
+  //   setUsername(Username as string);
+  //   return username;
+  // }
+
+
+  const fetchUser_id = async (username: string): Promise<string | null> => {
     try {
-      // Add friend request to the FriendRequestSent collection of the current user
-      const friendRequestSentRef = firestoreInstance
-        .collection('Users')
-        .doc('user_id')
-        .collection('FriendRequestSent')
-        .doc('user_id');
-
-      await friendRequestSentRef.set({ requestedAt: new Date() });
-
-      // Add friend request to the FriendRequestReceived collection of the targeted user
-      const friendRequestReceivedRef = firestoreInstance
-        .collection('Users')
-        .doc('user_id')
-        .collection('FriendRequestReceived')
-        .doc('user_id');
-
-      await friendRequestReceivedRef.set({ receivedAt: new Date() });
-
-      console.log('Friend request sent to:', user_id); 
+      const userRef = (await firestoreInstance.collection("User").doc(username).get()).data() as userId;
+      //setUser_id(userRef.user_id);
+      return userRef.user_id;
     } catch (error) {
-      console.error('Error sending friend request: ', error);
+      console.log("error: " + error);
+      return null;
+    }
+  }
+
+  const fetchFriends = async (currentUsername: string) => {
+    try {
+      const friendsSnapshot = await firestoreInstance.collection('User').doc(currentUsername).collection('Friends').get();
+      const friendsData: FriendsData[] = friendsSnapshot.docs.map(doc => ({
+        id: doc.id,
+        username: doc.data().username
+      }));
+      setFriends(friendsData);
+    } catch (error) {
+      console.log("Error fetching friends: ", error);
+    }
+  };
+
+  const fetchUsers = async (currentUsername: string) => {
+    try {
+      const usersSnapshot = await firestoreInstance.collection('User').get();
+      const usersData: UserData[] = [];
+      usersSnapshot.forEach((doc) => {
+        if (doc.id !== currentUsername && !friends.find(friend => friend.username === doc.id)) {
+          usersData.push({ username: doc.id });
+        }
+      });
+      setUsers(usersData);
+    } catch (error) {
+      console.log("Error fetching users: ", error);
+    }
+  };
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const currentUsername = await getCurrentUsername();
+      if (!currentUsername) return;
+
+      await fetchFriends(currentUsername);
+      await fetchUsers(currentUsername);
+    } catch (error) {
+      console.log("Error fetching data: ", error);
+    } finally {
+      setLoading(false);
     }
   };
 
 
+  const sendFriendRequest = async (friendId: string, friendUsername: string) => {
+    try {
+      const currentUsername = await getCurrentUsername();
+      if (!currentUsername) return;
+
+      const currentUser_id = await AsyncStorage.getItem("user_id");
+      if (!currentUser_id) return;
+
+      const currentUserRef = firestoreInstance.collection('User').doc(currentUsername);
+      const friendUserRef = firestoreInstance.collection('User').doc(friendUsername);
+
+      // Add request to current user
+      const requestSentRef = currentUserRef.collection('FriendRequestSent').doc();
+      await requestSentRef.set({ id : friendId, username: friendUsername, requestId: requestSentRef.id });
+
+      // Add request to friend user
+      const requestReceivedRef = friendUserRef.collection('FriendRequestReceived').doc(requestSentRef.id);
+      await requestReceivedRef.set({ id : currentUser_id, username: currentUsername, requestId: requestSentRef.id });
+
+      console.log(`Friend request sent to ${friendUsername}`);
+      Alert.alert(`Friend request sent to ${friendUsername}`)
+    } catch (error) {
+      console.log("Error sending friend request: ", error);
+    }
+  };
+
+  const renderItem = ({ item }: { item: UserData }) => (
+    <View style={styles.userItem}>
+      <Text style={styles.username}>{item.username}</Text>
+      <TouchableOpacity
+        onPress={async () => {
+          const friendId = await fetchUser_id(item.username);
+          if (friendId) {
+            sendFriendRequest(friendId, item.username);
+          }
+        }}
+        style={styles.addButton}
+      >
+        <Text style={styles.addButtonText}>+</Text>
+      </TouchableOpacity>
+    </View>
+  );
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="Search for users"
-        value={searchTerm}
-        onChangeText={setSearchTerm}
-      />
-      <Button title="Search" onPress={searchUsers} />
       <FlatList
-        data={results}
-        renderItem={({ item } : {item : FriendsData}) => (
-          <View style={styles.resultItem}>
-            <Text style={styles.resultText}>{item.username}</Text>
-            <Button title="+" onPress={() => sendFriendRequest()} />
-          </View>
-        )}
-      />
-      <FlatList
-        data={friends}
-        renderItem={renderFriendItem}
-        style={styles.container}
+        data={users}
+        keyExtractor={(item) => item.username}
+        renderItem={renderItem}
+        ListFooterComponent={<Button title="Refresh" onPress={fetchData} />}
+        refreshing={loading}
+        onRefresh={fetchData}
       />
       <Button title="Back" onPress={() => navigation.goBack()} />
     </View>
   );
 }
 
+
+
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 20,
   },
-  input: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    marginBottom: 10,
-    paddingHorizontal: 10,
-  },
-  resultItem: {
+  userItem: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
     padding: 10,
-    borderBottomColor: '#ccc',
-    borderBottomWidth: 1,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    marginVertical: 5,
+    width: '100%',
   },
-  resultText: {
+  username: {
     fontSize: 16,
-    flex: 1,
+    fontWeight: 'bold',
+  },
+  addButton: {
+    backgroundColor: '#007bff',
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  addButtonText: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });

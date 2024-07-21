@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react';
-import { View, TextInput, Button, FlatList, Text, StyleSheet } from 'react-native';
+import { View, TextInput, Button, FlatList, Text, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
@@ -10,88 +10,155 @@ type FriendRequestScreenNavigationProp = NativeStackNavigationProp<RootStackPara
 
 type FriendRequestData = {
   id: string;
-  name: string;
+  username: string;
+  requestId: string;
 };
 
 export default function FriendRequestScreen() {
-    const [friendRequests, setFriendRequests] = useState<FriendRequestData[]>([]);
-    const navigation = useNavigation<FriendRequestScreenNavigationProp>();
+  const [friendRequests, setFriendRequests] = useState<FriendRequestData[]>([]);
+  const [loading, setLoading] = useState(false);
+  const navigation = useNavigation<FriendRequestScreenNavigationProp>();
 
-    //FETCH USERID
-    const getId = async () => {
-      try {
-          const user_id = await AsyncStorage.getItem("user_id");
-          return user_id;
-      } catch (error) {
-          console.log("error: " + error);
-      }
+  useEffect(() => {
+    fetchFriendRequests();
+  }, []);
+
+  //FETCH USERID
+  const getUsername = async () => {
+    try {
+        const username = await AsyncStorage.getItem("username");
+        return username;
+    } catch (error) {
+        console.log("error: " + error);
     }
-    const user_id = getId();
+  };
 
+  const fetchFriendRequests = async () => {
+    setLoading(true);
+    try {
+      const username = await AsyncStorage.getItem("username");
+      if (!username) return;
 
-    useEffect(() => {
-        const fetchFriendRequests = async () => {
-          const friendRequestsRef = firestoreInstance.collection('Users').doc("username").collection('FriendRequestReceived');
-          const snapshot = await friendRequestsRef.get();
-          const requests = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as FriendRequestData));
-          setFriendRequests(requests);
-        };
-    
-        fetchFriendRequests();
-      }, []);
-    
-      const acceptFriendRequest = async () => {
-        const currentUserRef = firestoreInstance.collection('users').doc(); //add user_id
-        const friendUserRef = firestoreInstance.collection('users').doc(); //friend id
-    
-        // Add each other to Friends collection
-        await currentUserRef.collection('Friends').doc(friendId).set({ name: friendName });
-        await friendUserRef.collection('Friends').doc(currentUserId).set({ name: 'YourName' }); // Replace 'YourName' with the actual name
-    
-        // Remove from FriendRequestReceived of current user
-        await currentUserRef.collection('FriendRequestReceived').doc().delete(); // add user id
-    
-        // Remove from FriendRequestSent of the other user
-        await friendUserRef.collection('FriendRequestSent').doc().delete(); //add friend id
-    
-        // Refresh friend requests
-        setFriendRequests(friendRequests.filter(request => request.id !== friendId)); //friendId is added friends id
-      };
-    
-      return (
-        <View style={styles.container}>
-          <FlatList
-            data={friendRequests}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <View style={styles.friendRequestItem}>
-                <Text>{item.name}</Text>
-                <Button title="Accept" onPress={() => acceptFriendRequest()} />
-              </View>
-            )}
-          />
-          <Button title="Back" onPress={() => navigation.goBack()} />
+      const friendRequestsSnapshot = await firestoreInstance
+        .collection('User')
+        .doc(username)
+        .collection('FriendRequestReceived')
+        .get();
+      
+      const friendRequestData: FriendRequestData[] = friendRequestsSnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      })) as FriendRequestData[];
+      setFriendRequests(friendRequestData);
+
+    } catch (error) {
+      console.log('Error Fetching FriendRequests', error);
+    } finally {
+      setLoading(false)
+    }
+  };
+
+  const acceptFriendRequest = async (friendId: string, friendUsername: string, requestId: string) => {
+    try {
+      const currentUsername = await getUsername();
+      if (!currentUsername) return;
+
+      const currentUserRef = firestoreInstance.collection('User').doc(currentUsername);
+      const friendUserRef = firestoreInstance.collection('User').doc(friendUsername);
+      const user_id = await AsyncStorage.getItem("user_id");
+
+      //Add each other to Friends collection
+      await currentUserRef.collection('Friends').doc(currentUsername).set({ id: friendId, username: friendUsername });
+      await friendUserRef.collection('Friends').doc(friendUsername).set({ id : user_id as string ,username: currentUsername });
+
+      //Remove FriendRequestReceived of current user
+      await currentUserRef.collection('FriendRequestReceived').doc(requestId).delete();
+
+      //Remove FriendRequestSent of the other user
+      await friendUserRef.collection('FriendRequestSent').doc(requestId).delete();
+
+      //Refresh friend requests
+      setFriendRequests(friendRequests.filter(request => request.id !== requestId));
+
+      Alert.alert('Friend request accepted');
+    } catch (error) {
+      console.log("Error accepting friend request: ", error);
+    }
+  };
+
+  const rejectFriendRequest = async (friendUsername: string, requestId: string) => {
+    try {
+      const currentUsername = await getUsername();
+      if (!currentUsername) return;
+
+      const currentUserRef = firestoreInstance.collection('User').doc(currentUsername);
+      const friendUserRef = firestoreInstance.collection('User').doc(friendUsername);
+
+      //Remove FriendRequestReceived of current user
+      await currentUserRef.collection('FriendRequestReceived').doc(requestId).delete();
+
+      //Remove FriendRequestSent of the other user
+      await friendUserRef.collection('FriendRequestSent').doc(requestId).delete();
+
+      //Refresh friend requests
+      setFriendRequests(friendRequests.filter(request => request.id !== requestId));
+
+      Alert.alert('Friend request rejected');
+    } catch (error) {
+      console.log("Error rejecting friend request: ", error);
+    }
+  };
+
+  const renderItem = ({ item }: { item: FriendRequestData }) => (
+    <View style={styles.friendRequestItem}>
+      <Text>{item.username}</Text>
+      <Button title="Accept" onPress={() => acceptFriendRequest(item.id, item.username, item.requestId)} />
+      <Button title="Reject" onPress={() => rejectFriendRequest(item.username, item.requestId)} />
+    </View>
+  );
+
+  return (
+    <View style={styles.container}>
+      {friendRequests.length === 0 ? (
+        <View style={styles.noRequestsContainer}>
+          <Text>No friend requests</Text>
+          <Button title="Find Friends" onPress={() => navigation.navigate("FindFriendsScreen")} />
         </View>
-      );
-    };
-    
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 20,
-      },
-      friendRequestItem: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 5,
-        marginVertical: 5,
-        width: '100%',
-      },
-    });
-    
+      ) : (
+        <FlatList
+          data={friendRequests}
+          keyExtractor={(item) => item.requestId}
+          renderItem={renderItem}
+          refreshing={loading}
+          onRefresh={fetchFriendRequests}
+        />
+      )}
+      <Button title="Back" onPress={() => navigation.goBack()} />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  friendRequestItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    marginVertical: 5,
+    width: '100%',
+  },
+  noRequestsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
