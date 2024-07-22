@@ -17,9 +17,9 @@ type FlashcardData = {
   answer: string;
 };
 
-type MyFlashcardsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "MyFlashcardsScreen">;
+type MyFlashcardsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "SavedFlashcardsScreen">;
 
-function MyFlashcardsScreen() {
+function SavedFlashcardsScreen() {
   const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const [flashcards, setFlashcards] = useState<FlashcardData[]>([]);
   const [currentFlashcard, setCurrentFlashcard] = useState(0);
@@ -124,7 +124,9 @@ function MyFlashcardsScreen() {
             <Text />
           </View>
         )}
-        <Button onPress={() => navigation.navigate('FlashcardMainScreen')} title="Back"/>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("FlashcardMainScreen")}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );
@@ -176,7 +178,7 @@ const customStyles = StyleSheet.create({
   },
 });
 
-export default MyFlashcardsScreen;
+export default SavedFlashcardsScreen;
 
 
 

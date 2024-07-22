@@ -104,9 +104,15 @@ function NewQuizScreen() {
                 style={styles.textInput}
             />
             <Text />
-            <Button onPress={() => handleSubmit()} title="Submit"/>
+
+            <TouchableOpacity style={styles.button} onPress={() => handleSubmit}>
+                <Text style={styles.buttonText}>Submit</Text>
+            </TouchableOpacity>
             <Text />
-            <Button onPress={() => navigation.navigate("QuizScreen")} title="Back"/>
+
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("QuizScreen")}>
+                <Text style={styles.buttonText}>Back</Text>
+            </TouchableOpacity>
             </ImageBackground>
         </View>
     )

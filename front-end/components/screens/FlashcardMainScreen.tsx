@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { RootStackParamList } from '../types';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -17,11 +17,20 @@ function FlashcardMainScreen() {
       <ImageBackground resizeMode="cover" source={image} style={styles.image}>
         <Text style={styles.brand}> My Flashcards</Text>
         <Text />
-        <Button onPress={() => navigation.navigate("NewFlashcardScreen")} title="New Flashcard"/>
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("NewFlashcardScreen")}>
+          <Text style={styles.buttonText}>New Flashcard</Text>
+        </TouchableOpacity>
         <Text />
-        <Button onPress={() => navigation.navigate("MyFlashcardsScreen")} title="Saved Flashcards"/>
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SavedFlashcardsScreen")}>
+          <Text style={styles.buttonText}>Saved Flashcards</Text>
+        </TouchableOpacity>
         <Text />
-        <Button onPress={() => navigation.navigate("HomeScreen")} title="Back" />
+        
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("HomeScreen")}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );

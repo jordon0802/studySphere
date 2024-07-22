@@ -10,7 +10,7 @@ import ProfileScreen from './components/screens/ProfileScreen';
 import QuizScreen from './components/screens/QuizScreen';
 import QuizMeScreen from './components/screens/QuizMeScreen';
 import NewQuizScreen from './components/screens/NewQuizScreen'
-import MyFlashcardsScreen from './components/screens/MyFlashcardsScreen';
+import SavedFlashcardsScreen from './components/screens/SavedFlashcardsScreen';
 import FlashcardMainScreen from './components/screens/FlashcardMainScreen';
 import NewFlashcardScreen from './components/screens/NewFlashcardScreen';
 import StudyPlanScreen from './components/screens/StudyPlan';
@@ -34,8 +34,8 @@ function App() {
             <Stack.Navigator initialRouteName='RegisterScreen' screenOptions={{headerShown: false}}>
 
                 <Stack.Screen 
-                    name="MyFlashcardsScreen"
-                    component={MyFlashcardsScreen}
+                    name="SavedFlashcardsScreen"
+                    component={SavedFlashcardsScreen}
                 />
 
                 <Stack.Screen 

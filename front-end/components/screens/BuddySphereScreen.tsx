@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Button, StyleSheet, Text, ImageBackground } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../types';
-import styles from '../styles';
+import React from "react";
+import { View, Button, StyleSheet, Text, ImageBackground, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../types";
+import styles from "../styles";
 
 type BuddySphereScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "BuddySphereScreen">;
 
@@ -16,13 +16,25 @@ export default function HomeScreen() {
         <ImageBackground resizeMode="cover" source={image} style={styles.image}>
           <Text style={styles.brand}>BuddySphere</Text>
           <Text />
-          <Button title="My Friends" onPress={() => navigation.navigate('MyFriendsScreen')} />
+
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("MyFriendsScreen")}>
+            <Text style={styles.buttonText}>My Friends</Text>
+          </TouchableOpacity>
           <Text />
-          <Button title="Find Friends" onPress={() => navigation.navigate('FindFriendsScreen')} />
+
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("FindFriendsScreen")}>
+            <Text style={styles.buttonText}>Find Friends</Text>
+          </TouchableOpacity>
           <Text />
-          <Button title="Friend Request" onPress={() => navigation.navigate('FriendRequestScreen')} />
+
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("FriendRequestScreen")}>
+            <Text style={styles.buttonText}>Friend Requests</Text>
+          </TouchableOpacity>
           <Text />
-          <Button title="Back" onPress={() => navigation.navigate('HomeScreen')} />
+
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("HomeScreen")}>
+            <Text style={styles.buttonText}>Back</Text>
+          </TouchableOpacity>
         </ImageBackground>
       </View>
     );

@@ -26,11 +26,20 @@
                 <ImageBackground resizeMode="cover" source={image} style={styles.image}>
                     <Text style={styles.brand}> My Quizzes</Text>
                     <Text />
-                    <Button onPress={() => {navigation.navigate("NewQuizScreen")}} title="New Quiz"/>
+
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("NewQuizScreen")}>
+                        <Text style={styles.buttonText}>New Quiz</Text>
+                    </TouchableOpacity>
                     <Text />
-                    <Button onPress={() => {navigation.navigate("QuizMeScreen")}} title="Quiz Me"/>
+
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("QuizMeScreen")}>
+                        <Text style={styles.buttonText}>Quiz Me</Text>
+                    </TouchableOpacity>
                     <Text />
-                    <Button onPress={() => {navigation.navigate("HomeScreen")}} title="Back"/>
+                    
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("HomeScreen")}>
+                        <Text style={styles.buttonText}>Back</Text>
+                    </TouchableOpacity>
                 </ImageBackground>
             </View>    
         );
