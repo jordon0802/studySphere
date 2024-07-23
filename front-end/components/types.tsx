@@ -11,6 +11,7 @@
         SavedFlashcardsScreen : undefined;
         FlashcardMainScreen : undefined;
         NewFlashcardScreen : undefined;
+        PublicFlashcardScreen : undefined;
         StudyPlanScreen : undefined;
         NewStudyPlanScreen : undefined;
         NotesScreen : undefined;
@@ -19,6 +20,7 @@
         FindFriendsScreen : undefined;
         FriendRequestScreen : undefined;
         ChatScreen: { friendId: string; friendUsername: string };
+        PublicQuizScreen : undefined;
     };
 
     export type RegisterScreenProps = NativeStackScreenProps<
@@ -55,6 +57,11 @@
         RootStackParamList,
         "NewQuizScreen"
     >;
+
+    export type PublicQuizScreenProps = NativeStackScreenProps<
+        RootStackParamList,
+        "PublicQuizScreen"
+    >;
     
     export type MyFlashcardScreenProps = NativeStackScreenProps<
         RootStackParamList,
@@ -69,6 +76,11 @@
     export type NewFlashcardScreenProps = NativeStackScreenProps<
         RootStackParamList,
         "NewFlashcardScreen"
+    >;
+
+    export type PublicFlashcardScreenProps = NativeStackScreenProps<
+        RootStackParamList,
+        "PublicFlashcardScreen"
     >;
 
     export type StudyPlanScreenProps = NativeStackScreenProps<

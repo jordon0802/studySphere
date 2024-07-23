@@ -10,9 +10,11 @@ import ProfileScreen from './components/screens/ProfileScreen';
 import QuizScreen from './components/screens/QuizScreen';
 import QuizMeScreen from './components/screens/QuizMeScreen';
 import NewQuizScreen from './components/screens/NewQuizScreen'
+import PublicQuizScreen from './components/screens/PublicQuizScreen';
 import SavedFlashcardsScreen from './components/screens/SavedFlashcardsScreen';
 import FlashcardMainScreen from './components/screens/FlashcardMainScreen';
 import NewFlashcardScreen from './components/screens/NewFlashcardScreen';
+import PublicFlashcardScreen from './components/screens/PublicFlashcardScreen';
 import StudyPlanScreen from './components/screens/StudyPlan';
 import NotesScreen from './components/screens/NotesScreen';
 //import FlashcardScreen from './components/screens/FlashcardScreen';
@@ -48,6 +50,11 @@ function App() {
                     component={FlashcardMainScreen}
                 />
 
+                <Stack.Screen 
+                    name="PublicFlashcardScreen"
+                    component={PublicFlashcardScreen}
+                />
+
                 <Stack.Screen
                     name='HomeScreen'
                     component={HomeScreen}
@@ -81,6 +88,11 @@ function App() {
                 <Stack.Screen
                     name="NewQuizScreen"
                     component={NewQuizScreen}
+                />
+
+                <Stack.Screen
+                    name="PublicQuizScreen"
+                    component={PublicQuizScreen}
                 />
                 
                 <Stack.Screen

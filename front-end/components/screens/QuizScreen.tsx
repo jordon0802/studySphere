@@ -26,6 +26,11 @@
                 <ImageBackground resizeMode="cover" source={image} style={styles.image}>
                     <Text style={styles.brand}> My Quizzes</Text>
                     <Text />
+                  
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("PublicQuizScreen")}>
+                        <Text style={styles.buttonText}>Find a Quiz</Text>
+                    </TouchableOpacity>
+                    <Text />
 
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("NewQuizScreen")}>
                         <Text style={styles.buttonText}>New Quiz</Text>

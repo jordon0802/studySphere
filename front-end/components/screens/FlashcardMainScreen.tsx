@@ -17,7 +17,11 @@ function FlashcardMainScreen() {
       <ImageBackground resizeMode="cover" source={image} style={styles.image}>
         <Text style={styles.brand}> My Flashcards</Text>
         <Text />
-
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("PublicFlashcardScreen")}>
+          <Text style={styles.buttonText}>Find Flashcards</Text>
+        </TouchableOpacity>
+        <Text />
+        
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("NewFlashcardScreen")}>
           <Text style={styles.buttonText}>New Flashcard</Text>
         </TouchableOpacity>
