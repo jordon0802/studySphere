@@ -58,6 +58,7 @@ function StudyPlanScreen() {
       if (currentStudyPlan > 0) {
         setCurrentStudyPlan(currentStudyPlan - 1);
       }
+      fetchStudyPlan();
     } catch (error) {
       console.log('Error deleting StudyPlan', error);
     }
@@ -119,24 +120,27 @@ function StudyPlanScreen() {
   const handleNext = () => {
     if (currentStudyPlan < studyPlan.length - 1) {
       setCurrentStudyPlan(currentStudyPlan + 1);
-    }
+    };
+    fetchStudyPlan();
   };
 
   const handlePrev = () => {
-    if (currentStudyPlan > 0)
+    if (currentStudyPlan > 0) {
       setCurrentStudyPlan(currentStudyPlan - 1);
+    };
+    fetchStudyPlan();
   }
 
-  useEffect(() => {fetchStudyPlan();}, []);
+  useEffect(() => { fetchStudyPlan(); }, []);
 
   return (
     <View style={styles.background}>
       <ImageBackground resizeMode="cover" source={image} style={styles.image}>
         <Text style={styles.brand}>Study Plans</Text>
         <Text />
-        <View style={styles.buttonContainer}>
-          <Button onPress={() => navigation.navigate('NewStudyPlanScreen')} title="New Plan" />
-        </View>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("NewStudyPlanScreen")}>
+          <Text style={styles.buttonText}>New Plan</Text>
+        </TouchableOpacity>
         <Text />
         {studyPlan.length === 0 ? (
         <View>
@@ -149,11 +153,18 @@ function StudyPlanScreen() {
           renderItem({ item: studyPlan[currentStudyPlan] })
         )}
         <View style={styles.nextPrevContainer}>
-          <Button onPress={handlePrev} title="Prev" />
-          <Button onPress={handleNext} title="Next" />
+          <TouchableOpacity style={styles.button} onPress={handlePrev}>
+            <Text style={styles.buttonText}>Prev</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.button} onPress={handleNext}>
+            <Text style={styles.buttonText}>Next</Text>
+          </TouchableOpacity>
         </View>
         <Text />
-        <Button onPress={() => navigation.navigate('HomeScreen')} title="Back" />
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("HomeScreen")}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );
@@ -172,7 +183,7 @@ const customStyles = StyleSheet.create({
     borderRadius: 8,
     padding: 15,
     marginVertical: 10,
-    width: '100%',
+    marginHorizontal: 5,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
@@ -215,12 +226,6 @@ const customStyles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 12,
-  },
-  homeButtonContainer: {
-    position: 'absolute',
-    bottom: 20,
-    width: '100%',
-    alignItems: 'center',
   },
 });
 

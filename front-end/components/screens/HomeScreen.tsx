@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, Text, Button, ImageBackground } from 'react-native';
-import styles from '../styles'; 
-import type { RootStackParamList } from '../types';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React from "react";
+import { View, Text, Button, ImageBackground, TouchableOpacity } from "react-native";
+import styles from "../styles"; 
+import type { RootStackParamList } from "../types";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "HomeScreen">;
 
@@ -15,40 +15,40 @@ function HomeScreen() {
             <ImageBackground resizeMode="cover" source={image} style={styles.image}>
                 <Text style={styles.brand}>StudySphere</Text>
                 <Text />
-                <Button
-                    title="My Profile"
-                    onPress={() => navigation.navigate('ProfileScreen')}
-                />
+
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("ProfileScreen")}>
+                    <Text style={styles.buttonText}>My Profile</Text>
+                </TouchableOpacity>
                 <Text />
-                <Button
-                    title="BuddySphere"
-                    onPress={() => navigation.navigate('BuddySphereScreen')}
-                />
+
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("BuddySphereScreen")}>
+                    <Text style={styles.buttonText}>BuddySphere</Text>
+                </TouchableOpacity>
                 <Text />
-                <Button
-                    title="My Notes"
-                    onPress={() => navigation.navigate('NotesScreen')}
-                />
+
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("NotesScreen")}>
+                    <Text style={styles.buttonText}>My Notes</Text>
+                </TouchableOpacity>
                 <Text />
-                <Button
-                    title="My Flashcards"
-                    onPress={() => navigation.navigate('FlashcardMainScreen')}
-                />
+
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("FlashcardMainScreen")}>
+                    <Text style={styles.buttonText}>My Flashcards</Text>
+                </TouchableOpacity>
                 <Text />
-                <Button
-                    title="My Quizzes"
-                    onPress={() => navigation.navigate('QuizScreen')}
-                />
+
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("QuizScreen")}>
+                    <Text style={styles.buttonText}>My Quizzes</Text>
+                </TouchableOpacity>
                 <Text />
-                <Button
-                    title="My Study Plans"
-                    onPress={() => navigation.navigate('StudyPlanScreen')}
-                />
+
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("StudyPlanScreen")}>
+                    <Text style={styles.buttonText}>My Study Plans</Text>
+                </TouchableOpacity>
                 <Text />
-                <Button
-                    title="Logout"
-                    onPress={() => navigation.navigate('LoginScreen')}
-                />
+
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("LoginScreen")}>
+                    <Text style={styles.buttonText}>Logout</Text>
+                </TouchableOpacity>
             </ImageBackground>
         </View>
     );

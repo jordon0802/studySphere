@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, FlatList, Text, Button, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { firestoreInstance } from '../Firebase';
-import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -75,7 +75,10 @@ function MyFriendsScreen() {
           renderItem={renderItem}
         />
         <Text />
-        <Button onPress={() => navigation.navigate("BuddySphereScreen")} title="Back"/>
+        
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("BuddySphereScreen")}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
         <Text />
       </ImageBackground>
     </View>

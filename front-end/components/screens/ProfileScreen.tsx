@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import {Button, ImageBackground, Text, View} from 'react-native';
+import React, { useState } from "react";
+import {Button, ImageBackground, Text, TouchableOpacity, View} from "react-native";
 
 import styles from "../styles"
 import type { ProfileScreenProps } from "../types";
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { firestoreInstance } from '../Firebase';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { firestoreInstance } from "../Firebase";
 
 function ProfileScreen({navigation, route}: ProfileScreenProps) {
     const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
@@ -84,7 +84,9 @@ function ProfileScreen({navigation, route}: ProfileScreenProps) {
                     <Text style={styles.textOutput}>Your user id is: {user_id}</Text>
                 </View>
                 <Text />
-                <Button title='Back' onPress={() => navigation.navigate('HomeScreen')}/>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("HomeScreen")}>
+                    <Text style={styles.buttonText}>Back</Text>
+                </TouchableOpacity>
             </ImageBackground>
         </View>
     );

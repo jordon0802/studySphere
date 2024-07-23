@@ -1,12 +1,12 @@
-import { Button } from '@rneui/base';
-import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, FlatList, ImageBackground } from 'react-native';
-import { NotesScreenProps, RootStackParamList } from '../types';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { Button } from "@rneui/base";
+import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, FlatList, ImageBackground } from "react-native";
+import { NotesScreenProps, RootStackParamList } from "../types";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import styles from "../styles";
-import { firestoreInstance } from '../Firebase';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { firestoreInstance } from "../Firebase";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 
 type NotesData = {
@@ -20,12 +20,12 @@ function NotesScreen() {
   const image = {uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp"};
   const navigation = useNavigation<NotesScreenNavigationProp>();
   const [notes, setNotes] = useState<NotesData[]>([]);
-  const [newNote, setNewNote] = useState('');
+  const [newNote, setNewNote] = useState("");
 
   const addNote = async () => {
     const username = await AsyncStorage.getItem("username")
     const collectionRef = firestoreInstance.collection("User").doc(username as string).collection("Notes");
-    if (newNote.trim() !== '') {
+    if (newNote.trim() !== "") {
       await collectionRef.add({note: newNote})
       getNotes();
       setNewNote("");
@@ -67,9 +67,12 @@ function NotesScreen() {
         <Text />
         <View style={customStyles.addNoteContainer}>
           <TextInput onChangeText={setNewNote} placeholder="Enter your note" style={customStyles.input} value={newNote}/>
-          <View style={styles.buttonContainer}>
+          {/*<View style={styles.buttonContainer}>
             <Button onPress={addNote} title={"Add Note"} />
-          </View>
+          </View>*/}
+          <TouchableOpacity style={styles.addNoteButton} onPress={addNote}>
+            <Text style={styles.buttonText}>Add Note</Text>
+          </TouchableOpacity>
         </View>
         <FlatList
           data={notes}
@@ -77,7 +80,9 @@ function NotesScreen() {
           style={customStyles.notesList}
         />
         <Text />
-        <Button onPress={() => navigation.navigate("HomeScreen")} title="Back"/>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("HomeScreen")}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
         <Text />
       </ImageBackground>
     </View>
@@ -101,7 +106,7 @@ const customStyles = StyleSheet.create({
     marginRight: 10,
   },
   addButton: {
-    backgroundColor: 'blue',
+    backgroundColor: "blue",
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 8,

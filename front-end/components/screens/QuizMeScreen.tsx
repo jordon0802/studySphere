@@ -141,7 +141,9 @@ function QuizMeScreen() {
                             <Text style={styles.quizResultStyle}> {score} / {quizzes.length} </Text>
                         </View>
                         <Text />
-                        <Button onPress={() => handleRestart()} title="Restart" />
+                        <TouchableOpacity style={styles.button} onPress={() => handleRestart}>
+                            <Text style={styles.buttonText}>Restart</Text>
+                        </TouchableOpacity>
                     </View>
                 ) : (quizzes[currentQuestion]) ? (
                     <View>
@@ -162,7 +164,9 @@ function QuizMeScreen() {
                     </View>
                 )}
                 <Text />
-                <Button title="Back" onPress={() => navigation.goBack()} />
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("QuizScreen")}>
+                    <Text style={styles.buttonText}>Back</Text>
+                </TouchableOpacity>
             </ImageBackground>
         </View>
     );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ImageBackground, StyleSheet, Text, TextInput, View, Switch, Alert} from 'react-native';
+import { Button, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View, Switch, Alert } from 'react-native';
 
 import { firestoreInstance } from '../Firebase';
 import styles from "../styles"
@@ -53,6 +53,7 @@ function NewFlashcardScreen() {
           onChangeText={setQuestion}
         />
         <Text />
+
         <TextInput
           style={styles.textInput}
           placeholder="Answer"
@@ -67,9 +68,15 @@ function NewFlashcardScreen() {
           />
         </View>
         <Text />
-        <Button onPress={handleSubmit} title="Submit"/>
+
+        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+          <Text style={styles.buttonText}>Submit</Text>
+        </TouchableOpacity>
         <Text />
-        <Button onPress={() => navigation.navigate("FlashcardMainScreen")} title="Back"/>
+
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("FlashcardMainScreen")}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );

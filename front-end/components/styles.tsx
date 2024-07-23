@@ -1,6 +1,19 @@
 import {StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
+    addNoteButton: {
+        alignItems: "center",
+        backgroundColor: "navy",
+        borderColor: "white",
+        borderRadius: 10,
+        borderWidth: 2,
+        elevation: 6,
+        justifyContent: "center",
+        padding: 6,
+        shadowColor: "rgba(46, 229, 157, 0.4)",
+        shadowOpacity: 0.8,
+        shadowOffset : { width: 1, height: 13},
+    },
     background: {
         backgroundColor: "turquoise",
         flex: 1,
@@ -14,12 +27,24 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         textAlign: "center",
     },
-    buttonContainer: {
+    button: {
         alignItems: "center",
-        borderRadius: 20,
-        color: "blue",
+        backgroundColor: "navy",
+        borderColor: "lightblue",
+        borderRadius: 10,
+        borderWidth: 2,
+        elevation: 6,
         justifyContent: "center",
-        //marginTop: 20,
+        marginHorizontal: 60,
+        padding: 6,
+        shadowColor: "rgba(46, 229, 157, 0.4)",
+        shadowOpacity: 0.8,
+        shadowOffset : { width: 1, height: 13},
+    },
+    buttonText: {
+        color: "white",
+        fontSize: 20,
+        fontWeight:"bold",
     },
     delButton: {
         aspectRatio: 1,
