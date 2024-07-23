@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     button: {
         alignItems: "center",
         backgroundColor: "navy",
-        borderColor: "white",
+        borderColor: "lightblue",
         borderRadius: 10,
         borderWidth: 2,
         elevation: 6,

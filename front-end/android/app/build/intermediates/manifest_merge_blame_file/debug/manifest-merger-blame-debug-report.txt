@@ -9,352 +9,352 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:3:5-67
-11-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:3:22-64
+11-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:3:5-67
+11-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:3:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-79
-12-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-76
+12-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-79
+12-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-76
 13    <uses-permission android:name="android.permission.WAKE_LOCK" />
-13-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-68
-13-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-65
+13-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-68
+13-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-65
 14    <!--
 15    This manifest file is used only by Gradle to configure debug-only capabilities
 16    for React Native Apps.
 17    -->
 18    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-18-->[com.facebook.react:react-android:0.74.3] C:\Users\Jordon\.gradle\caches\transforms-4\80996679d81f97f56ff0c490b40f6e6e\transformed\jetified-react-android-0.74.3-debug\AndroidManifest.xml:16:5-78
-18-->[com.facebook.react:react-android:0.74.3] C:\Users\Jordon\.gradle\caches\transforms-4\80996679d81f97f56ff0c490b40f6e6e\transformed\jetified-react-android-0.74.3-debug\AndroidManifest.xml:16:22-75
+18-->[com.facebook.react:react-android:0.74.3] /Users/jordonchang/.gradle/caches/transforms-4/80996679d81f97f56ff0c490b40f6e6e/transformed/jetified-react-android-0.74.3-debug/AndroidManifest.xml:16:5-78
+18-->[com.facebook.react:react-android:0.74.3] /Users/jordonchang/.gradle/caches/transforms-4/80996679d81f97f56ff0c490b40f6e6e/transformed/jetified-react-android-0.74.3-debug/AndroidManifest.xml:16:22-75
 19    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-19-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:25:5-79
-19-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:25:22-76
+19-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:25:5-79
+19-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:25:22-76
 20    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
-20-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:26:5-88
-20-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:26:22-85
+20-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:26:5-88
+20-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:26:22-85
 21    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
-21-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:27:5-82
-21-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:27:22-79
+21-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:27:5-82
+21-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:27:22-79
 22    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-22-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:26:5-110
-22-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:26:22-107
+22-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:26:5-110
+22-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:26:22-107
 23
 24    <permission
-24-->[androidx.core:core:1.9.0] C:\Users\Jordon\.gradle\caches\transforms-4\74cfaeab93d3f1cd3550f4ca60d0daab\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+24-->[androidx.core:core:1.9.0] /Users/jordonchang/.gradle/caches/transforms-4/74cfaeab93d3f1cd3550f4ca60d0daab/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
 25        android:name="com.studysphere.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-25-->[androidx.core:core:1.9.0] C:\Users\Jordon\.gradle\caches\transforms-4\74cfaeab93d3f1cd3550f4ca60d0daab\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+25-->[androidx.core:core:1.9.0] /Users/jordonchang/.gradle/caches/transforms-4/74cfaeab93d3f1cd3550f4ca60d0daab/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
 26        android:protectionLevel="signature" />
-26-->[androidx.core:core:1.9.0] C:\Users\Jordon\.gradle\caches\transforms-4\74cfaeab93d3f1cd3550f4ca60d0daab\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+26-->[androidx.core:core:1.9.0] /Users/jordonchang/.gradle/caches/transforms-4/74cfaeab93d3f1cd3550f4ca60d0daab/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
 27
 28    <uses-permission android:name="com.studysphere.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-28-->[androidx.core:core:1.9.0] C:\Users\Jordon\.gradle\caches\transforms-4\74cfaeab93d3f1cd3550f4ca60d0daab\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-28-->[androidx.core:core:1.9.0] C:\Users\Jordon\.gradle\caches\transforms-4\74cfaeab93d3f1cd3550f4ca60d0daab\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+28-->[androidx.core:core:1.9.0] /Users/jordonchang/.gradle/caches/transforms-4/74cfaeab93d3f1cd3550f4ca60d0daab/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+28-->[androidx.core:core:1.9.0] /Users/jordonchang/.gradle/caches/transforms-4/74cfaeab93d3f1cd3550f4ca60d0daab/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 29
 30    <application
-30-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:5:5-24:19
+30-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:5:5-24:19
 31        android:name="com.studysphere.MainApplication"
-31-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:6:7-38
+31-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:6:7-38
 32        android:allowBackup="false"
-32-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:10:7-34
+32-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:10:7-34
 33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-33-->[androidx.core:core:1.9.0] C:\Users\Jordon\.gradle\caches\transforms-4\74cfaeab93d3f1cd3550f4ca60d0daab\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+33-->[androidx.core:core:1.9.0] /Users/jordonchang/.gradle/caches/transforms-4/74cfaeab93d3f1cd3550f4ca60d0daab/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 34        android:debuggable="true"
 35        android:extractNativeLibs="false"
 36        android:icon="@mipmap/ic_launcher"
-36-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:8:7-41
+36-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:8:7-41
 37        android:label="@string/app_name"
-37-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:7:7-39
+37-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:7:7-39
 38        android:roundIcon="@mipmap/ic_launcher_round"
-38-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:9:7-52
+38-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:9:7-52
 39        android:theme="@style/AppTheme"
-39-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:11:7-38
+39-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:11:7-38
 40        android:usesCleartextTraffic="true" >
-40-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\debug\AndroidManifest.xml:6:9-44
+40-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/debug/AndroidManifest.xml:6:9-44
 41        <activity
-41-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:12:7-23:18
+41-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:12:7-23:18
 42            android:name="com.studysphere.MainActivity"
-42-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:13:9-37
+42-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:13:9-37
 43            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-43-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:15:9-118
+43-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:15:9-118
 44            android:exported="true"
-44-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:18:9-32
+44-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:18:9-32
 45            android:label="@string/app_name"
-45-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:14:9-41
+45-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:14:9-41
 46            android:launchMode="singleTask"
-46-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:16:9-40
+46-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:16:9-40
 47            android:windowSoftInputMode="adjustResize" >
-47-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:17:9-51
+47-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:17:9-51
 48            <intent-filter>
-48-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:19:9-22:25
+48-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:19:9-22:25
 49                <action android:name="android.intent.action.MAIN" />
-49-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:20:13-65
-49-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:20:21-62
+49-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:20:13-65
+49-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:20:21-62
 50
 51                <category android:name="android.intent.category.LAUNCHER" />
-51-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:21:13-73
-51-->C:\Users\Jordon\Desktop\studySphere\front-end\android\app\src\main\AndroidManifest.xml:21:23-70
+51-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:21:13-73
+51-->/Users/jordonchang/Documents/Apps/studySphere/front-end/android/app/src/main/AndroidManifest.xml:21:23-70
 52            </intent-filter>
 53        </activity>
 54
 55        <meta-data
-55-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:9-14:36
+55-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-14:36
 56            android:name="firebase_analytics_collection_enabled"
-56-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-65
+56-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-65
 57            android:value="true" />
-57-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-33
+57-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-33
 58        <meta-data
-58-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-17:37
+58-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-17:37
 59            android:name="firebase_analytics_collection_deactivated"
-59-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-69
+59-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-69
 60            android:value="false" />
-60-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-34
+60-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-34
 61        <meta-data
-61-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-20:36
+61-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-20:36
 62            android:name="google_analytics_adid_collection_enabled"
-62-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-68
+62-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-68
 63            android:value="true" />
-63-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-33
+63-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-33
 64        <meta-data
-64-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-23:36
+64-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:9-23:36
 65            android:name="google_analytics_ssaid_collection_enabled"
-65-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-69
+65-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-69
 66            android:value="true" />
-66-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-33
+66-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-33
 67        <meta-data
-67-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-26:36
+67-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:9-26:36
 68            android:name="google_analytics_automatic_screen_reporting_enabled"
-68-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-79
+68-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-79
 69            android:value="true" />
-69-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-33
+69-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-33
 70        <meta-data
-70-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:9-29:36
+70-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:9-29:36
 71            android:name="google_analytics_default_allow_analytics_storage"
-71-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-76
+71-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-76
 72            android:value="true" />
-72-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:13-33
+72-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-33
 73        <meta-data
-73-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:30:9-32:36
+73-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:9-32:36
 74            android:name="google_analytics_default_allow_ad_storage"
-74-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-69
+74-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-69
 75            android:value="true" />
-75-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-33
+75-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-33
 76        <meta-data
-76-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:33:9-35:36
+76-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:9-35:36
 77            android:name="google_analytics_default_allow_ad_user_data"
-77-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:13-71
+77-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:13-71
 78            android:value="true" />
-78-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-33
+78-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-33
 79        <meta-data
-79-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:9-38:36
+79-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:9-38:36
 80            android:name="google_analytics_default_allow_ad_personalization_signals"
-80-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-85
+80-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-85
 81            android:value="true" />
-81-->[:react-native-firebase_analytics] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\analytics\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-33
+81-->[:react-native-firebase_analytics] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-33
 82        <meta-data
-82-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:9-11:36
+82-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:9-11:36
 83            android:name="app_data_collection_default_enabled"
-83-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-63
+83-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-63
 84            android:value="true" />
-84-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-33
+84-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-33
 85
 86        <service
-86-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-21:19
+86-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-21:19
 87            android:name="com.google.firebase.components.ComponentDiscoveryService"
-87-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-84
+87-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-84
 88            android:directBootAware="true"
-88-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-43
+88-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-43
 89            android:exported="false" >
-89-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
+89-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-37
 90            <meta-data
-90-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-20:85
+90-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:85
 91                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
-91-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:17-120
+91-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-120
 92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:17-82
+92-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-82
 93            <meta-data
-93-->[com.google.firebase:firebase-firestore:25.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\99a00d61a3daa5e220bbf5c520924cc2\transformed\jetified-firebase-firestore-25.0.0\AndroidManifest.xml:17:13-19:85
+93-->[com.google.firebase:firebase-firestore:25.0.0] /Users/jordonchang/.gradle/caches/transforms-4/99a00d61a3daa5e220bbf5c520924cc2/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:17:13-19:85
 94                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
-94-->[com.google.firebase:firebase-firestore:25.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\99a00d61a3daa5e220bbf5c520924cc2\transformed\jetified-firebase-firestore-25.0.0\AndroidManifest.xml:18:17-122
+94-->[com.google.firebase:firebase-firestore:25.0.0] /Users/jordonchang/.gradle/caches/transforms-4/99a00d61a3daa5e220bbf5c520924cc2/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:18:17-122
 95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[com.google.firebase:firebase-firestore:25.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\99a00d61a3daa5e220bbf5c520924cc2\transformed\jetified-firebase-firestore-25.0.0\AndroidManifest.xml:19:17-82
+95-->[com.google.firebase:firebase-firestore:25.0.0] /Users/jordonchang/.gradle/caches/transforms-4/99a00d61a3daa5e220bbf5c520924cc2/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:19:17-82
 96            <meta-data
-96-->[com.google.firebase:firebase-firestore:25.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\99a00d61a3daa5e220bbf5c520924cc2\transformed\jetified-firebase-firestore-25.0.0\AndroidManifest.xml:20:13-22:85
+96-->[com.google.firebase:firebase-firestore:25.0.0] /Users/jordonchang/.gradle/caches/transforms-4/99a00d61a3daa5e220bbf5c520924cc2/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:20:13-22:85
 97                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-97-->[com.google.firebase:firebase-firestore:25.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\99a00d61a3daa5e220bbf5c520924cc2\transformed\jetified-firebase-firestore-25.0.0\AndroidManifest.xml:21:17-111
+97-->[com.google.firebase:firebase-firestore:25.0.0] /Users/jordonchang/.gradle/caches/transforms-4/99a00d61a3daa5e220bbf5c520924cc2/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:21:17-111
 98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[com.google.firebase:firebase-firestore:25.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\99a00d61a3daa5e220bbf5c520924cc2\transformed\jetified-firebase-firestore-25.0.0\AndroidManifest.xml:22:17-82
+98-->[com.google.firebase:firebase-firestore:25.0.0] /Users/jordonchang/.gradle/caches/transforms-4/99a00d61a3daa5e220bbf5c520924cc2/transformed/jetified-firebase-firestore-25.0.0/AndroidManifest.xml:22:17-82
 99            <meta-data
-99-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:37:13-39:85
+99-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:37:13-39:85
 100                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-100-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:38:17-139
+100-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:38:17-139
 101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:39:17-82
+101-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:39:17-82
 102            <meta-data
-102-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\fd0397759c589bc5af4623ec62101f87\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
+102-->[com.google.firebase:firebase-installations:18.0.0] /Users/jordonchang/.gradle/caches/transforms-4/fd0397759c589bc5af4623ec62101f87/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
 103                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-103-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\fd0397759c589bc5af4623ec62101f87\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
+103-->[com.google.firebase:firebase-installations:18.0.0] /Users/jordonchang/.gradle/caches/transforms-4/fd0397759c589bc5af4623ec62101f87/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
 104                android:value="com.google.firebase.components.ComponentRegistrar" />
-104-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\fd0397759c589bc5af4623ec62101f87\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
+104-->[com.google.firebase:firebase-installations:18.0.0] /Users/jordonchang/.gradle/caches/transforms-4/fd0397759c589bc5af4623ec62101f87/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
 105            <meta-data
-105-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\fd0397759c589bc5af4623ec62101f87\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
+105-->[com.google.firebase:firebase-installations:18.0.0] /Users/jordonchang/.gradle/caches/transforms-4/fd0397759c589bc5af4623ec62101f87/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
 106                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-106-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\fd0397759c589bc5af4623ec62101f87\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
+106-->[com.google.firebase:firebase-installations:18.0.0] /Users/jordonchang/.gradle/caches/transforms-4/fd0397759c589bc5af4623ec62101f87/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
 107                android:value="com.google.firebase.components.ComponentRegistrar" />
-107-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\fd0397759c589bc5af4623ec62101f87\transformed\jetified-firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
+107-->[com.google.firebase:firebase-installations:18.0.0] /Users/jordonchang/.gradle/caches/transforms-4/fd0397759c589bc5af4623ec62101f87/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
 108            <meta-data
-108-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\d921f95dac70240970c64eefbddf8050\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+108-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/d921f95dac70240970c64eefbddf8050/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
 109                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-109-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\d921f95dac70240970c64eefbddf8050\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+109-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/d921f95dac70240970c64eefbddf8050/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
 110                android:value="com.google.firebase.components.ComponentRegistrar" />
-110-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\d921f95dac70240970c64eefbddf8050\transformed\jetified-firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+110-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/d921f95dac70240970c64eefbddf8050/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
 111            <meta-data
-111-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\4d2fcc7dd8f57a88e0ebe99bf4b5174e\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+111-->[com.google.firebase:firebase-common:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/4d2fcc7dd8f57a88e0ebe99bf4b5174e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
 112                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-112-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\4d2fcc7dd8f57a88e0ebe99bf4b5174e\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+112-->[com.google.firebase:firebase-common:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/4d2fcc7dd8f57a88e0ebe99bf4b5174e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:36:17-109
 113                android:value="com.google.firebase.components.ComponentRegistrar" />
-113-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\4d2fcc7dd8f57a88e0ebe99bf4b5174e\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+113-->[com.google.firebase:firebase-common:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/4d2fcc7dd8f57a88e0ebe99bf4b5174e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:37:17-82
 114        </service>
 115
 116        <provider
-116-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-27:38
+116-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-27:38
 117            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
-117-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-88
+117-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-88
 118            android:authorities="com.studysphere.reactnativefirebaseappinitprovider"
-118-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-86
+118-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-86
 119            android:exported="false"
-119-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-37
+119-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-37
 120            android:initOrder="99" />
-120-->[:react-native-firebase_app] C:\Users\Jordon\Desktop\studySphere\front-end\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-35
+120-->[:react-native-firebase_app] /Users/jordonchang/Documents/Apps/studySphere/front-end/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-35
 121
 122        <activity
-122-->[com.facebook.react:react-android:0.74.3] C:\Users\Jordon\.gradle\caches\transforms-4\80996679d81f97f56ff0c490b40f6e6e\transformed\jetified-react-android-0.74.3-debug\AndroidManifest.xml:19:9-21:40
+122-->[com.facebook.react:react-android:0.74.3] /Users/jordonchang/.gradle/caches/transforms-4/80996679d81f97f56ff0c490b40f6e6e/transformed/jetified-react-android-0.74.3-debug/AndroidManifest.xml:19:9-21:40
 123            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-123-->[com.facebook.react:react-android:0.74.3] C:\Users\Jordon\.gradle\caches\transforms-4\80996679d81f97f56ff0c490b40f6e6e\transformed\jetified-react-android-0.74.3-debug\AndroidManifest.xml:20:13-77
+123-->[com.facebook.react:react-android:0.74.3] /Users/jordonchang/.gradle/caches/transforms-4/80996679d81f97f56ff0c490b40f6e6e/transformed/jetified-react-android-0.74.3-debug/AndroidManifest.xml:20:13-77
 124            android:exported="false" />
-124-->[com.facebook.react:react-android:0.74.3] C:\Users\Jordon\.gradle\caches\transforms-4\80996679d81f97f56ff0c490b40f6e6e\transformed\jetified-react-android-0.74.3-debug\AndroidManifest.xml:21:13-37
+124-->[com.facebook.react:react-android:0.74.3] /Users/jordonchang/.gradle/caches/transforms-4/80996679d81f97f56ff0c490b40f6e6e/transformed/jetified-react-android-0.74.3-debug/AndroidManifest.xml:21:13-37
 125        <activity
-125-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:23:9-27:75
+125-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:23:9-27:75
 126            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-126-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:24:13-93
+126-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:24:13-93
 127            android:excludeFromRecents="true"
-127-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:25:13-46
+127-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:25:13-46
 128            android:exported="false"
-128-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:26:13-37
+128-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:26:13-37
 129            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-129-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:27:13-72
+129-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:27:13-72
 130        <!--
 131            Service handling Google Sign-In user revocation. For apps that do not integrate with
 132            Google Sign-In, this service will never be started.
 133        -->
 134        <service
-134-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:33:9-37:51
+134-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:33:9-37:51
 135            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-135-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:34:13-89
+135-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:34:13-89
 136            android:exported="true"
-136-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:35:13-36
+136-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:35:13-36
 137            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-137-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:36:13-107
+137-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:36:13-107
 138            android:visibleToInstantApps="true" />
-138-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\695e2752b43ecca75a6d32f3ca2db57b\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:37:13-48
+138-->[com.google.android.gms:play-services-auth:21.2.0] /Users/jordonchang/.gradle/caches/transforms-4/695e2752b43ecca75a6d32f3ca2db57b/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:37:13-48
 139
 140        <activity
-140-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Jordon\.gradle\caches\transforms-4\1a5079a6f3b8a0de5001af50c7d4e47c\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
+140-->[com.google.android.gms:play-services-base:18.3.0] /Users/jordonchang/.gradle/caches/transforms-4/1a5079a6f3b8a0de5001af50c7d4e47c/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:9-22:45
 141            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-141-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Jordon\.gradle\caches\transforms-4\1a5079a6f3b8a0de5001af50c7d4e47c\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:19-85
+141-->[com.google.android.gms:play-services-base:18.3.0] /Users/jordonchang/.gradle/caches/transforms-4/1a5079a6f3b8a0de5001af50c7d4e47c/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:19-85
 142            android:exported="false"
-142-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Jordon\.gradle\caches\transforms-4\1a5079a6f3b8a0de5001af50c7d4e47c\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:22:19-43
+142-->[com.google.android.gms:play-services-base:18.3.0] /Users/jordonchang/.gradle/caches/transforms-4/1a5079a6f3b8a0de5001af50c7d4e47c/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:22:19-43
 143            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-143-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\Jordon\.gradle\caches\transforms-4\1a5079a6f3b8a0de5001af50c7d4e47c\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:21:19-78
+143-->[com.google.android.gms:play-services-base:18.3.0] /Users/jordonchang/.gradle/caches/transforms-4/1a5079a6f3b8a0de5001af50c7d4e47c/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:21:19-78
 144
 145        <property
-145-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:30:9-32:61
+145-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:30:9-32:61
 146            android:name="android.adservices.AD_SERVICES_CONFIG"
-146-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:31:13-65
+146-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:31:13-65
 147            android:resource="@xml/ga_ad_services_config" />
-147-->[com.google.android.gms:play-services-measurement-api:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\abddbc4366f2ca0a944a02002e63212e\transformed\jetified-play-services-measurement-api-22.0.2\AndroidManifest.xml:32:13-58
+147-->[com.google.android.gms:play-services-measurement-api:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/abddbc4366f2ca0a944a02002e63212e/transformed/jetified-play-services-measurement-api-22.0.2/AndroidManifest.xml:32:13-58
 148
 149        <provider
-149-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\4d2fcc7dd8f57a88e0ebe99bf4b5174e\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+149-->[com.google.firebase:firebase-common:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/4d2fcc7dd8f57a88e0ebe99bf4b5174e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
 150            android:name="com.google.firebase.provider.FirebaseInitProvider"
-150-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\4d2fcc7dd8f57a88e0ebe99bf4b5174e\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+150-->[com.google.firebase:firebase-common:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/4d2fcc7dd8f57a88e0ebe99bf4b5174e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:24:13-77
 151            android:authorities="com.studysphere.firebaseinitprovider"
-151-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\4d2fcc7dd8f57a88e0ebe99bf4b5174e\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+151-->[com.google.firebase:firebase-common:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/4d2fcc7dd8f57a88e0ebe99bf4b5174e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:25:13-72
 152            android:directBootAware="true"
-152-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\4d2fcc7dd8f57a88e0ebe99bf4b5174e\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+152-->[com.google.firebase:firebase-common:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/4d2fcc7dd8f57a88e0ebe99bf4b5174e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:26:13-43
 153            android:exported="false"
-153-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\4d2fcc7dd8f57a88e0ebe99bf4b5174e\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+153-->[com.google.firebase:firebase-common:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/4d2fcc7dd8f57a88e0ebe99bf4b5174e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:27:13-37
 154            android:initOrder="100" />
-154-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Jordon\.gradle\caches\transforms-4\4d2fcc7dd8f57a88e0ebe99bf4b5174e\transformed\jetified-firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+154-->[com.google.firebase:firebase-common:21.0.0] /Users/jordonchang/.gradle/caches/transforms-4/4d2fcc7dd8f57a88e0ebe99bf4b5174e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:28:13-36
 155
 156        <receiver
-156-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:29:9-33:20
+156-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:29:9-33:20
 157            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-157-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:30:13-85
+157-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:30:13-85
 158            android:enabled="true"
-158-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:31:13-35
+158-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:31:13-35
 159            android:exported="false" >
-159-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:32:13-37
+159-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:32:13-37
 160        </receiver>
 161
 162        <service
-162-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:35:9-38:40
+162-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:35:9-38:40
 163            android:name="com.google.android.gms.measurement.AppMeasurementService"
-163-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:36:13-84
+163-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:36:13-84
 164            android:enabled="true"
-164-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:37:13-35
+164-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:37:13-35
 165            android:exported="false" />
-165-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:38:13-37
+165-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:38:13-37
 166        <service
-166-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:39:9-43:72
+166-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:39:9-43:72
 167            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-167-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:40:13-87
+167-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:40:13-87
 168            android:enabled="true"
-168-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:41:13-35
+168-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:41:13-35
 169            android:exported="false"
-169-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:42:13-37
+169-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:42:13-37
 170            android:permission="android.permission.BIND_JOB_SERVICE" />
-170-->[com.google.android.gms:play-services-measurement:22.0.2] C:\Users\Jordon\.gradle\caches\transforms-4\efa3893f79ea5c424e791447a9792f81\transformed\jetified-play-services-measurement-22.0.2\AndroidManifest.xml:43:13-69
+170-->[com.google.android.gms:play-services-measurement:22.0.2] /Users/jordonchang/.gradle/caches/transforms-4/efa3893f79ea5c424e791447a9792f81/transformed/jetified-play-services-measurement-22.0.2/AndroidManifest.xml:43:13-69
 171
 172        <uses-library
-172-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Jordon\.gradle\caches\transforms-4\e9980de144ad2a2e83e05a8df2de52a7\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:23:9-25:40
+172-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/jordonchang/.gradle/caches/transforms-4/e9980de144ad2a2e83e05a8df2de52a7/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
 173            android:name="android.ext.adservices"
-173-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Jordon\.gradle\caches\transforms-4\e9980de144ad2a2e83e05a8df2de52a7\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:24:13-50
+173-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/jordonchang/.gradle/caches/transforms-4/e9980de144ad2a2e83e05a8df2de52a7/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
 174            android:required="false" />
-174-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] C:\Users\Jordon\.gradle\caches\transforms-4\e9980de144ad2a2e83e05a8df2de52a7\transformed\jetified-ads-adservices-1.0.0-beta05\AndroidManifest.xml:25:13-37
+174-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/jordonchang/.gradle/caches/transforms-4/e9980de144ad2a2e83e05a8df2de52a7/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
 175
 176        <meta-data
-176-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Jordon\.gradle\caches\transforms-4\bd656685386a6f4dd476ce15ee272d04\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+176-->[com.google.android.gms:play-services-basement:18.4.0] /Users/jordonchang/.gradle/caches/transforms-4/bd656685386a6f4dd476ce15ee272d04/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
 177            android:name="com.google.android.gms.version"
-177-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Jordon\.gradle\caches\transforms-4\bd656685386a6f4dd476ce15ee272d04\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+177-->[com.google.android.gms:play-services-basement:18.4.0] /Users/jordonchang/.gradle/caches/transforms-4/bd656685386a6f4dd476ce15ee272d04/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
 178            android:value="@integer/google_play_services_version" />
-178-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Jordon\.gradle\caches\transforms-4\bd656685386a6f4dd476ce15ee272d04\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+178-->[com.google.android.gms:play-services-basement:18.4.0] /Users/jordonchang/.gradle/caches/transforms-4/bd656685386a6f4dd476ce15ee272d04/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
 179
 180        <provider
-180-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\b5d0940704fe5e8b8959c723bce217da\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+180-->[androidx.emoji2:emoji2:1.2.0] /Users/jordonchang/.gradle/caches/transforms-4/b5d0940704fe5e8b8959c723bce217da/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 181            android:name="androidx.startup.InitializationProvider"
-181-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\b5d0940704fe5e8b8959c723bce217da\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+181-->[androidx.emoji2:emoji2:1.2.0] /Users/jordonchang/.gradle/caches/transforms-4/b5d0940704fe5e8b8959c723bce217da/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
 182            android:authorities="com.studysphere.androidx-startup"
-182-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\b5d0940704fe5e8b8959c723bce217da\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+182-->[androidx.emoji2:emoji2:1.2.0] /Users/jordonchang/.gradle/caches/transforms-4/b5d0940704fe5e8b8959c723bce217da/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
 183            android:exported="false" >
-183-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\b5d0940704fe5e8b8959c723bce217da\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+183-->[androidx.emoji2:emoji2:1.2.0] /Users/jordonchang/.gradle/caches/transforms-4/b5d0940704fe5e8b8959c723bce217da/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
 184            <meta-data
-184-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\b5d0940704fe5e8b8959c723bce217da\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+184-->[androidx.emoji2:emoji2:1.2.0] /Users/jordonchang/.gradle/caches/transforms-4/b5d0940704fe5e8b8959c723bce217da/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
 185                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-185-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\b5d0940704fe5e8b8959c723bce217da\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+185-->[androidx.emoji2:emoji2:1.2.0] /Users/jordonchang/.gradle/caches/transforms-4/b5d0940704fe5e8b8959c723bce217da/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
 186                android:value="androidx.startup" />
-186-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Jordon\.gradle\caches\transforms-4\b5d0940704fe5e8b8959c723bce217da\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+186-->[androidx.emoji2:emoji2:1.2.0] /Users/jordonchang/.gradle/caches/transforms-4/b5d0940704fe5e8b8959c723bce217da/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
 187            <meta-data
-187-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Jordon\.gradle\caches\transforms-4\972da878cfbfe8aedc199c44e914409e\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+187-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/jordonchang/.gradle/caches/transforms-4/972da878cfbfe8aedc199c44e914409e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
 188                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-188-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Jordon\.gradle\caches\transforms-4\972da878cfbfe8aedc199c44e914409e\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+188-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/jordonchang/.gradle/caches/transforms-4/972da878cfbfe8aedc199c44e914409e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
 189                android:value="androidx.startup" />
-189-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Jordon\.gradle\caches\transforms-4\972da878cfbfe8aedc199c44e914409e\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+189-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/jordonchang/.gradle/caches/transforms-4/972da878cfbfe8aedc199c44e914409e/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
 190        </provider>
 191
 192        <meta-data
-192-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Jordon\.gradle\caches\transforms-4\55c8d97790b428182b4b963363fe27bb\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+192-->[com.facebook.soloader:soloader:0.10.5] /Users/jordonchang/.gradle/caches/transforms-4/55c8d97790b428182b4b963363fe27bb/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:12:9-14:37
 193            android:name="com.facebook.soloader.enabled"
-193-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Jordon\.gradle\caches\transforms-4\55c8d97790b428182b4b963363fe27bb\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+193-->[com.facebook.soloader:soloader:0.10.5] /Users/jordonchang/.gradle/caches/transforms-4/55c8d97790b428182b4b963363fe27bb/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:13:13-57
 194            android:value="false" />
-194-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Jordon\.gradle\caches\transforms-4\55c8d97790b428182b4b963363fe27bb\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+194-->[com.facebook.soloader:soloader:0.10.5] /Users/jordonchang/.gradle/caches/transforms-4/55c8d97790b428182b4b963363fe27bb/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:14:13-34
 195    </application>
 196
 197</manifest>

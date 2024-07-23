@@ -4,7 +4,7 @@
             "outputFile": "com.studysphere.app-mergeDebugResources-39:/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Jordon\\.gradle\\caches\\transforms-4\\5036541849238df30e0b03cb5d4dd902\\transformed\\appcompat-1.6.1\\res\\values-v25\\values-v25.xml",
+                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/5036541849238df30e0b03cb5d4dd902/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

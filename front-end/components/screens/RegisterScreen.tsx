@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Alert, Button, ImageBackground, Text, TextInput , View } from 'react-native';
+import { Alert, Button, ImageBackground, Text, TextInput , TouchableOpacity, View } from 'react-native';
 import * as Yup from 'yup';
 
 import styles from "../styles"
@@ -86,9 +86,13 @@ function RegisterScreen() {
                     secureTextEntry={true}
                 />
                 <Text />
-                <Button onPress={() => (doSubmit({username, email, password}, navigation))} title="register" />
+                <TouchableOpacity onPress={() => (doSubmit({username, email, password}, navigation))} style={styles.button}>
+                    <Text style={styles.buttonText}>Register</Text>
+                </TouchableOpacity>
                 <Text />
-                <Button onPress={() => navigation.navigate("LoginScreen")} title="login here" />
+                <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")} style={styles.button}>
+                    <Text style={styles.buttonText}>Login Here</Text>
+                </TouchableOpacity>
             </ImageBackground>
         </View>
     );

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Alert, Button, ImageBackground, Text, TextInput , View } from 'react-native';
+import { Alert, Button, ImageBackground, Text, TextInput , TouchableOpacity, View } from 'react-native';
 import * as Yup from 'yup';
 
 import styles from "../styles"
@@ -91,11 +91,13 @@ function StudySphere() {
                     secureTextEntry={true}
                 />
                 <Text />
-                <Button onPress={() => (doSubmit({email: "qweiop", password: "qweiop"}, navigation))} title="debug-login" />
+                <TouchableOpacity onPress={() => (doSubmit({email, password}, navigation))} style={styles.button}>
+                    <Text style={styles.buttonText}>Login</Text>
+                </TouchableOpacity>
                 <Text />
-                <Button onPress={() => (doSubmit({email, password}, navigation))} title="login" />
-                <Text />
-                <Button onPress={() => navigation.navigate("RegisterScreen")} title="register here" />
+                <TouchableOpacity onPress={() => navigation.navigate("RegisterScreen")} style={styles.button}>
+                    <Text style={styles.buttonText}>Register Here</Text>
+                </TouchableOpacity>
             </ImageBackground>
         </View>
     );
