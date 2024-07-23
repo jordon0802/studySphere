@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ImageBackground, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, ImageBackground, StyleSheet, Text, TextInput, View, Switch, Alert} from 'react-native';
 
 import { firestoreInstance } from '../Firebase';
 import styles from "../styles"
@@ -16,17 +16,29 @@ function NewFlashcardScreen() {
   const navigation = useNavigation<NewFlashcardScreenNavigationProp>();
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
+  const [isPublic, setIsPublic] = useState(false);
 
   const handleSubmit = async () => {
     const username = await AsyncStorage.getItem("username");
-    await firestoreInstance.collection("User").doc(username as string).collection("Flashcards").add({
+
+    const newFlashcard = {
       question: question,
-      answer: answer
-    });
+      answer: answer,
+      createdBy: username
+    };
+
+    if (isPublic) {
+      await firestoreInstance.collection("PublicFlashcards").add(newFlashcard);
+    } else {
+      await firestoreInstance.collection("User").doc(username as string).collection("Flashcards").add(newFlashcard);
+    }
+
     // Reset the form
     setQuestion('');
     setAnswer('');
+    setIsPublic(false);
     navigation.navigate("FlashcardMainScreen");
+    Alert.alert("Flashcard created successfully");
   };
 
   return (
@@ -47,6 +59,13 @@ function NewFlashcardScreen() {
           value={answer}
           onChangeText={setAnswer}
         />
+        <View style={localStyles.switchContainer}>
+          <Text>Make Public</Text>
+          <Switch
+            value={isPublic}
+            onValueChange={setIsPublic}
+          />
+        </View>
         <Text />
         <Button onPress={handleSubmit} title="Submit"/>
         <Text />
@@ -57,3 +76,12 @@ function NewFlashcardScreen() {
 }
 
 export default NewFlashcardScreen;
+
+const localStyles = StyleSheet.create({
+  switchContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+});

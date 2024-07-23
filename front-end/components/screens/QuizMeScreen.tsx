@@ -16,6 +16,7 @@ type QuizData =  {
     option3: string;
     option4: string;
     question: string;
+    createdBy : string | null;
 };
 
 type QuizMeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "QuizMeScreen">;

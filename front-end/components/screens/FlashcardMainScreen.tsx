@@ -17,6 +17,8 @@ function FlashcardMainScreen() {
       <ImageBackground resizeMode="cover" source={image} style={styles.image}>
         <Text style={styles.brand}> My Flashcards</Text>
         <Text />
+        <Button onPress={() => navigation.navigate("PublicFlashcardScreen")} title="Find Flashcards"/>
+        <Text />
         <Button onPress={() => navigation.navigate("NewFlashcardScreen")} title="New Flashcard"/>
         <Text />
         <Button onPress={() => navigation.navigate("MyFlashcardsScreen")} title="Saved Flashcards"/>

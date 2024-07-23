@@ -1,5 +1,5 @@
 import React, { useState } from "react"; 
-import { Button, ImageBackground, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Button, ImageBackground, Switch, Text, TextInput, TouchableOpacity, View, StyleSheet } from "react-native";
 import styles from "../styles";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../types";
@@ -24,6 +24,7 @@ function NewQuizScreen() {
     const [option3, setOption3] = useState("");
     const [option4, setOption4] = useState("");
     const [answer, setAnswer] = useState("");
+    const [isPublic, setIsPublic] = useState(false);
 
     const handleSubmit = async () => {
         if (question == "") { console.log("Question must be filled!"); return; }
@@ -37,15 +38,23 @@ function NewQuizScreen() {
         if (answer == option4) { correctAnswers++; }
         if (correctAnswers > 1) { console.log("Must only have 1 correct answer!"); return; }
         if (correctAnswers < 1) { console.log("Answer must match an option!"); return; }
+
         const username = await AsyncStorage.getItem("username");
-        await firestoreInstance.collection("User").doc(username as string).collection("Quizzes").add({
-            question: question,
-            option1: option1,
-            option2: option2,
-            option3: option3,
-            option4: option4,
-            answer: answer
-        });
+        const quizData = {
+            question : question,
+            option1 : option1,
+            option2 : option2,
+            option3 : option3,
+            option4 : option4,
+            answer : answer,
+            createdBy : username
+        };
+
+        if (isPublic) {
+            await firestoreInstance.collection("PublicQuiz").add(quizData);
+        }
+
+        await firestoreInstance.collection("User").doc(username as string).collection("Quizzes").add(quizData);
         // Reset the form
         setQuestion("");
         setOption1("");
@@ -53,6 +62,7 @@ function NewQuizScreen() {
         setOption3("");
         setOption4("");
         setAnswer("");
+        setIsPublic(false);
         navigation.navigate("QuizScreen");
     }
 
@@ -104,6 +114,14 @@ function NewQuizScreen() {
                 style={styles.textInput}
             />
             <Text />
+            <View style={localStyles.switchContainer}>
+                <Text style={localStyles.label}>Make Public</Text>
+                <Switch
+                    value={isPublic}
+                    onValueChange={setIsPublic}
+                />
+            </View>
+            <Text />
             <Button onPress={() => handleSubmit()} title="Submit"/>
             <Text />
             <Button onPress={() => navigation.navigate("QuizScreen")} title="Back"/>
@@ -113,3 +131,16 @@ function NewQuizScreen() {
 };
 
 export default NewQuizScreen;
+
+const localStyles = StyleSheet.create({
+    switchContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '80%',
+      },
+      label: {
+        fontSize: 16,
+        color: '#fff',
+      },
+});

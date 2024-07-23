@@ -26,6 +26,8 @@
                 <ImageBackground resizeMode="cover" source={image} style={styles.image}>
                     <Text style={styles.brand}> My Quizzes</Text>
                     <Text />
+                    <Button onPress={() => {navigation.navigate("PublicQuizScreen")}} title="Find a Quiz"/>
+                    <Text />
                     <Button onPress={() => {navigation.navigate("NewQuizScreen")}} title="New Quiz"/>
                     <Text />
                     <Button onPress={() => {navigation.navigate("QuizMeScreen")}} title="Quiz Me"/>
