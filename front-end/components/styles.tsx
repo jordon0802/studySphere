@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     },
     formBackground: {
         alignItems: "center",
-        backgroundColor: "white",
+        backgroundColor: "lightgrey",
         borderRadius: 10,
         padding: 10,
     },
