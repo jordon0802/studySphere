@@ -49,7 +49,7 @@ function RegisterScreen() {
                 "password": password
             })
         
-            const response = await axios.post('http://10.0.2.2:9080/api/v1/user/register', data, {
+            const response = await axios.post('http://180.129.93.209:9080/api/v1/user/register', data, {
                 headers: {
                 'Content-Type': 'application/json',
             }});

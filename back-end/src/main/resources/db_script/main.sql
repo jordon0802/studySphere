@@ -1,12 +1,12 @@
 -- Database Name:
-CREATE DATABASE gradleTest;
+CREATE DATABASE IF NOT EXISTS gradleTest;
 
 USE gradleTest;
 
 GRANT ALL PRIVILEGES ON gradleTest.* TO 'testUser'@'localhost';
 
 -- Users Table Structure:
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     user_id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
