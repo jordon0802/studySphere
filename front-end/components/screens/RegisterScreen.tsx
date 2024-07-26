@@ -109,6 +109,7 @@ function RegisterScreen() {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Username"
+                    placeholderTextColor={"black"}
                     onChangeText={setUsername}
                     value={username}
                 />
@@ -116,6 +117,7 @@ function RegisterScreen() {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Email"
+                    placeholderTextColor={"black"}
                     onChangeText={setEmail}
                     value={email}
                 />
@@ -123,6 +125,7 @@ function RegisterScreen() {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Password"
+                    placeholderTextColor={"black"}
                     onChangeText={setPassword}
                     value={password}
                     secureTextEntry={true}

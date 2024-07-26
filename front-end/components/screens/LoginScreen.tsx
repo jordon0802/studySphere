@@ -118,6 +118,7 @@ function StudySphere() {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Email"
+                    placeholderTextColor={"black"}
                     onChangeText={setEmail}
                     value={email}
                 />
@@ -125,6 +126,7 @@ function StudySphere() {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Password"
+                    placeholderTextColor={"black"}
                     onChangeText={setPassword}
                     value={password}
                     secureTextEntry={true}
