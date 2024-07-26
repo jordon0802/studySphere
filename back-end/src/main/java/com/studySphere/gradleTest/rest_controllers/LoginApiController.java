@@ -18,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.net.http.HttpResponse;
 import java.util.List;
@@ -31,6 +32,7 @@ public class LoginApiController {
 
     private final JwtIssuer jwtIssuer;
     private final AuthenticationManager authenticationManager;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
     CustomUserDetailService userService;
@@ -75,7 +77,7 @@ public class LoginApiController {
             return response;
         }
 
-        if (principal.getEmail().equals(email) && password.equals(principal.getPassword())) {
+        if (principal.getEmail().equals(email) && bCryptPasswordEncoder.matches(password, principal.getPassword())) {
             var role = principal.getAuthorities().stream()
                     .map(GrantedAuthority::getAuthority)
                     .toList();

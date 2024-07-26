@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Date;
 
@@ -20,6 +21,7 @@ public class RegisterApiController {
 
     private final JwtIssuer jwtIssuer;
     private final AuthenticationManager authenticationManager;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
     UserService userService;
@@ -30,6 +32,8 @@ public class RegisterApiController {
         String username = registerUserRequest.getUsername();
         String email = registerUserRequest.getEmail();
         String password = registerUserRequest.getPassword();
+
+        String encryptedPassword = bCryptPasswordEncoder.encode(password);
 
         long currentTime = System.currentTimeMillis();
         Date createdAt = new Date(currentTime);
@@ -42,7 +46,7 @@ public class RegisterApiController {
 
 
         // Register New User YAY!
-        int result = userService.registerNewUserServiceMethod(username, email, password, createdAt, updatedAt);
+        int result = userService.registerNewUserServiceMethod(username, email, encryptedPassword, createdAt, updatedAt);
 
         if (result != 1) {
             return new ResponseEntity<>("Failed to register User", HttpStatus.BAD_REQUEST);
