@@ -141,7 +141,7 @@ function ProfileQuizScreen() {
                 .collection("Profiling")
                 .doc(docId);
             await profileRef.set(userProfile, { merge: true });
-            const userRef = firestoreInstance
+            await firestoreInstance
                 .collection("User")
                 .doc(username)
                 .update({
@@ -149,6 +149,7 @@ function ProfileQuizScreen() {
                 });
 
             Alert.alert("Profile updated successfully");
+            navigation.navigate("HomeScreen");
         } catch (error) {
             console.log("Error updating profile: ", error);
             Alert.alert("Failed to update profile");
