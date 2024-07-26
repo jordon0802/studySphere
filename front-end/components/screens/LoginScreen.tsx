@@ -81,7 +81,7 @@ function StudySphere() {
                     await firestoreInstance
                         .collection("User")
                         .doc(response.data[1])
-                        .set({ user_id: response.data[0] });
+                        .update({ user_id: response.data[0] });
                 } catch (error) {
                     console.log("error: " + error);
                 }
