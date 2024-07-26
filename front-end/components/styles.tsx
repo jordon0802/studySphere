@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     },
     formBackground: {
         alignItems: "center",
-        backgroundColor: "lightgrey",
+        backgroundColor: "white",
         borderRadius: 10,
         padding: 10,
     },
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 1, height: 13 },
     },
     textInput: {
-        backgroundColor: "lightgrey",
+        backgroundColor: "white",
         borderColor: "#ccc",
         borderRadius: 5,
         borderWidth: 2,
