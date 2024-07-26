@@ -196,6 +196,7 @@ const styles = StyleSheet.create({
         padding: 15,
     },
     quizQuestionText: {
+        color: "black",
         fontSize: 20,
         textAlign: "center",
     },

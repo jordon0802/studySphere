@@ -40,7 +40,7 @@ function HomeScreen() {
             const profileDoc = await firestoreInstance
                 .collection("User")
                 .doc(username)
-                .collection("Profilling")
+                .collection("Profiling")
                 .doc(identity)
                 .get();
             if (profileDoc.exists) {

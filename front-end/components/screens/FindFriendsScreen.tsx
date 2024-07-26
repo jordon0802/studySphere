@@ -222,7 +222,7 @@ function FindFriendsScreen() {
                     .collection("User")
                     .doc(completeProfileUsers[i]);
                 const userProfile = (
-                    await userRef.collection("Profilling").doc(docId).get()
+                    await userRef.collection("Profiling").doc(docId).get()
                 ).data() as UserProfile;
                 const currentUsersData: UserData[] = completeUsersData;
                 completeUsersData.push({
@@ -252,7 +252,7 @@ function FindFriendsScreen() {
             const docId = [username, "ProfileData"].join("_");
             const userRef = firestoreInstance.collection("User").doc(username);
             const userProfile = (
-                await userRef.collection("Profilling").doc(docId).get()
+                await userRef.collection("Profiling").doc(docId).get()
             ).data() as UserProfile;
             const currentUserData: UserData = {
                 username: username,

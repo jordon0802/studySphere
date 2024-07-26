@@ -138,7 +138,7 @@ function ProfileQuizScreen() {
             const profileRef = firestoreInstance
                 .collection("User")
                 .doc(username)
-                .collection("Profilling")
+                .collection("Profiling")
                 .doc(docId);
             await profileRef.set(userProfile, { merge: true });
             const userRef = firestoreInstance
@@ -198,7 +198,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>Individual</Text>
+                            <Text style={styles.quizOptionText}>Individual</Text>
                             <TouchableOpacity
                                 onPress={() => setStudyPreference(1)}
                                 style={[
@@ -207,7 +207,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>Group</Text>
+                            <Text style={styles.quizOptionText}>Group</Text>
                         </View>
 
                         <Text style={styles.quizQuestionText}>
@@ -222,7 +222,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>&lt; 1h</Text>
+                            <Text style={styles.quizOptionText}>&lt; 1h</Text>
                             <TouchableOpacity
                                 onPress={() => setStudyFrequency(1)}
                                 style={[
@@ -231,7 +231,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>2h - 5h</Text>
+                            <Text style={styles.quizOptionText}>2h - 5h</Text>
                             <TouchableOpacity
                                 onPress={() => setStudyFrequency(2)}
                                 style={[
@@ -240,7 +240,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>6h - 8h</Text>
+                            <Text style={styles.quizOptionText}>6h - 8h</Text>
                             <TouchableOpacity
                                 onPress={() => setStudyFrequency(3)}
                                 style={[
@@ -249,7 +249,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>&gt; 8h</Text>
+                            <Text style={styles.quizOptionText}>&gt; 8h</Text>
                         </View>
 
                         <Text style={styles.quizQuestionText}>
@@ -264,7 +264,7 @@ function ProfileQuizScreen() {
                             "Law",
                         ].map((field, index) => (
                             <View key={field} style={styles.checkboxContainer}>
-                                <Text>{field}</Text>
+                                <Text style={styles.quizOptionText}>{field}</Text>
                                 <TouchableOpacity
                                     onPress={() =>
                                         handleFieldOfStudySelection(index)
@@ -288,7 +288,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>Introvert</Text>
+                            <Text style={styles.quizOptionText}>Introvert</Text>
                             <TouchableOpacity
                                 onPress={() => setPersonality(1)}
                                 style={[
@@ -297,7 +297,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>Extrovert</Text>
+                            <Text style={styles.quizOptionText}>Extrovert</Text>
                         </View>
 
                         <Text style={styles.quizQuestionText}>
@@ -312,7 +312,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>No</Text>
+                            <Text style={styles.quizOptionText}>No</Text>
                             <TouchableOpacity
                                 onPress={() => setSocialPreference(1)}
                                 style={[
@@ -321,7 +321,7 @@ function ProfileQuizScreen() {
                                         styles.radioButtonSelected,
                                 ]}
                             />
-                            <Text>Yes</Text>
+                            <Text style={styles.quizOptionText}>Yes</Text>
                         </View>
 
                         <Text style={styles.quizQuestionText}>
@@ -334,7 +334,7 @@ function ProfileQuizScreen() {
                             "Collaborative space",
                         ].map((env, index) => (
                             <View key={env} style={styles.checkboxContainer}>
-                                <Text>{env}</Text>
+                                <Text style={styles.quizOptionText}>{env}</Text>
                                 <TouchableOpacity
                                     onPress={() => {
                                         const newPreferredStudyEnvironment = [
@@ -370,7 +370,7 @@ function ProfileQuizScreen() {
                             "Late night",
                         ].map((time, index) => (
                             <View key={time} style={styles.checkboxContainer}>
-                                <Text>{time}</Text>
+                                <Text style={styles.quizOptionText}>{time}</Text>
                                 <TouchableOpacity
                                     onPress={() => {
                                         const newPreferredStudyTime = [
