@@ -7,6 +7,7 @@ import styles from "../styles"
 import type { RegisterScreenProps, RootStackParamList, ProfileScreenProps } from "../types";
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { firestoreInstance } from '../Firebase';
 
 interface Values {
     username: string;
@@ -30,6 +31,12 @@ function RegisterScreen() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const setProfiling = async () => {
+        const userRef = firestoreInstance.collection("User").doc(username).update({
+            profilingDone: 0
+        })
+    }
+
     // POST Request
     const doSubmit = async ({ username, email, password } : Values, navigation : ProfileScreenNavigationProp) => {
         try {
@@ -42,11 +49,13 @@ function RegisterScreen() {
                 "password": password
             })
         
-            const response = await axios.post('http://180.129.93.209:9080/api/v1/user/register', data, {
+            const response = await axios.post('http://10.0.2.2:9080/api/v1/user/register', data, {
                 headers: {
                 'Content-Type': 'application/json',
             }});
             if (response.status == 200) {
+                setProfiling();
+
                 setUsername("");
                 setEmail("");
                 setPassword("");

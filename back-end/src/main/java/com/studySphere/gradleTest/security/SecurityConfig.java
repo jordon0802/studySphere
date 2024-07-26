@@ -46,6 +46,7 @@ public class SecurityConfig {
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/api/v1/user/register").permitAll()
                         .requestMatchers("/api/v1/user/login").permitAll()
+                        .requestMatchers("/api/calculate-similarity").permitAll()
                         .anyRequest().authenticated())
                 /*.rememberMe(Customizer.withDefaults())*/;
 

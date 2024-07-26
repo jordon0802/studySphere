@@ -16,6 +16,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B4F7487B73F6D85FFA1BAA29 /* Pods_studySphere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69134CAC9799E2E8AA121BB4 /* Pods_studySphere.framework */; };
 		F66B64FB2C47BC9800121321 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F66B64FA2C47BC9800121321 /* GoogleService-Info.plist */; };
+		F67DFA802C516CE10001B1AD /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = F67DFA7F2C516CE10001B1AD /* main.jsbundle */; };
+		F67DFA812C516CE10001B1AD /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = F67DFA7F2C516CE10001B1AD /* main.jsbundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		958951B0028423DE8C16EB3E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = studySphere/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F66B64FA2C47BC9800121321 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F67DFA7F2C516CE10001B1AD /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 		13B07FAE1A68108700A75B9A /* studySphere */ = {
 			isa = PBXGroup;
 			children = (
+				F67DFA7F2C516CE10001B1AD /* main.jsbundle */,
 				F66B64FA2C47BC9800121321 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -243,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67DFA812C516CE10001B1AD /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +257,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				F66B64FB2C47BC9800121321 /* GoogleService-Info.plist in Resources */,
+				F67DFA802C516CE10001B1AD /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				19B05C04134764623BC2CA56 /* PrivacyInfo.xcprivacy in Resources */,
 			);

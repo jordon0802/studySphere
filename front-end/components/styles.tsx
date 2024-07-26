@@ -1,4 +1,4 @@
-import {StyleSheet} from "react-native";
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     addNoteButton: {
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         padding: 6,
         shadowColor: "rgba(46, 229, 157, 0.4)",
         shadowOpacity: 0.8,
-        shadowOffset : { width: 1, height: 13},
+        shadowOffset: { width: 1, height: 13 },
     },
     background: {
         backgroundColor: "turquoise",
@@ -39,12 +39,66 @@ const styles = StyleSheet.create({
         padding: 6,
         shadowColor: "rgba(46, 229, 157, 0.4)",
         shadowOpacity: 0.8,
-        shadowOffset : { width: 1, height: 13},
+        shadowOffset: { width: 1, height: 13 },
     },
     buttonText: {
         color: "white",
         fontSize: 20,
-        fontWeight:"bold",
+        fontWeight: "bold",
+    },
+    chatBackButton: {
+        alignContent: "center",
+        flex: 1,
+        justifyContent: "center",
+        //backgroundColor: "yellow",
+    },
+    chatBottomBanner: {
+        backgroundColor: "grey",
+        borderRadius: 20,
+        flexDirection: "row",
+        padding: 10,
+    },
+    chatFriendMessage: {
+        backgroundColor: "#ECECEC",
+        alignSelf: "flex-start",
+    },
+    chatInput: {
+        flex: 1,
+        borderColor: "#ccc",
+        borderWidth: 1,
+        borderRadius: 20,
+        paddingHorizontal: 10,
+        marginRight: 10,
+    },
+    chatMessagesContainer: {
+        flexGrow: 1,
+        justifyContent: "flex-end",
+    },
+    chatMessageItem: {
+        padding: 10,
+        marginVertical: 5,
+        marginHorizontal: 10,
+        borderRadius: 10,
+    },
+    chatMyMessage: {
+        backgroundColor: "#DCF8C6",
+        alignSelf: "flex-end",
+    },
+    chatName: {
+        flex: 8,
+        fontSize: 30,
+        fontWeight: "bold",
+        textAlign: "center",
+        //backgroundColor: "green",
+    },
+    chatTimestamp: {
+        fontSize: 5,
+        textAlign: "right",
+    },
+    chatTopBanner: {
+        backgroundColor: "grey",
+        flexDirection: "row",
+        padding: 10,
     },
     delButton: {
         aspectRatio: 1,
@@ -53,14 +107,74 @@ const styles = StyleSheet.create({
         position: "absolute",
         right: 5,
         top: 3,
-      },
+    },
+    flashcard: {
+        width: "80%",
+        aspectRatio: 1.5,
+        backgroundColor: "#fff",
+        borderRadius: 8,
+        justifyContent: "center",
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOpacity: 0.2,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 6,
+        elevation: 3,
+        marginBottom: 20,
+    },
+    flashcardContainer: {
+        marginBottom: 10,
+        alignItems: "center",
+    },
+    formBackground: {
+        alignItems: "center",
+        backgroundColor: "white",
+        borderRadius: 10,
+        padding: 10,
+    },
+    friendContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: 10,
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderRadius: 10,
+        marginVertical: 5,
+        width: "100%",
+        backgroundColor: "lightgrey",
+    },
+    friendListContainer: {
+        margin: 10,
+    },
     image: {
         flex: 1,
         justifyContent: "center",
     },
     nextPrevContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+    },
+    profileBackground: {
+        backgroundColor: "white",
+        borderRadius: 10,
+        marginHorizontal: 30,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        justifyContent: "center",
+    },
+    profileText: {
+        color: "black",
+        fontSize: 24,
+        textAlign: "left",
+    },
+    quizAnswerText: {
+        borderRadius: 5,
+        color: "green",
+        padding: 5,
+        alignSelf: "center",
+        fontSize: 16,
+        fontWeight: "bold",
     },
     quizOptionContainer: {
         borderRadius: 5,
@@ -68,7 +182,7 @@ const styles = StyleSheet.create({
         color: "black",
         marginTop: 15,
     },
-    quizOptionStyle: {
+    quizOptionText: {
         borderRadius: 5,
         color: "black",
         padding: 5,
@@ -80,10 +194,15 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         margin: 10,
         padding: 15,
-    },    
+    },
     quizQuestionText: {
         fontSize: 20,
         textAlign: "center",
+    },
+    quizResultStyle: {
+        alignSelf: "center",
+        fontSize: 20,
+        fontWeight: "bold",
     },
     resultContainer: {
         backgroundColor: "lightcyan",
@@ -91,16 +210,25 @@ const styles = StyleSheet.create({
         marginHorizontal: 40,
         padding: 12,
     },
-    quizResultStyle: {
-        alignSelf: "center",
-        fontSize: 20,
-        fontWeight: "bold"
+    sendButton: {
+        alignItems: "center",
+        backgroundColor: "navy",
+        borderColor: "lightblue",
+        borderRadius: 10,
+        borderWidth: 2,
+        elevation: 6,
+        justifyContent: "center",
+        padding: 6,
+        shadowColor: "rgba(46, 229, 157, 0.4)",
+        shadowOpacity: 0.8,
+        shadowOffset: { width: 1, height: 13 },
     },
     textInput: {
-        backgroundColor: "white",
+        backgroundColor: "lightgrey",
         borderColor: "#ccc",
         borderRadius: 5,
         borderWidth: 2,
+        color: "black",
         marginHorizontal: 10,
         padding: 10,
     },
@@ -109,7 +237,50 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 24,
         textAlign: "center",
-    }
+    },
+    scrollContainer: {
+        flexGrow: 1,
+        justifyContent: "center",
+        padding: 20,
+    },
+    switchContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginVertical: 10,
+        marginHorizontal: 20,
+    },
+    radioButtonContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginVertical: 5,
+    },
+    radioButton: {
+        height: 20,
+        width: 20,
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: "#000",
+        marginHorizontal: 10,
+    },
+    radioButtonSelected: {
+        backgroundColor: "#000",
+    },
+    checkboxContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginVertical: 5,
+    },
+    checkbox: {
+        height: 20,
+        width: 20,
+        borderWidth: 1,
+        borderColor: "#000",
+        marginHorizontal: 10,
+    },
+    checkboxSelected: {
+        backgroundColor: "#000",
+    },
 });
 
 export default styles;

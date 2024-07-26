@@ -4,7 +4,7 @@
             "outputFile": "com.studysphere.app-mergeDebugResources-39:/values-mn/values-mn.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\garethdcruz\\.gradle\\caches\\transforms-4\\067c87c7bdbb0d340d16cb2923839d28\\transformed\\material-1.6.1\\res\\values-mn\\values-mn.xml",
+                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/067c87c7bdbb0d340d16cb2923839d28/transformed/material-1.6.1/res/values-mn/values-mn.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\garethdcruz\\.gradle\\caches\\transforms-4\\bd656685386a6f4dd476ce15ee272d04\\transformed\\jetified-play-services-basement-18.4.0\\res\\values-mn\\values.xml",
+                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/bd656685386a6f4dd476ce15ee272d04/transformed/jetified-play-services-basement-18.4.0/res/values-mn/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\garethdcruz\\.gradle\\caches\\transforms-4\\74cfaeab93d3f1cd3550f4ca60d0daab\\transformed\\core-1.9.0\\res\\values-mn\\values-mn.xml",
+                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/74cfaeab93d3f1cd3550f4ca60d0daab/transformed/core-1.9.0/res/values-mn/values-mn.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -57,7 +57,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\garethdcruz\\.gradle\\caches\\transforms-4\\5036541849238df30e0b03cb5d4dd902\\transformed\\appcompat-1.6.1\\res\\values-mn\\values-mn.xml",
+                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/5036541849238df30e0b03cb5d4dd902/transformed/appcompat-1.6.1/res/values-mn/values-mn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -74,7 +74,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\garethdcruz\\.gradle\\caches\\transforms-4\\80996679d81f97f56ff0c490b40f6e6e\\transformed\\jetified-react-android-0.74.3-debug\\res\\values-mn\\values-mn.xml",
+                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/80996679d81f97f56ff0c490b40f6e6e/transformed/jetified-react-android-0.74.3-debug/res/values-mn/values-mn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -91,7 +91,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\garethdcruz\\.gradle\\caches\\transforms-4\\1a5079a6f3b8a0de5001af50c7d4e47c\\transformed\\jetified-play-services-base-18.3.0\\res\\values-mn\\values.xml",
+                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/1a5079a6f3b8a0de5001af50c7d4e47c/transformed/jetified-play-services-base-18.3.0/res/values-mn/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
