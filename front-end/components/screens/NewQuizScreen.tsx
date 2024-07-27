@@ -120,6 +120,7 @@ function NewQuizScreen() {
                 <TextInput
                     onChangeText={setQuestion}
                     placeholder="Question (required)"
+                    placeholderTextColor={"black"}
                     value={question}
                     style={styles.textInput}
                 />
@@ -127,6 +128,7 @@ function NewQuizScreen() {
                 <TextInput
                     onChangeText={setAnswer}
                     placeholder="Answer (required)"
+                    placeholderTextColor={"black"}
                     value={answer}
                     style={styles.textInput}
                 />
@@ -134,6 +136,7 @@ function NewQuizScreen() {
                 <TextInput
                     onChangeText={setOption1}
                     placeholder="Option 1 (required)"
+                    placeholderTextColor={"black"}
                     value={option1}
                     style={styles.textInput}
                 />
@@ -141,6 +144,7 @@ function NewQuizScreen() {
                 <TextInput
                     onChangeText={setOption2}
                     placeholder="Option 2 (required)"
+                    placeholderTextColor={"black"}
                     value={option2}
                     style={styles.textInput}
                 />
@@ -148,6 +152,7 @@ function NewQuizScreen() {
                 <TextInput
                     onChangeText={setOption3}
                     placeholder="Option 3"
+                    placeholderTextColor={"black"}
                     value={option3}
                     style={styles.textInput}
                 />
@@ -155,6 +160,7 @@ function NewQuizScreen() {
                 <TextInput
                     onChangeText={setOption4}
                     placeholder="Option 4"
+                    placeholderTextColor={"black"}
                     value={option4}
                     style={styles.textInput}
                 />
@@ -166,7 +172,7 @@ function NewQuizScreen() {
                 <Text />
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => handleSubmit}
+                    onPress={() => handleSubmit()}
                 >
                     <Text style={styles.buttonText}>Submit</Text>
                 </TouchableOpacity>

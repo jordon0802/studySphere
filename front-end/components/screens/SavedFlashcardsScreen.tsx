@@ -100,9 +100,9 @@ function SavedFlashcardsScreen() {
                 style={styles.flashcard}
             >
                 {!flip ? (
-                    <Text>{item.question}</Text>
+                    <Text style={styles.quizQuestionText}>{item.question}</Text>
                 ) : (
-                    <Text>{item.answer}</Text>
+                    <Text style={styles.quizQuestionText}>{item.answer}</Text>
                 )}
             </TouchableOpacity>
         </View>
