@@ -236,6 +236,7 @@ const styles = StyleSheet.create({
     },
     quizResultStyle: {
         alignSelf: "center",
+        color: "black",
         fontSize: 20,
         fontWeight: "bold",
     },
@@ -272,6 +273,10 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 24,
         textAlign: "center",
+    },
+    usernameText: {
+        fontSize: 16,
+        fontWeight: "bold",
     },
     scrollContainer: {
         flexGrow: 1,

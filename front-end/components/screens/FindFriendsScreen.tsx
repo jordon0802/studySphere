@@ -354,7 +354,7 @@ function FindFriendsScreen() {
 
     const renderItem = ({ item }: { item: string }) => (
         <View style={styles.friendContainer}>
-            <Text style={customStyles.username}>{item}</Text>
+            <Text style={styles.usernameText}>{item}</Text>
             <TouchableOpacity
                 onPress={async () => {
                     const friendId = await getUser_id(item);
@@ -417,29 +417,5 @@ function FindFriendsScreen() {
         </View>
     );
 }
-
-const customStyles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 20,
-    },
-    username: {
-        fontSize: 16,
-        fontWeight: "bold",
-    },
-    addButton: {
-        backgroundColor: "#007bff",
-        borderRadius: 20,
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-    },
-    addButtonText: {
-        color: "#fff",
-        fontSize: 20,
-        fontWeight: "bold",
-    },
-});
 
 export default FindFriendsScreen;
