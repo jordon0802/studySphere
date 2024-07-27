@@ -186,6 +186,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
     },
     noteText: {
+        color: "black",
         flex: 8,
         padding: 10,
     },
@@ -275,6 +276,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
     usernameText: {
+        color: "black",
         fontSize: 16,
         fontWeight: "bold",
     },
