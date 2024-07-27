@@ -74,6 +74,7 @@ function NewFlashcardScreen() {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Question"
+                    placeholderTextColor={"black"}
                     value={question}
                     onChangeText={setQuestion}
                 />
@@ -82,6 +83,7 @@ function NewFlashcardScreen() {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Answer"
+                    placeholderTextColor={"black"}
                     value={answer}
                     onChangeText={setAnswer}
                 />

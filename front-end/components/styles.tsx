@@ -14,6 +14,12 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowOffset: { width: 1, height: 13 },
     },
+    addNoteContainer: {
+        borderRadius: 10,
+        flexDirection: "row",
+        marginBottom: 20,
+        marginHorizontal: 10,
+    },
     background: {
         backgroundColor: "turquoise",
         flex: 1,
@@ -111,11 +117,11 @@ const styles = StyleSheet.create({
     flashcard: {
         width: "80%",
         aspectRatio: 1.5,
-        backgroundColor: "#fff",
+        backgroundColor: "white",
         borderRadius: 8,
         justifyContent: "center",
         alignItems: "center",
-        shadowColor: "#000",
+        shadowColor: "black",
         shadowOpacity: 0.2,
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 6,
@@ -142,7 +148,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginVertical: 5,
         width: "100%",
-        backgroundColor: "lightgrey",
+        backgroundColor: "white",
     },
     friendListContainer: {
         margin: 10,
@@ -154,6 +160,34 @@ const styles = StyleSheet.create({
     nextPrevContainer: {
         flexDirection: "row",
         justifyContent: "space-evenly",
+    },
+    noteInput: {
+        flex: 1,
+        backgroundColor: "white",
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderRadius: 8,
+        color: "black",
+        padding: 10,
+        marginRight: 10,
+    },
+    notesList: {
+        flex: 1,
+        marginTop: 10,
+    },
+    noteItem: {
+        backgroundColor: "white",
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderRadius: 8,
+        flexDirection: "row",
+        padding: 1,
+        marginBottom: 10,
+        marginHorizontal: 10,
+    },
+    noteText: {
+        flex: 8,
+        padding: 10,
     },
     profileBackground: {
         backgroundColor: "white",
@@ -261,11 +295,11 @@ const styles = StyleSheet.create({
         width: 20,
         borderRadius: 10,
         borderWidth: 1,
-        borderColor: "#000",
+        borderColor: "black",
         marginHorizontal: 10,
     },
     radioButtonSelected: {
-        backgroundColor: "#000",
+        backgroundColor: "black",
     },
     checkboxContainer: {
         flexDirection: "row",
@@ -276,11 +310,11 @@ const styles = StyleSheet.create({
         height: 20,
         width: 20,
         borderWidth: 1,
-        borderColor: "#000",
+        borderColor: "black",
         marginHorizontal: 10,
     },
     checkboxSelected: {
-        backgroundColor: "#000",
+        backgroundColor: "black",
     },
 });
 
