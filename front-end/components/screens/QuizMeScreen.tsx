@@ -201,7 +201,7 @@ function QuizMeScreen() {
                         <Text />
                         <TouchableOpacity
                             style={styles.button}
-                            onPress={() => handleRestart}
+                            onPress={() => handleRestart()}
                         >
                             <Text style={styles.buttonText}>Restart</Text>
                         </TouchableOpacity>

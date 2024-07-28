@@ -119,6 +119,8 @@ function PublicFlashcardScreen() {
                 });
 
             Alert.alert("Flashcard added to your flashcards");
+
+            fetchPublicFlashcards();
         } catch (error) {
             console.log("Error adding flashcard to your flashcards: ", error);
         }

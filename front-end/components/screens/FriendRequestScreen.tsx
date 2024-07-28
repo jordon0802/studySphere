@@ -98,12 +98,12 @@ function FriendRequestScreen() {
             //Add each other to Friends collection
             await currentUserRef
                 .collection("Friends")
-                .doc(currentUsername)
-                .set({ id: friendId, username: friendUsername });
+                .doc(friendUsername)
+                .set({ username: friendUsername });
             await friendUserRef
                 .collection("Friends")
-                .doc(friendUsername)
-                .set({ id: user_id as string, username: currentUsername });
+                .doc(currentUsername)
+                .set({ username: currentUsername });
 
             //Remove FriendRequestReceived of current user
             await currentUserRef

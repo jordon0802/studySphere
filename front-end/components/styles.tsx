@@ -157,6 +157,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
     },
+    materialsContainer: {
+        backgroundColor: "lightcyan",
+        borderRadius: 10,
+        marginHorizontal: 40,
+        marginVertical: 10,
+        padding: 12,
+    },
     nextPrevContainer: {
         flexDirection: "row",
         justifyContent: "space-evenly",
@@ -322,6 +329,56 @@ const styles = StyleSheet.create({
     },
     checkboxSelected: {
         backgroundColor: "black",
+    },
+    card: {
+        backgroundColor: "#f9f9f9",
+        borderRadius: 8,
+        padding: 15,
+        marginVertical: 10,
+        marginHorizontal: 5,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 8,
+        elevation: 3,
+    },
+    title: {
+        color: "black",
+        fontSize: 18,
+        fontWeight: "bold",
+        marginBottom: 5,
+    },
+    description: {
+        fontSize: 14,
+        color: "#444",
+        marginBottom: 5,
+    },
+    dueDate: {
+        fontSize: 16,
+        color: "#777",
+        marginBottom: 10,
+    },
+    buttonContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+    },
+    smallButtonDelete: {
+        backgroundColor: "red",
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 5,
+        marginHorizontal: 5,
+    },
+    smallButtonComplete: {
+        backgroundColor: "green",
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 5,
+        marginHorizontal: 5,
+    },
+    smallButtonText: {
+        color: "#fff",
+        fontSize: 12,
     },
 });
 

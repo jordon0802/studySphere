@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.studysphere.app-mergeDebugResources-39:/values-v21/values-v21.xml",
+            "outputFile": "com.studysphere.app-mergeDebugResources-41:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/74cfaeab93d3f1cd3550f4ca60d0daab/transformed/core-1.9.0/res/values-v21/values-v21.xml",
+                    "source": "/Users/jordonchang/.gradle/caches/transforms-4/3e19d5f39a6c7ac50401483b24836071/transformed/core-1.13.0/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

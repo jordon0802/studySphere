@@ -70,7 +70,10 @@ function SavedFlashcardsScreen() {
                 .doc(username as string)
                 .collection("Flashcards");
             await collectionRef.doc(id).delete();
-            setCurrentFlashcard(currentFlashcard - 1);
+            totalFlashcards -= 1;
+            if (currentFlashcard != 0) {
+                setCurrentFlashcard(currentFlashcard - 1);
+            }
         } catch (error) {
             console.log("error: " + error);
         }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.studysphere.app-mergeDebugResources-39:/values-land/values-land.xml",
+            "outputFile": "com.studysphere.app-mergeDebugResources-41:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/Users/jordonchang/.gradle/caches/transforms-4/067c87c7bdbb0d340d16cb2923839d28/transformed/material-1.6.1/res/values-land/values-land.xml",

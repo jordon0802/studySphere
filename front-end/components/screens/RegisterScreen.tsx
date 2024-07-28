@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosHeaders } from "axios";
 import React, { useState } from "react";
 import {
     Alert,
@@ -9,7 +9,6 @@ import {
     TouchableOpacity,
     View,
 } from "react-native";
-import * as Yup from "yup";
 
 import styles from "../styles";
 import type {
@@ -27,17 +26,6 @@ interface Values {
     password: string;
 }
 
-// Validation Schema
-const userSchema = Yup.object({
-    username: Yup.string().required("Name is required"),
-    email: Yup.string()
-        .email("Email is not valid")
-        .required("Email is required"),
-    password: Yup.string()
-        .min(8, "Password is too short")
-        .required("Password is required"),
-});
-
 type ProfileScreenNavigationProp = NativeStackNavigationProp<
     RootStackParamList,
     "ProfileScreen"
@@ -48,9 +36,9 @@ function RegisterScreen() {
         uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp",
     };
     const navigation = useNavigation<ProfileScreenNavigationProp>();
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
 
     const setProfiling = async () => {
         await firestoreInstance.collection("User").doc(username).set({
@@ -93,7 +81,11 @@ function RegisterScreen() {
             } else {
             }
         } catch (error) {
-            console.log(error);
+            Alert.alert("Invalid Credentials", "Please try again");
+        } finally {
+            setUsername("");
+            setEmail("");
+            setPassword("");
         }
     };
 

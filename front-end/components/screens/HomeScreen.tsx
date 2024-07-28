@@ -14,6 +14,11 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+type UserDoc = {
+    user_id: string;
+    profilingDone: number;
+};
+
 type HomeScreenNavigationProp = NativeStackNavigationProp<
     RootStackParamList,
     "HomeScreen"
@@ -26,35 +31,15 @@ function HomeScreen() {
     const navigation = useNavigation<HomeScreenNavigationProp>();
     const [isProfileComplete, setIsProfileComplete] = useState(false);
 
-    useEffect(() => {
-        checkProfileCompletion();
-    }, []);
+    const handleBuddySpherePress = async () => {
+        const username = await AsyncStorage.getItem("username");
+        if (!username) return;
 
-    const checkProfileCompletion = async () => {
-        try {
-            const username = await AsyncStorage.getItem("username");
-            if (!username) return;
+        const profileDoc = (
+            await firestoreInstance.collection("User").doc(username).get()
+        ).data() as UserDoc;
 
-            const identity = [username, "ProfileData"].join("_");
-
-            const profileDoc = await firestoreInstance
-                .collection("User")
-                .doc(username)
-                .collection("Profiling")
-                .doc(identity)
-                .get();
-            if (profileDoc.exists) {
-                setIsProfileComplete(true);
-            } else {
-                setIsProfileComplete(false);
-            }
-        } catch (error) {
-            console.error("Error checking profile completion: ", error);
-        }
-    };
-
-    const handleBuddySpherePress = () => {
-        if (isProfileComplete) {
+        if (profileDoc.profilingDone == 1) {
             navigation.navigate("BuddySphereScreen");
         } else {
             Alert.alert(
@@ -133,11 +118,9 @@ function HomeScreen() {
 
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => navigation.navigate("UploadMaterialsScreen")}
+                    onPress={() => navigation.navigate("StudyMaterialsScreen")}
                 >
-                    <Text style={styles.buttonText}>
-                        Upload Study Materials
-                    </Text>
+                    <Text style={styles.buttonText}>Study Materials</Text>
                 </TouchableOpacity>
                 <Text />
 

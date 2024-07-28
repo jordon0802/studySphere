@@ -28,16 +28,6 @@ interface Values {
     password: string;
 }
 
-// Validation Schema
-const userSchema = Yup.object({
-    email: Yup.string()
-        .email("Email is not valid")
-        .required("Email is required"),
-    password: Yup.string()
-        .min(8, "Password is too short")
-        .required("Password is required"),
-});
-
 type ProfileScreenNavigationProp = NativeStackNavigationProp<
     RootStackParamList,
     "ProfileScreen"
@@ -48,8 +38,8 @@ function StudySphere() {
         uri: "https://wallpapers.com/images/high/bubbles-phone-mxbajctl63dkrkmx.webp",
     };
     const navigation = useNavigation<ProfileScreenNavigationProp>();
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
 
     // POST Request
     const doSubmit = async (
@@ -102,7 +92,10 @@ function StudySphere() {
                 navigation.navigate("HomeScreen");
             }
         } catch (error) {
-            console.log("Error: " + error);
+            Alert.alert("Invalid Credentials", "Please try again");
+        } finally {
+            setEmail("");
+            setPassword("");
         }
     };
 

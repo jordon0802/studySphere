@@ -23,6 +23,8 @@ export type RootStackParamList = {
     PublicQuizScreen: undefined;
     ProfileQuizScreen: undefined;
     UploadMaterialsScreen: undefined;
+    StudyMaterialsScreen: undefined;
+    AllStudyMaterialsScreen: undefined;
 };
 
 export type RegisterScreenProps = NativeStackScreenProps<
@@ -133,4 +135,14 @@ export type ProfileQuizScreenProps = NativeStackScreenProps<
 export type UploadMaterialsScreenProps = NativeStackScreenProps<
     RootStackParamList,
     "UploadMaterialsScreen"
+>;
+
+export type StudyMaterialsScreenProps = NativeStackScreenProps<
+    RootStackParamList,
+    "StudyMaterialsScreen"
+>;
+
+export type AllStudyMaterialsScreenProps = NativeStackScreenProps<
+    RootStackParamList,
+    "AllStudyMaterialsScreen"
 >;

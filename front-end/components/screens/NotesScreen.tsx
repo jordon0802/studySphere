@@ -9,6 +9,7 @@ import {
     StyleSheet,
     FlatList,
     ImageBackground,
+    Alert,
 } from "react-native";
 import { NotesScreenProps, RootStackParamList } from "../types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -48,6 +49,25 @@ function NotesScreen() {
         }
     };
 
+    const confirmDelete = (id: string) => {
+        Alert.alert(
+            "Delete Note",
+            "Are you sure you want to delete this note?",
+            [
+                {
+                    text: "Cancel",
+                    style: "cancel",
+                },
+                {
+                    text: "Delete",
+                    onPress: () => deleteNote(id),
+                    style: "destructive",
+                },
+            ],
+            { cancelable: true }
+        );
+    };
+
     const deleteNote = async (id: string) => {
         const username = await AsyncStorage.getItem("username");
         const collectionRef = firestoreInstance
@@ -61,7 +81,7 @@ function NotesScreen() {
         <View style={styles.noteItem}>
             <Text style={styles.noteText}>{item.note}</Text>
             <TouchableOpacity
-                onPress={() => deleteNote(item.id)}
+                onPress={() => confirmDelete(item.id)}
                 style={styles.delButton}
             >
                 <FontAwesome name="close" size={20} color="black" />

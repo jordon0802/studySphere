@@ -18,7 +18,6 @@ import axios from "axios";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 type FriendData = {
-    id: string;
     username: string;
 };
 
@@ -344,6 +343,8 @@ function FindFriendsScreen() {
                 username: currentUsername,
                 requestId: requestSentRef.id,
             });
+
+            getData();
 
             console.log(`Friend request sent to ${friendUsername}`);
             Alert.alert(`Friend request sent to ${friendUsername}`);

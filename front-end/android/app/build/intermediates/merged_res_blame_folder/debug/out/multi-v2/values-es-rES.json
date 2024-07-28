@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.studysphere.app-mergeDebugResources-39:/values-es-rES/values-es-rES.xml",
+            "outputFile": "com.studysphere.app-mergeDebugResources-41:/values-es-rES/values-es-rES.xml",
             "map": [
                 {
                     "source": "/Users/jordonchang/.gradle/caches/transforms-4/80996679d81f97f56ff0c490b40f6e6e/transformed/jetified-react-android-0.74.3-debug/res/values-es-rES/values-es-rES.xml",

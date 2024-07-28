@@ -17,7 +17,6 @@ import NewFlashcardScreen from "./components/screens/NewFlashcardScreen";
 import PublicFlashcardScreen from "./components/screens/PublicFlashcardScreen";
 import StudyPlanScreen from "./components/screens/StudyPlan";
 import NotesScreen from "./components/screens/NotesScreen";
-//import FlashcardScreen from './components/screens/FlashcardScreen';
 import BuddySphereScreen from "./components/screens/BuddySphereScreen";
 import FriendRequestScreen from "./components/screens/FriendRequestScreen";
 import MyFriendsScreen from "./components/screens/MyFriendsScreen";
@@ -26,6 +25,8 @@ import ChatScreen from "./components/screens/ChatScreen";
 import NewStudyPlanScreen from "./components/screens/NewStudyPlanScreen";
 import ProfileQuizScreen from "./components/screens/ProfileQuizScreen";
 import UploadMaterialsScreen from "./components/screens/UploadMaterialsScreen";
+import StudyMaterialsScreen from "./components/screens/StudyMaterialsScreen";
+import AllStudyMaterialsScreen from "./components/screens/AllStudyMaterialsScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -33,7 +34,7 @@ function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="RegisterScreen"
+                initialRouteName="LoginScreen"
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen
@@ -120,6 +121,16 @@ function App() {
                 <Stack.Screen
                     name="UploadMaterialsScreen"
                     component={UploadMaterialsScreen}
+                />
+
+                <Stack.Screen
+                    name="StudyMaterialsScreen"
+                    component={StudyMaterialsScreen}
+                />
+
+                <Stack.Screen
+                    name="AllStudyMaterialsScreen"
+                    component={AllStudyMaterialsScreen}
                 />
             </Stack.Navigator>
         </NavigationContainer>

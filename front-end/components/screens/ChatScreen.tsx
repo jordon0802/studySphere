@@ -136,7 +136,7 @@ function ChatScreen() {
                     : styles.chatFriendMessage,
             ]}
         >
-            <Text>{item.text}</Text>
+            <Text style={styles.quizOptionText}>{item.text}</Text>
         </View>
     );
 
