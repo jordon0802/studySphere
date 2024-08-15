@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {
     Button,
-    StyleSheet,
     Text,
     TouchableOpacity,
     View,
-    FlatList,
     ImageBackground,
     Alert,
 } from "react-native";
@@ -13,12 +11,9 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types";
 
-import { firebase, firestoreInstance, analyticsInstance } from "../Firebase";
+import { firestoreInstance } from "../Firebase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "../styles";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-
-//import FlashcardScreen from './FlashcardScreen';
 
 type FlashcardData = {
     id: string;

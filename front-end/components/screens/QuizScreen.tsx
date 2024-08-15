@@ -1,19 +1,10 @@
     import React from "react";
-    import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+    import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
 
-    import type { RegisterScreenProps, RootStackParamList, ProfileScreenProps } from "../types";
+    import type { RootStackParamList } from "../types";
     import { useNavigation } from '@react-navigation/native';
     import { NativeStackNavigationProp } from '@react-navigation/native-stack';
     import styles from "../styles";
-
-    import { useState, useEffect } from 'react';
-    //import { firebase } from '../firebaseConfig';
-
-    type QuizData =  {
-        answer : string;
-        options : string[];
-        question : string;
-    };
 
     type QuizScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, "QuizScreen">;
 

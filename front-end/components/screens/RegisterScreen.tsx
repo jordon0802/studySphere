@@ -1,8 +1,7 @@
-import axios, { AxiosHeaders } from "axios";
+import axios from "axios";
 import React, { useState } from "react";
 import {
     Alert,
-    Button,
     ImageBackground,
     Text,
     TextInput,
@@ -12,9 +11,7 @@ import {
 
 import styles from "../styles";
 import type {
-    RegisterScreenProps,
     RootStackParamList,
-    ProfileScreenProps,
 } from "../types";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";

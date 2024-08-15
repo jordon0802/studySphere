@@ -1,4 +1,3 @@
-import { Button } from "@rneui/base";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -6,12 +5,11 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
-    StyleSheet,
     FlatList,
     ImageBackground,
     Alert,
 } from "react-native";
-import { NotesScreenProps, RootStackParamList } from "../types";
+import { RootStackParamList } from "../types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import styles from "../styles";
 import { firestoreInstance } from "../Firebase";

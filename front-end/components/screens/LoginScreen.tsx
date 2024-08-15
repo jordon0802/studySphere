@@ -9,13 +9,10 @@ import {
     TouchableOpacity,
     View,
 } from "react-native";
-import * as Yup from "yup";
 
 import styles from "../styles";
 import type {
-    RegisterScreenProps,
     RootStackParamList,
-    ProfileScreenProps,
 } from "../types";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";

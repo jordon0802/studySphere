@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
-    Button,
-    StyleSheet,
     Text,
     TouchableOpacity,
     View,
-    FlatList,
     Alert,
     ImageBackground,
 } from "react-native";

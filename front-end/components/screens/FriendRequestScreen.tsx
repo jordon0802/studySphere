@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
     View,
-    TextInput,
     Button,
     FlatList,
     Text,
@@ -15,7 +14,6 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types";
 import { firestoreInstance } from "../Firebase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import FindFriendsScreen from "./FindFriendsScreen";
 import styles from "../styles";
 
 type FriendRequestScreenNavigationProp = NativeStackNavigationProp<

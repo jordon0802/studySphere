@@ -3,7 +3,6 @@ import {
     View,
     FlatList,
     Text,
-    StyleSheet,
     TouchableOpacity,
     Alert,
     ImageBackground,

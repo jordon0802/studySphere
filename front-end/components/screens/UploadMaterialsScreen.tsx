@@ -15,7 +15,7 @@ import DocumentPicker, {
 } from "react-native-document-picker";
 import { storageInstance } from "../Firebase";
 import RNFetchBlob from "rn-fetch-blob";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
     checkManagePermission,
     requestManagePermission,

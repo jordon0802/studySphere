@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import {
-    Button,
     ImageBackground,
     Switch,
     Text,
     TextInput,
     TouchableOpacity,
     View,
-    StyleSheet,
 } from "react-native";
 import styles from "../styles";
 import { useNavigation } from "@react-navigation/native";

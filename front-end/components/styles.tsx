@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
         alignContent: "center",
         flex: 1,
         justifyContent: "center",
-        //backgroundColor: "yellow",
     },
     chatBottomBanner: {
         backgroundColor: "grey",
@@ -95,7 +94,6 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: "bold",
         textAlign: "center",
-        //backgroundColor: "green",
     },
     chatTimestamp: {
         fontSize: 5,
